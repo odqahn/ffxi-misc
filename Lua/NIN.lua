@@ -6,7 +6,7 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = 'Yasha Sune-Ate',
+        Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
         Legs = 'Byakko\'s Haidate',
@@ -20,12 +20,9 @@ local sets = {
         Body = 'Kupo Suit',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = 'Yasha Sune-Ate',
+        Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
         Neck = 'Orochi Nodowa',
-    },
-    ['NightIdle'] = {
-        Feet = 'Ninja Kyahan',
     },
     ['Damage_Haste'] = {
         Ammo = 'Nokizaru Shuriken',
@@ -78,21 +75,36 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Ninjutsu Earring',
-        Feet = 'Yasha Sune-Ate',
+        Feet = 'Koga Kyahan',
         Hands = 'Yasha Tekko',
-        Head = 'Ninja Hatsuburi',
+        Head = 'Koga Hatsuburi',
         Legs = 'Byakko\'s Haidate',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Waist = 'Druid\'s Rope',
     },
-    ['JutsuEnmity'] = {
+    ['JutsuElementEnmity'] = {
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Cerberus Mantle',
+        Body = 'Yasha Samue',
+        Ear1 = 'Moldavite Earring',
+        Ear2 = 'Eris\' Earring',
+        Feet = 'Yasha Sune-Ate',
+        Hands = 'Yasha Tekko',
+        Head = 'Koga Hatsuburi',
+        Legs = 'Yasha Hakama',
+        Neck = 'Ninjutsu Torque',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Waist = 'Warwolf Belt',
+    },
+    ['JutsuDebuffEnmity'] = {
         Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
         Body = 'Yasha Samue',
         Ear1 = 'Eris\' Earring',
-        Ear2 = 'Ninjutsu Earring',
+        Ear2 = 'Eris\' Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
         Head = 'Ninja Hatsuburi',
@@ -127,10 +139,14 @@ local sets = {
         Hands = 'Yasha Tekko',
         Head = 'Optical Hat',
         Legs = 'Byakko\'s Haidate',
-        Neck = 'Peacock Amulet',
+        Neck = 'Evasion Torque',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Sniper\'s Ring',
         Waist = 'Swift Belt',
+    },
+    ['NightTanking'] = { 
+        Head = 'Ninja Hatsuburi',
+        Legs = 'Koga Hakam'
     },
     ['RA'] = {
         Ammo = 'Fuma Shuriken',
@@ -153,7 +169,7 @@ local sets = {
         Body = 'Haubergeon +1',
         Ear1 = 'Bushinomimi',
         Ear2 = 'Aesir Ear Pendant',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
         Legs = 'Byakko\'s Haidate',
@@ -168,7 +184,7 @@ local sets = {
         Body = 'Haubergeon +1',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Emperor Hairpin',
         Legs = 'Byakko\'s Haidate',
@@ -183,7 +199,7 @@ local sets = {
         Body = 'Haubergeon +1',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Aesir Ear Pendant',
-        Feet = 'Yasha Sune-Ate',
+        Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Yasha Jinpachi',
         Legs = 'Byakko\'s Haidate',
@@ -237,7 +253,7 @@ profile.OnLoad = function()
 	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
 	AshitaCore:GetChatManager():QueueCommand(1, '/echo NIN loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 4 echo');
+	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 5 echo');
 end
 
 profile.OnUnload = function()
@@ -275,6 +291,10 @@ profile.HandleDefault = function()
     if (player.Status == 'Engaged') then
         if (yonin == 1) then
             gFunc.EquipSet(sets.Tanking);
+            -- Equipe night tanking gear
+            if (game.Time < 6.00) or (game.Time > 18.00) then
+                gFunc.EquipSet(sets.NightTanking);
+            end
         elseif (Settings.Accuracy == true) then
             gFunc.EquipSet(sets.Damage_Acc);
         else
@@ -286,9 +306,9 @@ profile.HandleDefault = function()
         if (Settings.Mog == true) then
             gFunc.EquipSet(sets.Mog);
             -- Equipe night feet if night
-            if (game.Time < 6.00) or (game.Time > 18.00) then
-                gFunc.EquipSet(sets.NightIdle);
-            end
+            -- if (game.Time < 6.00) or (game.Time > 18.00) then
+            --     gFunc.EquipSet(sets.NightIdle);
+            -- end
         else
             gFunc.EquipSet(sets.Idle);
             if (game.Time < 6.00) or (game.Time > 18.00) then
@@ -310,8 +330,6 @@ profile.HandleAbility = function()
     local action = gData.GetAction ();
     if action.Name == 'Provoke' then
         gFunc.EquipSet(sets.Enmity);
-    elseif action.Name == 'Defender' then
-        gFunc.EquipSet(sets.Enmity);
     end
 end
 
@@ -326,7 +344,11 @@ profile.HandlePrecast = function()
         if (string.contains(action.Name, 'Utsusemi:')) then
             gFunc.EquipSet(sets.Utsu);
         elseif (yonin ==1 ) then
-            gFunc.EquipSet(sets.JutsuEnmity);
+            if (string.contains(action.Name, 'Dokumori:')) or (string.contains(action.Name, 'Jubaku:')) (string.contains(action.Name, 'Hojo:')) then
+                gFunc.EquipSet(sets.JutsuDebuffEnmity);
+            else
+                gFunc.EquipSet(sets.JutsuElementEnmity);
+            end
         else
             gFunc.EquipSet(sets.Jutsu);
         end
