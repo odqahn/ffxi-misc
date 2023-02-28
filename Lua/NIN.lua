@@ -24,6 +24,9 @@ local sets = {
         Hands = 'Ninja Tekko',
         Neck = 'Orochi Nodowa',
     },
+    ['NightIdle'] = {
+        Feet = 'Ninja Kyahan',
+    },
     ['Damage_Haste'] = {
         Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
@@ -62,7 +65,7 @@ local sets = {
         Ear2 = 'Ocl. Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
-        Head = 'Yasha Jinpachi',
+        Head = 'Walahra Turban',
         Legs = 'Byakko\'s Haidate',
         Neck = 'Evasion Torque',
         Ring1 = 'Breeze Ring',
@@ -210,8 +213,6 @@ local sets = {
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
     },
-    -- ['Night'] = {
-    -- },
 };
 profile.Sets = sets;
 
@@ -284,15 +285,17 @@ profile.HandleDefault = function()
     else
         if (Settings.Mog == true) then
             gFunc.EquipSet(sets.Mog);
+            -- Equipe night feet if night
+            if (game.Time < 6.00) or (game.Time > 18.00) then
+                gFunc.EquipSet(sets.NightIdle);
+            end
         else
             gFunc.EquipSet(sets.Idle);
+            if (game.Time < 6.00) or (game.Time > 18.00) then
+                gFunc.EquipSet(sets.NightIdle);
+            end
         end
     end
-
-    -- Equipe night set, to be reworked
-    -- if (game.Time < 6.00) or (game.Time > 18.00) then
-        -- gFunc.EquipSet(sets.Night);
-    -- end
 
     -- Add Opo-pop / Flagellant's in case of Sleep / Para
     if (sleep == 1) then
@@ -320,7 +323,7 @@ profile.HandlePrecast = function()
     local yonin = gData.GetBuffCount('Yonin');
 
     if (action.Skill == 'Ninjutsu') then
-        if (string.contains(action.Name, 'Utsu')) then
+        if (string.contains(action.Name, 'Utsusemi:')) then
             gFunc.EquipSet(sets.Utsu);
         elseif (yonin ==1 ) then
             gFunc.EquipSet(sets.JutsuEnmity);
