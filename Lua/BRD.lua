@@ -2,17 +2,17 @@ local profile = {};
 local sets = {
     ['Idle'] = {
         Back = 'Birdman Cape',
-        Body = 'Scp. Harness +1',
-        Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Body = 'Sha\'ir Manteel',
+        Ear1 = 'Singing Earring',
+        Ear2 = 'Wind Earring',
         Feet = 'Sha\'ir Crackows',
         Hands = 'Bricta\'s Cuffs',
-        Head = 'Optical Hat',
+        Head = 'Bard\'s Roundlet',
         Legs = 'Sha\'ir Seraweels',
-        Neck = 'Orochi Nodowa',
+        Neck = 'Piper\'s Torque',
         Range = 'Hamelin Flute',
-        Ring1 = 'Coral Ring',
-        Ring2 = 'Coral Ring',
+        Ring1 = 'Trumpet Ring',
+        Ring2 = 'Trumpet Ring',
         Waist = 'Gleeman\'s Belt',
     },
     ['Mog'] = {
@@ -26,16 +26,17 @@ local sets = {
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
     },
-    ['Singing'] = {
-        Back = 'Birdman Cape',
+    ['SingingPrecast'] = {
+        Back = 'Veela Cape',
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Singing Earring',
         Feet = 'Sha\'ir Crackows',
-        Head = 'Demon Helm',
+        Head = 'Bard\'s Roundlet',
         Legs = 'Sha\'ir Seraweels',
         Waist = 'Gleeman\'s Belt',
     },
     ['Minuet'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Hands = 'Sha\'ir Gages',
         Neck = 'Piper\'s Torque',
@@ -44,6 +45,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Mazurka'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Hands = 'Sha\'ir Gages',
         Neck = 'Piper\'s Torque',
@@ -52,6 +54,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Threnody'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'String Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'String Torque',
@@ -60,6 +63,7 @@ local sets = {
         Ring2 = 'Light Ring',
     },
     ['Paeon'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'String Earring',
         Neck = 'String Torque',
         Hands = 'Sha\'ir Gages',
@@ -68,6 +72,7 @@ local sets = {
         Ring2 = 'Light Ring',
     },
     ['March'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Neck = 'Piper\'s Torque',
         Hands = 'Sha\'ir Gages',
@@ -76,6 +81,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Finale'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'String Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'String Torque',
@@ -84,6 +90,7 @@ local sets = {
         Ring2 = 'Light Ring',
     },
     ['Madrigal'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Neck = 'Piper\'s Torque',
         Hands = 'Sha\'ir Gages',
@@ -92,6 +99,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Ballad'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Neck = 'Piper\'s Torque',
         Hands = 'Sha\'ir Gages',
@@ -100,6 +108,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Elegy'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'Piper\'s Torque',
@@ -108,6 +117,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Lullaby'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'String Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'String Torque',
@@ -116,6 +126,7 @@ local sets = {
         Ring2 = 'Light Ring',
     },
     ['Hymnus'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'String Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'String Torque',
@@ -124,6 +135,7 @@ local sets = {
         Ring2 = 'Light Ring',
     },
     ['Requiem'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'Piper\'s Torque',
@@ -132,6 +144,7 @@ local sets = {
         Ring2 = 'Trumpet Ring',
     },
     ['Carol'] = {
+        Back = 'Birdman Cape',
         Ear2 = 'Wind Earring',
         Hands = 'Bricta\'s Cuffs',
         Neck = 'Piper\'s Torque',
@@ -174,12 +187,10 @@ local sets = {
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
         Legs = 'Byakko\'s Haidate',
-        Main = 'Mandau',
         Neck = 'Peacock Amulet',
         Range = 'Oliphant',
         Ring1 = 'Ecphoria Ring',
-        Ring2 = 'Sniper\'s Ring',
-        Sub = 'Mercurial Kris',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['STR'] = {
@@ -194,7 +205,7 @@ local sets = {
         Neck = 'Peacock Amulet',
         Range = 'Frenzy fife',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['DEX'] = {
@@ -209,7 +220,7 @@ local sets = {
         Neck = 'Peacock Amulet',
         Range = 'Ebony Harp +2',
         Ring1 = 'Thunder Ring',
-        Ring2 = 'Thunder Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['MAB'] = {
@@ -224,7 +235,7 @@ local sets = {
         Neck = 'Peacock Amulet',
         Range = 'Ebony Harp +2',
         Ring1 = 'Thunder Ring',
-        Ring2 = 'Thunder Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['Sleep'] = {
@@ -345,7 +356,7 @@ profile.HandleMidcast = function()
         elseif (string.contains(spell.Name, 'Elegy')) then
             gFunc.EquipSet(sets.Elegy);
         elseif (string.contains(spell.Name, 'Ballad')) then
-            gFunc.EquipSet(sets.Ballad);
+            gFunc.EquipSet(sets.Hymnus);
         elseif (string.contains(spell.Name, 'Lullaby')) then
             gFunc.EquipSet(sets.Lullaby);
         elseif (string.contains(spell.Name, 'Hymnus')) then

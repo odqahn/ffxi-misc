@@ -15,6 +15,21 @@ local sets = {
         Ring2 = 'Coral Ring',
         Waist = 'Potent Belt',
     },
+    ['Parade'] = {
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Cerberus Mantle',
+        Body = 'Koga Chainmail',
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Aesir Ear Pendant',
+        Feet = 'Ninja Kyahan',
+        Hands = 'Ninja Tekko',
+        Head = 'Walahra Turban',
+        Legs = 'Byakko\'s Haidate',
+        Neck = 'Orochi Nodowa',
+        Ring1 = 'Ecphoria Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Swift Belt',
+    },
     ['Mog'] = {
         Ammo = 'Fuma Shuriken',
         Body = 'Kupo Suit',
@@ -36,7 +51,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
-        Ring2 = 'Sniper\'s Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['Damage_Acc'] = {
@@ -54,65 +69,24 @@ local sets = {
         Ring2 = 'Sniper\'s Ring',
         Waist = 'Potent Belt',
     },
-    ['Utsu'] = {
-        Ammo = 'Goblin Cracker',
-        Back = 'Amemet Mantle +1',
+    ['Tanking'] = {
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Cerberus Mantle',
         Body = 'Scp. Harness +1',
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Suppanomimi',
         Ear2 = 'Ocl. Earring',
-        Feet = 'Yasha Sune-Ate',
+        Feet = 'Dusk Ledelsens',
         Hands = 'Yasha Tekko',
-        Head = 'Walahra Turban',
+        Head = 'Optical Hat',
         Legs = 'Byakko\'s Haidate',
         Neck = 'Evasion Torque',
-        Ring1 = 'Breeze Ring',
-        Ring2 = 'Breeze Ring',
+        Ring1 = 'Ecphoria Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
-    ['Jutsu'] = {
-        Ammo = 'Fuma Shuriken',
-        Back = 'Amemet Mantle +1',
-        Body = 'Scp. Harness +1',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Ninjutsu Earring',
-        Feet = 'Koga Kyahan',
-        Hands = 'Yasha Tekko',
+    ['NightTanking'] = { 
         Head = 'Koga Hatsuburi',
-        Legs = 'Byakko\'s Haidate',
-        Neck = 'Ninjutsu Torque',
-        Ring1 = 'Snow Ring',
-        Ring2 = 'Snow Ring',
-        Waist = 'Druid\'s Rope',
-    },
-    ['JutsuElementEnmity'] = {
-        Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
-        Body = 'Yasha Samue',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Eris\' Earring',
-        Feet = 'Yasha Sune-Ate',
-        Hands = 'Yasha Tekko',
-        Head = 'Koga Hatsuburi',
-        Legs = 'Yasha Hakama',
-        Neck = 'Ninjutsu Torque',
-        Ring1 = 'Snow Ring',
-        Ring2 = 'Snow Ring',
-        Waist = 'Warwolf Belt',
-    },
-    ['JutsuDebuffEnmity'] = {
-        Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
-        Body = 'Yasha Samue',
-        Ear1 = 'Eris\' Earring',
-        Ear2 = 'Eris\' Earring',
-        Feet = 'Yasha Sune-Ate',
-        Hands = 'Yasha Tekko',
-        Head = 'Ninja Hatsuburi',
-        Legs = 'Yasha Hakama',
-        Neck = 'Ninjutsu Torque',
-        Ring1 = 'Snow Ring',
-        Ring2 = 'Snow Ring',
-        Waist = 'Warwolf Belt',
+        Legs = 'Koga Hakam'
     },
     ['Enmity'] = {
         Ammo = 'Nokizaru Shuriken',
@@ -128,25 +102,6 @@ local sets = {
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
         Waist = 'Warwolf Belt',
-    },
-    ['Tanking'] = {
-        Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
-        Body = 'Scp. Harness +1',
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Ocl. Earring',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Yasha Tekko',
-        Head = 'Optical Hat',
-        Legs = 'Byakko\'s Haidate',
-        Neck = 'Evasion Torque',
-        Ring1 = 'Ecphoria Ring',
-        Ring2 = 'Sniper\'s Ring',
-        Waist = 'Swift Belt',
-    },
-    ['NightTanking'] = { 
-        Head = 'Ninja Hatsuburi',
-        Legs = 'Koga Hakam'
     },
     ['RA'] = {
         Ammo = 'Fuma Shuriken',
@@ -175,7 +130,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['WSDEX'] = {
@@ -190,7 +145,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
         Ring1 = 'Thunder Ring',
-        Ring2 = 'Thunder Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['WSDEXINT'] = {
@@ -204,8 +159,8 @@ local sets = {
         Head = 'Yasha Jinpachi',
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring1 = 'Thunder Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     -- TODO when needed...
@@ -214,7 +169,10 @@ local sets = {
         Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Rajas Ring',
+    },
+    ['TH'] = {
+        Head = 'Wh. Rarab Cap +1',
     },
     ['Para'] = {
         Waist = 'Flagellant\'s Rope',
@@ -229,12 +187,74 @@ local sets = {
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
     },
+    ['Utsu'] = {
+        Ammo = 'Goblin Cracker',
+        Back = 'Cerberus Mantle',
+        Body = 'Scp. Harness +1',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = 'Yasha Sune-Ate',
+        Hands = 'Yasha Tekko',
+        Head = 'Walahra Turban',
+        Legs = 'Byakko\'s Haidate',
+        Neck = 'Evasion Torque',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Breeze Ring',
+        Waist = 'Swift Belt',
+    },
+    ['Jutsu'] = {
+        Ammo = 'Fuma Shuriken',
+        Back = 'Cerberus Mantle',
+        Body = 'Scp. Harness +1',
+        Ear1 = 'Moldavite Earring',
+        Ear2 = 'Ninjutsu Earring',
+        Feet = 'Koga Kyahan',
+        Hands = 'Yasha Tekko',
+        Head = 'Koga Hatsuburi',
+        Legs = 'Byakko\'s Haidate',
+        Neck = 'Ninjutsu Torque',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Waist = 'Druid\'s Rope',
+    },
+    ['JutsuElementEnmity'] = {
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Cerberus Mantle',
+        Body = 'Yasha Samue',
+        Ear1 = 'Moldavite Earring',
+        Ear2 = 'Eris\' Earring',
+        Feet = 'Koga Kyahan',
+        Hands = 'Yasha Tekko',
+        Head = 'Koga Hatsuburi',
+        Legs = 'Yasha Hakama',
+        Neck = 'Ninjutsu Torque',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Waist = 'Warwolf Belt',
+    },
+    ['JutsuDebuffEnmity'] = {
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Cerberus Mantle',
+        Body = 'Yasha Samue',
+        Ear1 = 'Eris\' Earring',
+        Ear2 = 'Eris\' Earring',
+        Feet = 'Yasha Sune-Ate',
+        Hands = 'Yasha Tekko',
+        Head = 'Ninja Hatsuburi',
+        Legs = 'Yasha Hakama',
+        Neck = 'Ninjutsu Torque',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Waist = 'Warwolf Belt',
+    },
 };
 profile.Sets = sets;
 
 local Settings = {
+    Parade = true;
     Mog = false;
     Accuracy = false;
+    TH = false;
 };
 
 -- Sleep for lockstyleset
@@ -253,7 +273,7 @@ profile.OnLoad = function()
 	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
 	AshitaCore:GetChatManager():QueueCommand(1, '/echo NIN loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 5 echo');
+	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 4 echo');
 end
 
 profile.OnUnload = function()
@@ -278,6 +298,24 @@ profile.HandleCommand = function(args)
             gFunc.Message('Accuracy Set On');
         end
     end
+    if (args[1] == 'parade') then
+        if (Settings.Parade == true) then
+            Settings.Parade = false;
+            gFunc.Message('Parade Set Off');
+        else
+            Settings.Accuracy = true;
+            gFunc.Message('Parade Set On');
+        end
+    end
+    if (args[1] == 'th') then
+        if (Settings.TH == true) then
+            Settings.TH = false;
+            gFunc.Message('TH Set Off');
+        else
+            Settings.TH = true;
+            gFunc.Message('TH Set On');
+        end
+    end
 end
 
 profile.HandleDefault = function()
@@ -300,6 +338,10 @@ profile.HandleDefault = function()
         else
             gFunc.EquipSet(sets.Damage_Haste);
         end
+        -- Equip TH set during battle
+        if (Settings.TH == true) then
+            gFunc.EquipSet(sets.TH);
+        end
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Idle);
     else
@@ -309,11 +351,10 @@ profile.HandleDefault = function()
             -- if (game.Time < 6.00) or (game.Time > 18.00) then
             --     gFunc.EquipSet(sets.NightIdle);
             -- end
+        elseif (Settings.Parade == true) then
+            gFunc.EquipSet(sets.Parade);
         else
             gFunc.EquipSet(sets.Idle);
-            if (game.Time < 6.00) or (game.Time > 18.00) then
-                gFunc.EquipSet(sets.NightIdle);
-            end
         end
     end
 
@@ -344,7 +385,7 @@ profile.HandlePrecast = function()
         if (string.contains(action.Name, 'Utsusemi:')) then
             gFunc.EquipSet(sets.Utsu);
         elseif (yonin ==1 ) then
-            if (string.contains(action.Name, 'Dokumori:')) or (string.contains(action.Name, 'Jubaku:')) (string.contains(action.Name, 'Hojo:')) then
+            if (string.contains(action.Name, 'Dokumori:')) or (string.contains(action.Name, 'Jubaku:')) or (string.contains(action.Name, 'Hojo:')) then
                 gFunc.EquipSet(sets.JutsuDebuffEnmity);
             else
                 gFunc.EquipSet(sets.JutsuElementEnmity);
@@ -373,10 +414,10 @@ profile.HandleWeaponskill = function()
     local STRINT = T{ 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Kamu' };
     local DEX = T{ 'Blade: Metsu' , 'Blade: Shun'};
     local DEXINT = T{ 'Blade: Yu', 'Blade: Kamu' };
-    if (STRDEX:contains(action.Name)) then
-        gFunc.EquipSet(sets.WSSTRDEX);
-    elseif (DEX:contains(action.WSDEX)) then
+    if (DEX:contains(action.WSDEX)) then
         gFunc.EquipSet(sets.WSDEX);
+    elseif (STRDEX:contains(action.Name)) then
+        gFunc.EquipSet(sets.WSSTRDEX);
     elseif (DEXINT:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEXINT);
     elseif (STRINT:contains(action.Name)) then

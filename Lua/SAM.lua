@@ -12,7 +12,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
-        Ring2 = 'Sniper\'s Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['TPACC'] = {
@@ -54,7 +54,7 @@ local sets = {
         Legs = 'Sipahi Zerehs',
         Neck = 'Chivalrous Chain',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['Mediate'] = {

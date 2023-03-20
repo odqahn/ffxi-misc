@@ -33,7 +33,7 @@ local sets = {
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
-        Ring2 = 'Sniper\'s Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['TPACC'] = {
@@ -60,7 +60,7 @@ local sets = {
         Head = 'Assassin\'s Bonnet',
         Legs = 'Dragon Subligar',
         Ring1 = 'Thunder Ring',
-        Ring2 = 'Thunder Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['TA'] = {
@@ -126,7 +126,7 @@ local sets = {
         Legs = 'Dusk Trousers',
         Neck = 'Chivalrous Chain',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Potent Belt',
     },
     ['NIN'] = {
