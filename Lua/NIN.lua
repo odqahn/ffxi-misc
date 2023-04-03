@@ -20,7 +20,7 @@ local sets = {
         Back = 'Cerberus Mantle',
         Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
-        Ear2 = 'Aesir Ear Pendant',
+        Ear2 = 'Brutal Earring',
         Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Walahra Turban',
@@ -44,7 +44,7 @@ local sets = {
         Back = 'Cerberus Mantle',
         Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
-        Ear2 = 'Aesir Ear Pendant',
+        Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
@@ -59,7 +59,7 @@ local sets = {
         Back = 'Cerberus Mantle',
         Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
-        Ear2 = 'Aesir Ear Pendant',
+        Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
@@ -72,14 +72,14 @@ local sets = {
     ['Tanking'] = {
         Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
-        Body = 'Scp. Harness +1',
+        Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Yasha Tekko',
         Head = 'Optical Hat',
         Legs = 'Byakko\'s Haidate',
-        Neck = 'Evasion Torque',
+        Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
@@ -114,9 +114,12 @@ local sets = {
         Head = 'Optical Hat',
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
-        Ring1 = 'Coral Ring',
-        Ring2 = 'Coral Ring',
+        Ring1 = 'Behemoth Ring',
+        Ring2 = 'Behemoth Ring',
         Waist = 'Precise Belt',
+    },
+    ['Fuma'] = {
+        Ammo = 'Fuma Shuriken',
     },
     ['WSSTRDEX'] = {
         Ammo = 'Bomb Core',
@@ -135,13 +138,13 @@ local sets = {
     },
     ['WSDEX'] = {
         Ammo = 'Bomb Core',
-        Back = 'Commander\'s Cape',
+        Back = 'Cerberus Mantle',
         Body = 'Haubergeon +1',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
-        Head = 'Emperor Hairpin',
+        Head = 'Optical Hat',
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
         Ring1 = 'Thunder Ring',
@@ -189,7 +192,7 @@ local sets = {
     },
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
-        Back = 'Cerberus Mantle',
+        Back = 'Corse Cape',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
@@ -255,6 +258,7 @@ local Settings = {
     Mog = false;
     Accuracy = false;
     TH = false;
+    Fuma = false;
 };
 
 -- Sleep for lockstyleset
@@ -316,6 +320,15 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
+    if (args[1] == 'fuma') then
+        if (Settings.Fuma == true) then
+            Settings.Fuma = false;
+            gFunc.Message('Fuma Off');
+        else
+            Settings.Fuma = true;
+            gFunc.Message('Fuma On');
+        end
+    end
 end
 
 profile.HandleDefault = function()
@@ -341,6 +354,10 @@ profile.HandleDefault = function()
         -- Equip TH set during battle
         if (Settings.TH == true) then
             gFunc.EquipSet(sets.TH);
+        end
+        -- Equip Fuma if loosing DPS Shuriken
+        if (Settings.Fuma == true) then
+            gFunc.EquipSet(sets.Fuma);
         end
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Idle);
@@ -414,7 +431,7 @@ profile.HandleWeaponskill = function()
     local STRINT = T{ 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Kamu' };
     local DEX = T{ 'Blade: Metsu' , 'Blade: Shun'};
     local DEXINT = T{ 'Blade: Yu', 'Blade: Kamu' };
-    if (DEX:contains(action.WSDEX)) then
+    if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
     elseif (STRDEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSSTRDEX);

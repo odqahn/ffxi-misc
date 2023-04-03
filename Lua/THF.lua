@@ -24,8 +24,8 @@ local sets = {
     },
     ['TP'] = {
         Back = 'Cerberus Mantle',
-        Body = 'Dragon Harness',
-        Ear1 = 'Aesir Ear Pendant',
+        Body = 'Rapparee Harness',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
@@ -39,7 +39,7 @@ local sets = {
     ['TPACC'] = {
         Back = 'Cerberus Mantle',
         Body = 'Scp. Harness +1',
-        Ear1 = 'Aesir Ear Pendant',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
@@ -53,7 +53,7 @@ local sets = {
     ['SA'] = {
         Back = 'Commander\'s Cape',
         Body = 'Dragon Harness',
-        Ear1 = 'Aesir Ear Pendant',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
@@ -66,7 +66,7 @@ local sets = {
     ['TA'] = {
         Back = 'Commander\'s Cape',
         Body = 'Dragon Harness',
-        Ear1 = 'Aesir Ear Pendant',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
@@ -101,33 +101,19 @@ local sets = {
         Ring2 = 'Thunder Ring',
         Waist = 'Warwolf Belt',
     },
-    ['TA_Mercy'] = {
+    ['WSDEX'] = {
         Back = 'Commander\'s Cape',
         Body = 'Dragon Harness',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Suppanomimi',
-        Feet = 'Dragon Leggings',
+        Feet = 'Dusk Ledelsens',
         Hands = 'Dragon Mittens',
         Head = 'Optical Hat',
-        Legs = 'War brais',
+        Legs = 'Dragon Subligar',
         Neck = 'Chivalrous Chain',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
-        Waist = 'Potent Belt',
-    },
-    ['Mercy'] = {
-        Back = 'Cerberus Mantle',
-        Body = 'Scp. Harness +1',
-        Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Suppanomimi',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Alkyoneus\'s Brc.',
-        Head = 'Optical Hat',
-        Legs = 'Dusk Trousers',
-        Neck = 'Chivalrous Chain',
-        Ring1 = 'Flame Ring',
+        Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Potent Belt',
+        Waist = 'Warwolf Belt',
     },
     ['NIN'] = {
         Body = 'Rapparee Harness',
@@ -161,7 +147,7 @@ local sets = {
         Waist = 'Flagellant\'s Rope',
     },
     ['TH'] = {
-        Waist = 'Flagellant\'s Rope',
+        Head = 'Wh. Rarab Cap +1',
     },
     ['RA'] = {
         Back = 'Lynx Mantle',
@@ -172,8 +158,8 @@ local sets = {
         Head = 'Optical Hat',
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
-        Ring1 = 'Coral Ring',
-        Ring2 = 'Coral Ring',
+        Ring1 = 'Behemoth Ring',
+        Ring2 = 'Behemoth Ring',
         Waist = 'Precise Belt',
     },
 };
@@ -323,15 +309,8 @@ profile.HandleWeaponskill = function()
 
     local DEX = T{ 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
     local MAB = T{ 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
-    local STR = T{ 'Mercy Stroke' };
     if (DEX:contains(action.Name)) then
-        gFunc.EquipSet(sets.SA);
-    elseif (STR:contains(action.Name)) then
-        if (ta == 1) then
-            gFunc.EquipSet(sets.TA_Mercy);
-        else
-            gFunc.EquipSet(sets.Mercy);
-        end
+        gFunc.EquipSet(sets.WSDEX);
     elseif (MAB:contains(action.Name)) then
         gFunc.EquipSet(sets.MAB);
     end
