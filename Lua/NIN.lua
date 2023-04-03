@@ -85,8 +85,19 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['NightTanking'] = { 
-        Head = 'Koga Hatsuburi',
-        Legs = 'Koga Hakam'
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Cerberus Mantle',
+        Body = 'Koga Chainmail',
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Brutal Earring',
+        Feet = 'Dusk Ledelsens',
+        Hands = 'Yasha Tekko',
+        Head = 'Optical Hat',
+        Legs = 'Koga Hakam',
+        Neck = 'Peacock Amulet',
+        Ring1 = 'Ecphoria Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Swift Belt',
     },
     ['Enmity'] = {
         Ammo = 'Nokizaru Shuriken',
@@ -162,7 +173,7 @@ local sets = {
         Head = 'Yasha Jinpachi',
         Legs = 'Byakko\'s Haidate',
         Neck = 'Peacock Amulet',
-        Ring1 = 'Thunder Ring',
+        Ring1 = 'Snow Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
@@ -430,7 +441,7 @@ profile.HandleWeaponskill = function()
     local STRDEX = T{ 'Blade: Jin', 'Blade: Rin', 'Blade: Retsu', 'Blade: Ten', 'Blade: Ku' };
     local STRINT = T{ 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Kamu' };
     local DEX = T{ 'Blade: Metsu' , 'Blade: Shun'};
-    local DEXINT = T{ 'Blade: Yu', 'Blade: Kamu' };
+    local DEXINT = T{ 'Blade: Yu' };
     if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
     elseif (STRDEX:contains(action.Name)) then
