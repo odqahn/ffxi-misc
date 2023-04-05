@@ -9,7 +9,7 @@ local sets = {
         Ear2 = 'Star Earring',
         Body = 'Vermillion Cloak',
         Hands = 'Summoner\'s Brcr.',
-        Ring1 = 'Warp Ring',
+        Ring1 = 'Tamas Ring',
         Ring2 = 'Evoker\'s Ring',
         Back = 'Errant Cape',
         Waist = 'Jungle Rope',
@@ -61,45 +61,41 @@ profile.HandleCommand = function(args)
     if (args[1] == 'siphon') then
         local game = gData.GetEnvironment();
         local spirit = "unknown";
-        if(game.Weather:contains("x2")) then
-            if(game.Weather == "Fire x2") then
-                spirit = "Fire Spirit";
-            elseif(game.Weather == "Water x2") then
-                spirit = "Water Spirit";
-            elseif(game.Weather == "Earth x2") then
-                spirit = "Earth Spirit";
-            elseif(game.Weather == "Wind x2") then
-                spirit = "Wind Spirit";
-            elseif(game.Weather == "Ice x2") then
-                spirit = "Ice Spirit";
-            elseif(game.Weather == "Thunder x2") then
-                spirit = "Thunder Spirit";
-            elseif(game.Weather == "Light x2") then
-                spirit = "Light Spirit";
-            elseif(game.Weather == "Dark x2") then
-                spirit = "Dark Spirit";
-            end
-        else
-            if(game.DayElement == "Fire") then
-                spirit = "Fire Spirit";
-            elseif(game.DayElement == "Water") then
-                spirit = "Water Spirit";
-            elseif(game.DayElement == "Earth") then
-                spirit = "Earth Spirit";
-            elseif(game.DayElement == "Wind") then
-                spirit = "Wind Spirit";
-            elseif(game.DayElement == "Ice") then
-                spirit = "Ice Spirit";
-            elseif(game.DayElement == "Thunder") then
-                spirit = "Thunder Spirit";
-            elseif(game.DayElement == "Light") then
-                spirit = "Light Spirit";
-            elseif(game.DayElement == "Dark") then
-                spirit = "Dark Spirit";
-            end
+        if(game.Weather == "Fire x2") then
+            spirit = "Fire Spirit";
+        elseif(game.Weather == "Water x2") then
+            spirit = "Water Spirit";
+        elseif(game.Weather == "Earth x2") then
+            spirit = "Earth Spirit";
+        elseif(game.Weather == "Wind x2") then
+            spirit = "Wind Spirit";
+        elseif(game.Weather == "Ice x2") then
+            spirit = "Ice Spirit";
+        elseif(game.Weather == "Thunder x2") then
+            spirit = "Thunder Spirit";
+        elseif(game.Weather == "Light x2") then
+            spirit = "Light Spirit";
+        elseif(game.Weather == "Dark x2") then
+            spirit = "Dark Spirit";
+        elseif(game.DayElement == "Fire") then
+            spirit = "Fire Spirit";
+        elseif(game.DayElement == "Water") then
+            spirit = "Water Spirit";
+        elseif(game.DayElement == "Earth") then
+            spirit = "Earth Spirit";
+        elseif(game.DayElement == "Wind") then
+            spirit = "Wind Spirit";
+        elseif(game.DayElement == "Ice") then
+            spirit = "Ice Spirit";
+        elseif(game.DayElement == "Thunder") then
+            spirit = "Thunder Spirit";
+        elseif(game.DayElement == "Light") then
+            spirit = "Light Spirit";
+        elseif(game.DayElement == "Dark") then
+            spirit = "Dark Spirit";
         end
         if(spirit ~= "unknown") then
-            AshitaCore:GetChatManager():QueueCommand(1, '/ma "' .. spirit .. '" <me> <wait5>');
+            AshitaCore:GetChatManager():QueueCommand(1, '/ma "' .. spirit .. '" <me>');
         end
     end
 end
