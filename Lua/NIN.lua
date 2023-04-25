@@ -9,14 +9,14 @@ local sets = {
         Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
-        Waist = 'Potent Belt',
+        Waist = 'Koga Sarashi',
     },
     ['Parade'] = {
-        Ammo = 'Nokizaru Shuriken',
+        Ammo = 'Fuma Shuriken',
         Back = 'Cerberus Mantle',
         Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
@@ -24,11 +24,11 @@ local sets = {
         Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Walahra Turban',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Koga Sarashi',
     },
     ['Mog'] = {
         Ammo = 'Fuma Shuriken',
@@ -41,33 +41,36 @@ local sets = {
     },
     ['Damage_Haste'] = {
         Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
+        Back = 'Amemet Mantle +1',
         Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Koga Sarashi',
     },
     ['Damage_Acc'] = {
         Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
+        Back = 'Amemet Mantle +1',
         Body = 'Koga Chainmail',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Sniper\'s Ring',
         Waist = 'Potent Belt',
+    },
+    ['Damage_Night'] = {
+        Hands = 'Koga Tekko',
     },
     ['Tanking'] = {
         Ammo = 'Nokizaru Shuriken',
@@ -78,26 +81,15 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Yasha Tekko',
         Head = 'Optical Hat',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Koga Sarashi',
     },
     ['NightTanking'] = { 
-        Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
-        Body = 'Koga Chainmail',
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Brutal Earring',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Yasha Tekko',
-        Head = 'Optical Hat',
+        Hands = 'Toga Tekko',
         Legs = 'Koga Hakam',
-        Neck = 'Peacock Amulet',
-        Ring1 = 'Ecphoria Ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Swift Belt',
     },
     ['Enmity'] = {
         Ammo = 'Nokizaru Shuriken',
@@ -141,7 +133,7 @@ local sets = {
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Flame Ring',
         Ring2 = 'Rajas Ring',
@@ -156,7 +148,7 @@ local sets = {
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
@@ -165,13 +157,13 @@ local sets = {
     ['WSDEXINT'] = {
         Ammo = 'Bomb Core',
         Back = 'Commander\'s Cape',
-        Body = 'Haubergeon +1',
+        Body = 'Kirin\'s Osode',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Yasha Jinpachi',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Snow Ring',
         Ring2 = 'Rajas Ring',
@@ -180,6 +172,7 @@ local sets = {
     -- TODO when needed...
     ['WSSTRINT'] = {
         Ammo = 'Bomb Core',
+        Body = 'Kirin\'s Osode',
         Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Ring1 = 'Flame Ring',
@@ -200,36 +193,37 @@ local sets = {
         Neck = 'Opo-opo Necklace',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
+        Waist = 'Koga Sarashi',
     },
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Corse Cape',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Loquac. Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
         Head = 'Walahra Turban',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Koga Sarashi',
     },
     ['Jutsu'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Cerberus Mantle',
-        Body = 'Scp. Harness +1',
+        Body = 'Kirin\'s Osode',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Ninjutsu Earring',
         Feet = 'Koga Kyahan',
         Hands = 'Yasha Tekko',
         Head = 'Koga Hatsuburi',
-        Legs = 'Byakko\'s Haidate',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
-        Waist = 'Druid\'s Rope',
+        Waist = 'Koga Sarashi',
     },
     ['JutsuElementEnmity'] = {
         Ammo = 'Nokizaru Shuriken',
@@ -259,7 +253,7 @@ local sets = {
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
-        Waist = 'Warwolf Belt',
+        Waist = 'Koga Sarashi',
     },
 };
 profile.Sets = sets;
@@ -359,8 +353,16 @@ profile.HandleDefault = function()
             end
         elseif (Settings.Accuracy == true) then
             gFunc.EquipSet(sets.Damage_Acc);
+            -- Equipe night hands if night
+            if (game.Time < 6.00) or (game.Time > 18.00) then
+                gFunc.EquipSet(sets.Damage_Night);
+            end
         else
             gFunc.EquipSet(sets.Damage_Haste);
+            -- Equipe night hands if night
+            if (game.Time < 6.00) or (game.Time > 18.00) then
+                gFunc.EquipSet(sets.Damage_Night);
+            end
         end
         -- Equip TH set during battle
         if (Settings.TH == true) then
@@ -375,10 +377,6 @@ profile.HandleDefault = function()
     else
         if (Settings.Mog == true) then
             gFunc.EquipSet(sets.Mog);
-            -- Equipe night feet if night
-            -- if (game.Time < 6.00) or (game.Time > 18.00) then
-            --     gFunc.EquipSet(sets.NightIdle);
-            -- end
         elseif (Settings.Parade == true) then
             gFunc.EquipSet(sets.Parade);
         else

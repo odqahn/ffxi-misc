@@ -76,13 +76,6 @@ local sets = {
         Ring2 = 'Breeze Ring',
         Waist = 'Grenadier Belt',
     },
-    ['Steal'] = {
-        Feet = 'Rogue\'s Poulaines',
-        Hands = 'Thief\'s Kote',
-        Head = 'Rogue\'s Bonnet',
-        Legs = 'Rogue\'s Culottes',
-        Neck = 'Rabbit Charm',
-    },
     ['Fishing'] = {
         Body = 'Fsh. Tunica',
         Feet = 'Fisherman\'s Boots',
@@ -118,7 +111,7 @@ local sets = {
     ['NIN'] = {
         Body = 'Rapparee Harness',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Loquac. Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
@@ -134,6 +127,13 @@ local sets = {
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
     },
+    ['Steal'] = {
+        Feet = 'Rogue\'s Poulaines',
+        Hands = 'Thief\'s Kote',
+        Head = 'Rogue\'s Bonnet',
+        Legs = 'Assassin\'s Culottes',
+        Neck = 'Rabbit Charm',
+    },
     ['Mug'] = {
         Head = 'Assassin\'s Bonnet',
     },
@@ -147,6 +147,7 @@ local sets = {
         Waist = 'Flagellant\'s Rope',
     },
     ['TH'] = {
+        Hands = 'Assassin\'s Armlets',
         Head = 'Wh. Rarab Cap +1',
     },
     ['RA'] = {

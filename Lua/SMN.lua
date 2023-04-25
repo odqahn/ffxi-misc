@@ -6,8 +6,26 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         Neck = 'Smn. Torque',
         Ear1 = 'Star Earring',
-        Ear2 = 'Star Earring',
-        Body = 'Vermillion Cloak',
+        Ear2 = 'Loquac. Earring',
+        Body = 'Austere Robe',
+        -- Body = 'Yinyang Robe',
+        Hands = 'Summoner\'s Brcr.',
+        Head = 'Summoner\'s Horn',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Back = 'Errant Cape',
+        Waist = 'Jungle Rope',
+        Legs = 'Summoner\'s Spats',
+        Feet = 'Summoner\'s Pgch.',
+    },
+    ['Resting'] = {
+        Main = 'Chatoyant Staff',
+        Sub = 'Staff Strap',
+        Ammo = 'Hedgehog Bomb',
+        Neck = 'Smn. Torque',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Loquac. Earring',
+        Body = 'Vermillion Cloake',
         Hands = 'Summoner\'s Brcr.',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Evoker\'s Ring',
@@ -17,7 +35,19 @@ local sets = {
         Feet = 'Summoner\'s Pgch.',
     },
     ['Mog'] = {
+        Main = 'Chatoyant Staff',
+        Sub = 'Staff Strap',
+        Ammo = 'Hedgehog Bomb',
+        Neck = 'Smn. Torque',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Loquac. Earring',
         Body = 'Kupo Suit',
+        Hands = 'Summoner\'s Brcr.',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Back = 'Errant Cape',
+        Waist = 'Jungle Rope',
+        Feet = 'Summoner\'s Pgch.',
     },
 };
 profile.Sets = sets;
@@ -41,8 +71,8 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 8');
 	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
 	AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
-    -- Sleep(1);
-	-- AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 4 echo');
+    Sleep(1);
+	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 5 echo');
 end
 
 profile.OnUnload = function()
@@ -101,13 +131,12 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    local game = gData.GetEnvironment();
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Normal);
     elseif (player.Status == 'Resting') then
-        gFunc.EquipSet(sets.Normal);
+        gFunc.EquipSet(sets.Resting);
     else
         if (Settings.Mog == true) then
             gFunc.EquipSet(sets.Mog);
