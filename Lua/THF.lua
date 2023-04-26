@@ -108,6 +108,15 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
+    ['CHR'] = {
+        Head = 'Panther Mask',
+        Neck = 'Orochi Nodowa',
+        Body = 'Dragon Harness',
+        Ring1 = 'Light Ring',
+        Ring2 = 'Light Ring',
+        Back = 'Corse Cape',
+        Waist = 'Corsette',
+    },
     ['NIN'] = {
         Body = 'Rapparee Harness',
         Ear1 = 'Ocl. Earring',
@@ -170,25 +179,27 @@ profile.Packer = {
 };
 
 local Settings = {
-    Mog = false;
-    Accuracy = false;
-    TH = false;
+    Mog = false,
+    Accuracy = false,
+    TH = false,
 };
 
 -- Sleep for lockstyleset
 local clock = os.clock;
 function Sleep(n)
     local t0 = clock();
-    while clock() - t0 <= n do end;
+    while clock() - t0 <= n do
+    end
+    ;
 end
 
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 2');
-	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
-	AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
+    AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 11 echo');
+    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 11 echo');
 end
 
 profile.OnUnload = function()
@@ -252,7 +263,8 @@ profile.HandleDefault = function()
     -- SA TA sets
     if (sa == 1) then
         gFunc.EquipSet(sets.SA);
-    elseif (ta == 1) then
+    end
+    if (ta == 1) then
         gFunc.EquipSet(sets.TA);
     end
 
@@ -271,8 +283,8 @@ profile.HandleDefault = function()
 end
 
 profile.HandleAbility = function()
-    local action = gData.GetAction ();
-    if action.Name == 'Flee' then    
+    local action = gData.GetAction();
+    if action.Name == 'Flee' then
         gFunc.EquipSet(sets.Flee);
     elseif action.Name == 'Hide' then
         gFunc.EquipSet(sets.Hide);
@@ -280,6 +292,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Mug);
     elseif (action.Name == 'Steal') then
         gFunc.EquipSet(sets.Steal);
+    elseif (string.contains(action.Name, 'Waltz')) then
+        gFunc.EquipSet(sets.CHR);
     end
 end
 
@@ -287,7 +301,7 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local action = gData.GetAction ();
+    local action = gData.GetAction();
     if (action.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.NIN);
     end
@@ -305,11 +319,11 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    local action = gData.GetAction ();
+    local action = gData.GetAction();
     local ta = gData.GetBuffCount('Trick Attack');
 
-    local DEX = T{ 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
-    local MAB = T{ 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
+    local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
+    local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
     if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
     elseif (MAB:contains(action.Name)) then

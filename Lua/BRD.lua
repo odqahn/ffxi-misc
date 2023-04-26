@@ -30,6 +30,7 @@ local sets = {
         Back = 'Veela Cape',
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Singing Earring',
+        Ear2 = 'Loquac. Earring',
         Feet = 'Sha\'ir Crackows',
         Head = 'Bard\'s Roundlet',
         Legs = 'Sha\'ir Seraweels',
@@ -160,7 +161,7 @@ local sets = {
         Feet = 'Sha\'ir Crackows',
         Hands = 'Bricta\'s Cuffs',
         Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Range = 'Hamelin Flute',
         Waist = 'Tarutaru Sash',
     },
@@ -171,7 +172,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
         Ring1 = 'Coral Ring',
@@ -180,13 +181,13 @@ local sets = {
     },
     ['Fighting'] = {
         Back = 'Cerberus Mantle',
-        Body = 'Scp. Harness +1',
-        Ear1 = 'Aesir Ear Pendant',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Range = 'Oliphant',
         Ring1 = 'Ecphoria Ring',
@@ -195,7 +196,7 @@ local sets = {
     },
     ['STR'] = {
         Back = 'Cerberus Mantle',
-        Body = 'Bard\'s Jstcorps',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Bushinomimi',
         Feet = 'Dusk Ledelsens',
@@ -210,13 +211,13 @@ local sets = {
     },
     ['DEX'] = {
         Back = 'Commander\'s Cape',
-        Body = 'Bard\'s Jstcorps',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Range = 'Ebony Harp +2',
         Ring1 = 'Thunder Ring',
@@ -225,13 +226,13 @@ local sets = {
     },
     ['MAB'] = {
         Back = 'Commander\'s Cape',
-        Body = 'Scp. Harness +1',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Moldavite Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Range = 'Ebony Harp +2',
         Ring1 = 'Thunder Ring',
@@ -258,23 +259,25 @@ profile.Packer = {
 };
 
 local Settings = {
-    Mog = false;
+    Mog = false,
 };
 
 -- Sleep for lockstyleset
 local clock = os.clock;
 function Sleep(n)
     local t0 = clock();
-    while clock() - t0 <= n do end;
+    while clock() - t0 <= n do
+    end
+    ;
 end
 
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3');
-	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
-	AshitaCore:GetChatManager():QueueCommand(1, '/echo BRD loading!');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
+    AshitaCore:GetChatManager():QueueCommand(1, '/echo BRD loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 2 echo');
+    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 2 echo');
 end
 
 profile.OnUnload = function()
@@ -326,10 +329,10 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local spell = gData.GetAction ();
+    local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.Singing);
-    elseif (spell.Skill == 'Healing Magic') or  (spell.Skill == 'Enhancing Magic') then
+    elseif (spell.Skill == 'Healing Magic') or (spell.Skill == 'Enhancing Magic') then
         gFunc.EquipSet(sets.Casting);
     elseif (spell.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.NIN);
@@ -337,7 +340,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    local spell = gData.GetAction ();
+    local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
         if (string.contains(spell.Name, 'Paeon')) then
             gFunc.EquipSet(sets.Paeon);
@@ -378,10 +381,10 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    local action = gData.GetAction ();
-    local DEX = T{ 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
-    local MAB = T{ 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
-    local STR = T{ 'Mercy Stroke' };
+    local action = gData.GetAction();
+    local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
+    local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
+    local STR = T { 'Mercy Stroke' };
     if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.DEX);
     elseif (MAB:contains(action.Name)) then

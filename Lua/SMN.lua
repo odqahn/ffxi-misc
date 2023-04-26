@@ -53,14 +53,16 @@ local sets = {
 profile.Sets = sets;
 
 local Settings = {
-    Mog = false;
+    Mog = false,
 };
 
 -- Sleep for lockstyleset
 local clock = os.clock;
 function Sleep(n)
     local t0 = clock();
-    while clock() - t0 <= n do end;
+    while clock() - t0 <= n do
+    end
+    ;
 end
 
 profile.Packer = {
@@ -69,10 +71,10 @@ profile.Packer = {
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 8');
-	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
-	AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
+    AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 5 echo');
+    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 5 echo');
 end
 
 profile.OnUnload = function()
@@ -91,40 +93,40 @@ profile.HandleCommand = function(args)
     if (args[1] == 'siphon') then
         local game = gData.GetEnvironment();
         local spirit = "unknown";
-        if(game.Weather == "Fire x2") then
+        if (game.Weather == "Fire x2") then
             spirit = "Fire Spirit";
-        elseif(game.Weather == "Water x2") then
+        elseif (game.Weather == "Water x2") then
             spirit = "Water Spirit";
-        elseif(game.Weather == "Earth x2") then
+        elseif (game.Weather == "Earth x2") then
             spirit = "Earth Spirit";
-        elseif(game.Weather == "Wind x2") then
+        elseif (game.Weather == "Wind x2") then
             spirit = "Wind Spirit";
-        elseif(game.Weather == "Ice x2") then
+        elseif (game.Weather == "Ice x2") then
             spirit = "Ice Spirit";
-        elseif(game.Weather == "Thunder x2") then
+        elseif (game.Weather == "Thunder x2") then
             spirit = "Thunder Spirit";
-        elseif(game.Weather == "Light x2") then
+        elseif (game.Weather == "Light x2") then
             spirit = "Light Spirit";
-        elseif(game.Weather == "Dark x2") then
+        elseif (game.Weather == "Dark x2") then
             spirit = "Dark Spirit";
-        elseif(game.DayElement == "Fire") then
+        elseif (game.DayElement == "Fire") then
             spirit = "Fire Spirit";
-        elseif(game.DayElement == "Water") then
+        elseif (game.DayElement == "Water") then
             spirit = "Water Spirit";
-        elseif(game.DayElement == "Earth") then
+        elseif (game.DayElement == "Earth") then
             spirit = "Earth Spirit";
-        elseif(game.DayElement == "Wind") then
+        elseif (game.DayElement == "Wind") then
             spirit = "Wind Spirit";
-        elseif(game.DayElement == "Ice") then
+        elseif (game.DayElement == "Ice") then
             spirit = "Ice Spirit";
-        elseif(game.DayElement == "Thunder") then
+        elseif (game.DayElement == "Thunder") then
             spirit = "Thunder Spirit";
-        elseif(game.DayElement == "Light") then
+        elseif (game.DayElement == "Light") then
             spirit = "Light Spirit";
-        elseif(game.DayElement == "Dark") then
+        elseif (game.DayElement == "Dark") then
             spirit = "Dark Spirit";
         end
-        if(spirit ~= "unknown") then
+        if (spirit ~= "unknown") then
             AshitaCore:GetChatManager():QueueCommand(1, '/ma "' .. spirit .. '" <me>');
         end
     end

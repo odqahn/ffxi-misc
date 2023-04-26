@@ -9,7 +9,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
@@ -24,7 +24,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Sniper\'s Ring',
@@ -37,7 +37,7 @@ local sets = {
         Feet = 'Hmn. Sune-Ate',
         Hands = 'Hachiman Kote',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
@@ -111,24 +111,26 @@ profile.Packer = {
 };
 
 local Settings = {
-    Mog = false;
-    Accuracy = false;
+    Mog = false,
+    Accuracy = false,
 };
 
 -- Sleep for lockstyleset
 local clock = os.clock;
 function Sleep(n)
     local t0 = clock();
-    while clock() - t0 <= n do end;
+    while clock() - t0 <= n do
+    end
+    ;
 end
 
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 4');
-	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 10');
-	AshitaCore:GetChatManager():QueueCommand(1, '/echo SAM loading!');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 10');
+    AshitaCore:GetChatManager():QueueCommand(1, '/echo SAM loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 1 echo');
+    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 1 echo');
 end
 
 profile.OnUnload = function()
@@ -192,7 +194,7 @@ profile.HandleDefault = function()
 end
 
 profile.HandleAbility = function()
-    local action = gData.GetAction ();
+    local action = gData.GetAction();
     if action.Name == 'Meditate' then
         gFunc.EquipSet(sets['Mediate']);
     end
@@ -202,7 +204,7 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local action = gData.GetAction ();
+    local action = gData.GetAction();
     if action.Skill == 'Ninjutsu' then
         gFunc.EquipSet(sets.NIN);
     end

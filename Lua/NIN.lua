@@ -8,8 +8,8 @@ local sets = {
         Ear2 = 'Ocl. Earring',
         Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
-        Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
@@ -23,8 +23,8 @@ local sets = {
         Ear2 = 'Brutal Earring',
         Feet = 'Ninja Kyahan',
         Hands = 'Ninja Tekko',
-        Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
@@ -47,8 +47,8 @@ local sets = {
         Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
-        Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
@@ -63,7 +63,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Sniper\'s Ring',
@@ -80,14 +80,14 @@ local sets = {
         Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Yasha Tekko',
-        Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Koga Sarashi',
     },
-    ['NightTanking'] = { 
+    ['NightTanking'] = {
         Hands = 'Toga Tekko',
         Legs = 'Koga Hakam',
     },
@@ -127,13 +127,13 @@ local sets = {
     ['WSSTRDEX'] = {
         Ammo = 'Bomb Core',
         Back = 'Commander\'s Cape',
-        Body = 'Haubergeon +1',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Bushinomimi',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Flame Ring',
         Ring2 = 'Rajas Ring',
@@ -142,13 +142,13 @@ local sets = {
     ['WSDEX'] = {
         Ammo = 'Bomb Core',
         Back = 'Cerberus Mantle',
-        Body = 'Haubergeon +1',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
@@ -157,13 +157,13 @@ local sets = {
     ['WSDEXINT'] = {
         Ammo = 'Bomb Core',
         Back = 'Commander\'s Cape',
-        Body = 'Kirin\'s Osode',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Koga Kyahan',
         Hands = 'Ninja Tekko',
         Head = 'Yasha Jinpachi',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Snow Ring',
         Ring2 = 'Rajas Ring',
@@ -172,11 +172,21 @@ local sets = {
     -- TODO when needed...
     ['WSSTRINT'] = {
         Ammo = 'Bomb Core',
-        Body = 'Kirin\'s Osode',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Ring1 = 'Flame Ring',
         Ring2 = 'Rajas Ring',
+    },
+    ['CHR'] = {
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Neck = 'Orochi Nodowa',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
+        Ring1 = 'Light Ring',
+        Ring2 = 'Light Ring',
+        Back = 'Corse Cape',
+        Waist = 'Corsette',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
     },
     ['TH'] = {
         Head = 'Wh. Rarab Cap +1',
@@ -203,8 +213,8 @@ local sets = {
         Ear2 = 'Loquac. Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
-        Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
@@ -213,13 +223,13 @@ local sets = {
     ['Jutsu'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Cerberus Mantle',
-        Body = 'Kirin\'s Osode',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Ninjutsu Earring',
         Feet = 'Koga Kyahan',
         Hands = 'Yasha Tekko',
-        Head = 'Koga Hatsuburi',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +3%' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+1',[2] = 'Crit. hit damage +2%' } },
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
@@ -233,7 +243,7 @@ local sets = {
         Ear2 = 'Eris\' Earring',
         Feet = 'Koga Kyahan',
         Hands = 'Yasha Tekko',
-        Head = 'Koga Hatsuburi',
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
@@ -248,7 +258,7 @@ local sets = {
         Ear2 = 'Eris\' Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
-        Head = 'Ninja Hatsuburi',
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+2',[2] = 'Haste+4' } },
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
@@ -259,18 +269,20 @@ local sets = {
 profile.Sets = sets;
 
 local Settings = {
-    Parade = true;
-    Mog = false;
-    Accuracy = false;
-    TH = false;
-    Fuma = false;
+    Parade = true,
+    Mog = false,
+    Accuracy = false,
+    TH = false,
+    Fuma = false,
 };
 
 -- Sleep for lockstyleset
 local clock = os.clock;
 function Sleep(n)
     local t0 = clock();
-    while clock() - t0 <= n do end;
+    while clock() - t0 <= n do
+    end
+    ;
 end
 
 profile.Packer = {
@@ -279,10 +291,10 @@ profile.Packer = {
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 7');
-	AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
-	AshitaCore:GetChatManager():QueueCommand(1, '/echo NIN loading!');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
+    AshitaCore:GetChatManager():QueueCommand(1, '/echo NIN loading!');
     Sleep(1);
-	AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 4 echo');
+    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 4 echo');
 end
 
 profile.OnUnload = function()
@@ -394,9 +406,11 @@ profile.HandleDefault = function()
 end
 
 profile.HandleAbility = function()
-    local action = gData.GetAction ();
-    if action.Name == 'Provoke' then
+    local action = gData.GetAction();
+    if (action.Name == 'Provoke') then
         gFunc.EquipSet(sets.Enmity);
+    elseif (string.contains(action.Name, 'Waltz')) then
+        gFunc.EquipSet(sets.CHR);
     end
 end
 
@@ -404,13 +418,13 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local action = gData.GetAction ();
+    local action = gData.GetAction();
     local yonin = gData.GetBuffCount('Yonin');
 
     if (action.Skill == 'Ninjutsu') then
         if (string.contains(action.Name, 'Utsusemi:')) then
             gFunc.EquipSet(sets.Utsu);
-        elseif (yonin ==1 ) then
+        elseif (yonin == 1) then
             if (string.contains(action.Name, 'Dokumori:')) or (string.contains(action.Name, 'Jubaku:')) or (string.contains(action.Name, 'Hojo:')) then
                 gFunc.EquipSet(sets.JutsuDebuffEnmity);
             else
@@ -434,12 +448,12 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    local action = gData.GetAction ();
+    local action = gData.GetAction();
 
-    local STRDEX = T{ 'Blade: Jin', 'Blade: Rin', 'Blade: Retsu', 'Blade: Ten', 'Blade: Ku' };
-    local STRINT = T{ 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Kamu' };
-    local DEX = T{ 'Blade: Metsu' , 'Blade: Shun'};
-    local DEXINT = T{ 'Blade: Yu' };
+    local STRDEX = T { 'Blade: Jin', 'Blade: Rin', 'Blade: Retsu', 'Blade: Ten', 'Blade: Ku' };
+    local STRINT = T { 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Kamu' };
+    local DEX = T { 'Blade: Metsu', 'Blade: Shun' };
+    local DEXINT = T { 'Blade: Yu' };
     if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
     elseif (STRDEX:contains(action.Name)) then
