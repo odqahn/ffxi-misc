@@ -134,7 +134,7 @@ local sets = {
         Hands = 'Ninja Tekko',
         Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
-        Neck = 'Peacock Amulet',
+        Neck = 'Fotia Gorget',
         Ring1 = 'Flame Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
@@ -149,7 +149,7 @@ local sets = {
         Hands = 'Ninja Tekko',
         Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
-        Neck = 'Peacock Amulet',
+        Neck = 'Fotia Gorget',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
@@ -164,7 +164,7 @@ local sets = {
         Hands = 'Ninja Tekko',
         Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
-        Neck = 'Peacock Amulet',
+        Neck = 'Fotia Gorget',
         Ring1 = 'Snow Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
@@ -179,6 +179,7 @@ local sets = {
         Hands = 'Ninja Tekko',
         Head = 'Maat\'s Cap',
         Legs = 'Yasha Hakama',
+        Neck = 'Fotia Gorget',
         Ring1 = 'Flame Ring',
         Ring2 = 'Rajas Ring',
     },
@@ -277,7 +278,7 @@ local Settings = {
     Mog = false,
     Accuracy = false,
     TH = false,
-    Fuma = false,
+    Fuma = true,
 };
 
 -- Sleep for lockstyleset
