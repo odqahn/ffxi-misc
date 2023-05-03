@@ -57,7 +57,7 @@ local sets = {
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
-        Head = 'Assassin\'s Bonnet',
+        Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
@@ -70,7 +70,7 @@ local sets = {
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
-        Head = 'Dragon Cap',
+        Head = 'Maat\'s Cap',
         Legs = 'War brais',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
@@ -89,6 +89,7 @@ local sets = {
         Ear2 = 'Moldavite Earring',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
+        Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Thunder Ring',
@@ -101,7 +102,7 @@ local sets = {
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dragon Mittens',
-        Head = 'Optical Hat',
+        Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Neck = 'Chivalrous Chain',
         Ring1 = 'Thunder Ring',
@@ -109,7 +110,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['CHR'] = {
-        Head = 'Panther Mask',
+        Head = 'Maat\'s Cap',
         Neck = 'Orochi Nodowa',
         Body = 'Dragon Harness',
         Ring1 = 'Light Ring',
@@ -156,8 +157,18 @@ local sets = {
         Waist = 'Flagellant\'s Rope',
     },
     ['TH'] = {
+        Back = 'Cerberus Mantle',
+        Body = 'Rapparee Harness',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Suppanomimi',
+        Feet = 'Dusk Ledelsens',
         Hands = 'Assassin\'s Armlets',
         Head = 'Wh. Rarab Cap +1',
+        Legs = 'Dusk Trousers',
+        Neck = 'Peacock Amulet',
+        Ring1 = 'Ecphoria Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Swift Belt',
     },
     ['RA'] = {
         Back = 'Lynx Mantle',
@@ -245,7 +256,10 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
-        if (Settings.Accuracy == true) then
+        -- Add TH equip
+        if (Settings.TH == true) then
+            gFunc.EquipSet(sets.TH);
+        elseif (Settings.Accuracy == true) then
             gFunc.EquipSet(sets.TPACC);
         else
             gFunc.EquipSet(sets.TP);
@@ -266,11 +280,6 @@ profile.HandleDefault = function()
     end
     if (ta == 1) then
         gFunc.EquipSet(sets.TA);
-    end
-
-    -- Add TH equip
-    if (Settings.TH == true) then
-        gFunc.EquipSet(sets.TH);
     end
 
     -- Add Opo-pop / Flagellant's in case of Sleep / Para
