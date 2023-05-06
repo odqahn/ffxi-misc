@@ -64,6 +64,8 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
+    local player = gData.GetPlayer();
+
     if (player.Status == 'Engaged') then
         if (Settings.Accuracy == true) then
             gFunc.EquipSet(sets.TP);
