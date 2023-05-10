@@ -1,178 +1,94 @@
 local profile = {};
 local sets = {
     ['Idle'] = {
-        Back = 'Birdman Cape',
+        Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Ear1 = 'Singing Earring',
-        Ear2 = 'Wind Earring',
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Loquac. Earring',
         Feet = 'Sha\'ir Crackows',
         Hands = 'Bricta\'s Cuffs',
-        Head = 'Bard\'s Roundlet',
-        Legs = 'Sha\'ir Seraweels',
-        Neck = 'Piper\'s Torque',
-        Range = 'Hamelin Flute',
-        Ring1 = 'Trumpet Ring',
+        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+1', [2] = '"Refresh"+1' } },
+        Legs = 'Bard\'s Cannions',
+        Neck = 'Orochi Nodowa',
+        Range = 'Gjallarhorn',
+        Ring1 = 'Tamas Ring',
         Ring2 = 'Trumpet Ring',
         Waist = 'Gleeman\'s Belt',
     },
     ['Mog'] = {
+        Back = 'Veela cape',
         Body = 'Kupo Suit',
-        Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
-        Feet = 'Sha\'ir Crackows',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'Orochi Nodowa',
-        Range = 'Hamelin Flute',
-        Ring1 = 'Coral Ring',
-        Ring2 = 'Coral Ring',
-    },
-    ['SingingPrecast'] = {
-        Back = 'Veela Cape',
-        Body = 'Sha\'ir Manteel',
-        Ear1 = 'Singing Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Sha\'ir Crackows',
+        Hands = 'Bricta\'s Cuffs',
+        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+1', [2] = '"Refresh"+1' } },
+        Neck = 'Orochi Nodowa',
+        Range = 'Gjallarhorn',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Trumpet Ring',
+    },
+    ['Precast'] = {
+        Back = 'Veela cape',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
+        },
+        Ear2 = 'Loquac. Earring',
+    },
+    ['Buff'] = {
+        Back = 'Veela cape',
+        Body = 'Sha\'ir Manteel',
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Loquac. Earring',
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
-        Legs = 'Sha\'ir Seraweels',
+        Legs = 'Bard\'s Cannions',
+        Neck = 'Wind Torque',
+        Range = 'Gjallarhorn',
+        Ring1 = 'Trumpet Ring',
+        Ring2 = 'Trumpet Ring',
+        Waist = 'Swift Belt',
+    },
+    ['Debuff'] = {
+        Back = 'Birdman Cape',
+        Body = 'Sha\'ir Manteel',
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Loquac. Earring',
+        Feet = 'Sha\'ir Crackows',
+        Hands = 'Bricta\'s Cuffs',
+        Head = 'Bard\'s Roundlet',
+        Legs = 'Bard\'s Cannions',
+        Neck = 'Piper\'s Torque',
+        Range = 'Gjallarhorn',
+        Ring1 = 'Trumpet Ring',
+        Ring2 = 'Balrahn\'s Ring',
         Waist = 'Gleeman\'s Belt',
     },
-    ['Minuet'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Hands = 'Sha\'ir Gages',
-        Neck = 'Piper\'s Torque',
-        Range = 'Cornette +2',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Mazurka'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Hands = 'Sha\'ir Gages',
-        Neck = 'Piper\'s Torque',
-        Range = 'Harlequin\'s Horn',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Threnody'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'String Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'String Torque',
-        Range = 'Sorrowful Harp',
-        Ring1 = 'Light Ring',
-        Ring2 = 'Light Ring',
-    },
-    ['Paeon'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'String Earring',
-        Neck = 'String Torque',
-        Hands = 'Sha\'ir Gages',
-        Range = 'Ebony Harp +2',
-        Ring1 = 'Light Ring',
-        Ring2 = 'Light Ring',
-    },
-    ['March'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Neck = 'Piper\'s Torque',
-        Hands = 'Sha\'ir Gages',
-        Range = 'Faerie Piccolo',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Finale'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'String Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'String Torque',
-        Range = 'Military Harp',
-        Ring1 = 'Light Ring',
-        Ring2 = 'Light Ring',
-    },
-    ['Madrigal'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Neck = 'Piper\'s Torque',
-        Hands = 'Sha\'ir Gages',
-        Range = 'Traversiere +2',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Ballad'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Neck = 'Piper\'s Torque',
-        Hands = 'Sha\'ir Gages',
-        Range = 'Traversiere +2',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Elegy'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'Piper\'s Torque',
-        Range = 'Horn +1',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Lullaby'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'String Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'String Torque',
-        Range = 'Nursemaid\'s Harp',
-        Ring1 = 'Light Ring',
-        Ring2 = 'Light Ring',
-    },
-    ['Hymnus'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'String Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'String Torque',
-        Range = 'Angel Lyre',
-        Ring1 = 'Light Ring',
-        Ring2 = 'Light Ring',
-    },
-    ['Requiem'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'Piper\'s Torque',
-        Range = 'Requiem Flute',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Carol'] = {
-        Back = 'Birdman Cape',
-        Ear2 = 'Wind Earring',
-        Hands = 'Bricta\'s Cuffs',
-        Neck = 'Piper\'s Torque',
-        Range = 'Crumhorn +2',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-    },
-    ['Casting'] = {
-        Back = 'Veela Cape',
+    ['CastingMagic'] = {
+        Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = 'Sha\'ir Crackows',
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
         Hands = 'Bricta\'s Cuffs',
-        Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
-        Range = 'Hamelin Flute',
-        Waist = 'Tarutaru Sash',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
+        Legs = 'Bard\'s Cannions',
+        Neck = 'Evasion Torque',
+        Range = 'Angel Lyre',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Balrahn\'s Ring',
+        Waist = 'Swift Belt',
     },
     ['NIN'] = {
+        Back = 'Boxer\'s Mantle',
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Loquac. Earring',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Dusk Gloves',
-        Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Hands = 'Bard\'s Cuffs',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
         Ring1 = 'Coral Ring',
@@ -180,14 +96,14 @@ local sets = {
         Waist = 'Tarutaru Sash',
     },
     ['Fighting'] = {
-        Back = 'Cerberus Mantle',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
+        Back = 'Boxer\'s Mantle',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = 'Dusk Ledelsens',
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
         Hands = 'Dusk Gloves',
-        Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
         Range = 'Oliphant',
         Ring1 = 'Ecphoria Ring',
@@ -196,9 +112,9 @@ local sets = {
     },
     ['STR'] = {
         Back = 'Cerberus Mantle',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Bushinomimi',
+        Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Alkyoneus\'s Brc.',
         Head = 'Maat\'s Cap',
@@ -211,46 +127,78 @@ local sets = {
     },
     ['DEX'] = {
         Back = 'Commander\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Suppanomimi',
+        Ear2 = 'Brutal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
-        Range = 'Ebony Harp +2',
+        Range = 'Oliphant',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
+    ['AGI'] = {
+        Back = 'Commander\'s Cape',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Brutal Earring',
+        Feet = 'Choral Slippers',
+        Hands = 'Dusk Gloves',
+        Head = 'Optical Hat',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Neck = 'Fotia Gorget',
+        Range = 'Oliphant',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Breeze Ring',
+        Waist = 'Grenadier Belt',
+    },
+    ['CHR'] = {
+        Back = 'Birdman Cape',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Loquac. Earring',
+        Feet = 'Sha\'ir Crackows',
+        Hands = 'Sha\'ir Gages',
+        Head = 'Bard\'s Roundlet',
+        Legs = 'Bard\'s Cannions',
+        Neck = 'Piper\'s Torque',
+        Range = 'Gjallarhorn',
+        Ring1 = 'Light Ring',
+        Ring2 = 'Light Ring',
+        Waist = 'Gleeman\'s Belt',
+    },
     ['MAB'] = {
         Back = 'Commander\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4',[2] = '"Dbl.Atk."+3',[3] = 'Evasion+4' } },
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Moldavite Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
-        Range = 'Ebony Harp +2',
+        Range = 'Oliphant',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
     ['Sleep'] = {
+        Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
-        Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
-        Head = 'Optical Hat',
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Loquac. Earring',
+        Feet = 'Sha\'ir Crackows',
+        Hands = 'Bricta\'s Cuffs',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
+        Legs = 'Bard\'s Cannions',
         Neck = 'Opo-opo Necklace',
         Range = 'Hamelin Flute',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
-    },
-    ['Para'] = {
-        Waist = 'Flagellant\'s Rope',
+        Waist = 'Lieutenant\'s Sash',
     },
 };
 profile.Sets = sets;
@@ -260,6 +208,7 @@ profile.Packer = {
 
 local Settings = {
     Mog = false,
+    TH = false,
 };
 
 -- Sleep for lockstyleset
@@ -293,6 +242,15 @@ profile.HandleCommand = function(args)
             gFunc.Message('Mog Set On');
         end
     end
+    if (args[1] == 'th') then
+        if (Settings.TH == true) then
+            Settings.TH = false;
+            gFunc.Message('TH Set Off');
+        else
+            Settings.TH = true;
+            gFunc.Message('TH Set On');
+        end
+    end
 end
 
 profile.HandleDefault = function()
@@ -301,8 +259,14 @@ profile.HandleDefault = function()
 
     local player = gData.GetPlayer();
 
-    if (player.Status == 'Engaged') then
+    if (sleep == 1) then
+        gFunc.EquipSet(sets.Sleep);
+    elseif (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Fighting);
+        -- Equip TH set during battle
+        if (Settings.TH == true) then
+            gFunc.Equip('Head', 'Wh. Rarab Cap +1');
+        end
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Idle);
     else
@@ -313,64 +277,38 @@ profile.HandleDefault = function()
         end
     end
 
-    -- Add Opo-pop / Flagellant's in case of Sleep / Para
-    if (sleep == 1) then
-        gFunc.EquipSet(sets.Sleep);
-    end
+    -- Flagellant's in case of para
     if (para == 1) then
-        gFunc.EquipSet(sets.Para);
+        gFunc.Equip('Waist', 'Flagellant\'s Rope');
     end
 end
 
 profile.HandleAbility = function()
+    local action = gData.GetAction();
+    if (string.contains(action.Name, 'Waltz')) then
+        gFunc.EquipSet(sets.CHR);
+    end
 end
 
 profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local spell = gData.GetAction();
-    if (spell.Skill == 'Singing') then
-        gFunc.EquipSet(sets.Singing);
-    elseif (spell.Skill == 'Healing Magic') or (spell.Skill == 'Enhancing Magic') then
-        gFunc.EquipSet(sets.Casting);
-    elseif (spell.Skill == 'Ninjutsu') then
-        gFunc.EquipSet(sets.NIN);
-    end
+    gFunc.EquipSet(sets.Precast);
 end
 
 profile.HandleMidcast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
-        if (string.contains(spell.Name, 'Paeon')) then
-            gFunc.EquipSet(sets.Paeon);
-        elseif (string.contains(spell.Name, 'March')) then
-            gFunc.EquipSet(sets.March);
-        elseif (string.contains(spell.Name, 'Madrigal')) then
-            gFunc.EquipSet(sets.Madrigal);
-        elseif (string.contains(spell.Name, 'Minuet')) then
-            gFunc.EquipSet(sets.Minuet);
-        elseif (string.contains(spell.Name, 'Mazurka')) then
-            gFunc.EquipSet(sets.Mazurka);
-        elseif (string.contains(spell.Name, 'Threnody')) then
-            gFunc.EquipSet(sets.Threnody);
-        elseif (string.contains(spell.Name, 'Finale')) then
-            gFunc.EquipSet(sets.Finale);
-        elseif (string.contains(spell.Name, 'Elegy')) then
-            gFunc.EquipSet(sets.Elegy);
-        elseif (string.contains(spell.Name, 'Ballad')) then
-            gFunc.EquipSet(sets.Hymnus);
-        elseif (string.contains(spell.Name, 'Lullaby')) then
-            gFunc.EquipSet(sets.Lullaby);
-        elseif (string.contains(spell.Name, 'Hymnus')) then
-            gFunc.EquipSet(sets.Hymnus);
-        elseif (string.contains(spell.Name, 'Requiem')) then
-            gFunc.EquipSet(sets.Requiem);
-        elseif (string.contains(spell.Name, 'Carol')) then
-            gFunc.EquipSet(sets.Carol);
+        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Elegy')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
+            gFunc.EquipSet(sets.Debuff);
         else
-            gFunc.EquipSet(sets.Hymnus);
+            gFunc.EquipSet(sets.Buff);
         end
+    elseif (spell.Skill == 'Healing Magic') or (spell.Skill == 'Enhancing Magic') then
+        gFunc.EquipSet(sets.CastingMagic);
+    elseif (spell.Skill == 'Ninjutsu') then
+        gFunc.EquipSet(sets.NIN);
     end
 end
 
@@ -385,6 +323,8 @@ profile.HandleWeaponskill = function()
     local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
     local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
     local STR = T { 'Mercy Stroke' };
+    local AGI = T { 'Exenterator' };
+
     if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.DEX);
     elseif (MAB:contains(action.Name)) then
