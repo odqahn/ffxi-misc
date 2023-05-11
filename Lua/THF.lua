@@ -23,7 +23,7 @@ local sets = {
         Ring2 = 'Coral Ring',
     },
     ['TP'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Boxer\'s Mantle',
         Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
@@ -37,7 +37,7 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['TH'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Boxer\'s Mantle',
         Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
@@ -51,7 +51,7 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['TPACC'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
@@ -125,7 +125,7 @@ local sets = {
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Draggon Leggings',
         Hands = 'Dragon Mittens',
-        Head = 'Maat\'s Cap',
+        Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
         Neck = 'Fotia Gorget',
         Ring1 = 'Breeze Ring',
@@ -192,7 +192,7 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     Accuracy = false,
-    TH = false,
+    TH = true,
 };
 
 -- Sleep for lockstyleset
@@ -325,10 +325,11 @@ profile.HandleWeaponskill = function()
     local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
     local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
     local AGI = T { 'Exenterator' };
-    if (DEX:contains(action.Name)) then
-        gFunc.EquipSet(sets.WSDEX);
-    elseif (AGI:contains(action.Name)) then
+
+    if (AGI:contains(action.Name)) then
         gFunc.EquipSet(sets.WSAGI);
+    elseif (DEX:contains(action.Name)) then
+        gFunc.EquipSet(sets.WSDEX);
     elseif (MAB:contains(action.Name)) then
         gFunc.EquipSet(sets.MAB);
     end
