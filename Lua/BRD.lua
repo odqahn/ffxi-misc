@@ -8,7 +8,7 @@ local sets = {
         Feet = 'Sha\'ir Crackows',
         Hands = 'Bricta\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
-        Legs = 'Bard\'s Cannions',
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -1', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
         Ring1 = 'Tamas Ring',
@@ -37,14 +37,14 @@ local sets = {
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
-        Back = 'Veela cape',
+        Back = 'Birdman Cape',
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
-        Legs = 'Bard\'s Cannions',
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -1', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Wind Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -59,7 +59,7 @@ local sets = {
         Feet = 'Sha\'ir Crackows',
         Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
-        Legs = 'Bard\'s Cannions',
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -1', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Piper\'s Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -71,10 +71,10 @@ local sets = {
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Bricta\'s Cuffs',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
-        Legs = 'Bard\'s Cannions',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
         Ring1 = 'Tamas Ring',
@@ -85,7 +85,7 @@ local sets = {
         Back = 'Boxer\'s Mantle',
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Ocl. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -100,7 +100,7 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Dusk Gloves',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -192,8 +192,8 @@ local sets = {
         Ear2 = 'Loquac. Earring',
         Feet = 'Sha\'ir Crackows',
         Hands = 'Bricta\'s Cuffs',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
-        Legs = 'Bard\'s Cannions',
+        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -1', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Opo-opo Necklace',
         Range = 'Hamelin Flute',
         Ring1 = 'Coral Ring',
@@ -325,7 +325,9 @@ profile.HandleWeaponskill = function()
     local STR = T { 'Mercy Stroke' };
     local AGI = T { 'Exenterator' };
 
-    if (DEX:contains(action.Name)) then
+    if (AGI:contains(action.Name)) then
+        gFunc.EquipSet(sets.AGI);
+    elseif (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.DEX);
     elseif (MAB:contains(action.Name)) then
         gFunc.EquipSet(sets.MAB);
