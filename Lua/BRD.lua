@@ -11,7 +11,7 @@ local sets = {
         Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -1', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
-        Ring1 = 'Tamas Ring',
+        Ring1 = 'Trumpet Ring',
         Ring2 = 'Trumpet Ring',
         Waist = 'Gleeman\'s Belt',
     },
@@ -25,7 +25,7 @@ local sets = {
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
-        Ring1 = 'Tamas Ring',
+        Ring1 = 'Trumpet Ring',
         Ring2 = 'Trumpet Ring',
     },
     ['Precast'] = {
@@ -211,6 +211,7 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     TH = false,
+    Fight = false,
 };
 
 -- Sleep for lockstyleset
@@ -253,6 +254,15 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
+    if (args[1] == 'fight') then
+        if (Settings.Fight == true) then
+            Settings.Fight = false;
+            gFunc.Message('Fight Set Off');
+        else
+            Settings.Fight = true;
+            gFunc.Message('Fight Set On');
+        end
+    end
 end
 
 profile.HandleDefault = function()
@@ -263,7 +273,7 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
-    elseif (player.Status == 'Engaged') then
+    elseif (player.Status == 'Engaged') or (Settings.Fight == true) then
         gFunc.EquipSet(sets.Fighting);
         -- Equip TH set during battle
         if (Settings.TH == true) then
