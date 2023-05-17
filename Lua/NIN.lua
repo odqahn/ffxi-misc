@@ -116,12 +116,31 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Koga Sarashi',
     },
+    ['BigTankingNoShadow'] = {
+        -- Ammo = 'Nokizaru Shuriken',
+        Ammo = 'Fuma Shuriken',
+        Back = 'Boxer\'s Mantle',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Brutal Earring',
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Hands = 'Yasha Tekko',
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Neck = 'Evasion Torque',
+        Ring1 = 'Ecphoria Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Koga Sarashi',
+    },
+    ['Precast'] = {
+        Ear2 = 'Loquac. Earring',
+    },
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Loquac. Earring',
+        Ear2 = 'Ocl. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Yasha Tekko',
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
@@ -243,7 +262,8 @@ local sets = {
     ['WSDEX'] = {
         Ammo = 'Bomb Core',
         Back = 'Cerberus Mantle',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Body = 'Koga Chainmail',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
@@ -251,14 +271,17 @@ local sets = {
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
-        Ring1 = 'Thunder Ring',
+        Ring1 = 'Ecphoria Ring',
+        -- Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Warwolf Belt',
+        Waist = 'Potent Belt',
+        -- Waist = 'Warwolf Belt',
     },
     ['WSAGI'] = {
         Ammo = 'Bomb Core',
         Back = 'Commander\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Body = 'Koga Chainmail',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
@@ -266,9 +289,11 @@ local sets = {
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
-        Ring1 = 'Breeze Ring',
+        Ring1 = 'Ecphoria Ring',
+        -- Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
-        Waist = 'Warwolf Belt',
+        Waist = 'Potent Belt',
+        -- Waist = 'Warwolf Belt',
     },
     ['WSDEXINT'] = {
         Ammo = 'Bomb Core',
@@ -415,6 +440,7 @@ end
 
 profile.HandleDefault = function()
     local yonin = gData.GetBuffCount('Yonin');
+    local shadow = gData.GetBuffCount('Shadow');
     local sleep = gData.GetBuffCount('Sleep');
     local para = gData.GetBuffCount('Paralysis');
     local game = gData.GetEnvironment();
@@ -427,14 +453,18 @@ profile.HandleDefault = function()
         elseif (yonin == 1) then
             -- Equipe night tanking gear
             if (BigTanking == true ) then
-                gFunc.EquipSet(sets.BigTanking);
+                if(shadow == true) then
+                    gFunc.EquipSet(sets.BigTanking);
+                else
+                    gFunc.EquipSet(sets.BigTanking);
+                end
             else
                 gFunc.EquipSet(sets.Tanking);
             end
         elseif (Settings.Accuracy == true) then
             -- Equipe night hands if night
             if (game.Time < 6.00) or (game.Time > 18.00) then
-                gFunc.EquipSet(sets.Damage_Night_acc);
+                gFunc.EquipSet(sets.Damage_Night_Acc);
             else
                 gFunc.EquipSet(sets.Damage_Acc);
             end
@@ -471,7 +501,7 @@ end
 
 profile.HandleAbility = function()
     local action = gData.GetAction();
-    if (action.Name == 'Provoke') then
+    if (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort')  or (action.Name == 'Souleater')  then
         gFunc.EquipSet(sets.EnmityJA);
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
@@ -482,6 +512,10 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
+    gFunc.EquipSet(sets.Precast);
+end
+
+profile.HandleMidcast = function()
     local action = gData.GetAction();
     local yonin = gData.GetBuffCount('Yonin');
 
@@ -500,9 +534,6 @@ profile.HandlePrecast = function()
     elseif (string.contains(action.Name, 'Sleep')) or (string.contains(action.Name, 'Stun')) or (string.contains(action.Name, 'Drain')) or (string.contains(action.Name, 'Aspir')) then
         gFunc.EquipSet(sets.EnmityMA);
     end
-end
-
-profile.HandleMidcast = function()
 end
 
 profile.HandlePreshot = function()
