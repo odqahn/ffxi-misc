@@ -1,38 +1,57 @@
 local profile = {};
 local sets = {
     ['Normal'] = {
-        Main = 'Chatoyant Staff',
-        Sub = 'Staff Strap',
+        -- Body = 'Yinyang Robe',
         Ammo = 'Hedgehog Bomb',
-        Neck = 'Smn. Torque',
+        Back = 'Errant Cape',
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
-        Body = 'Austere Robe',
-        -- Body = 'Yinyang Robe',
+        Feet = 'Summoner\'s Pgch.',
         Hands = 'Summoner\'s Brcr.',
         Head = 'Summoner\'s Horn',
+        Legs = 'Summoner\'s Spats',
+        Main = 'Chatoyant Staff',
+        Neck = 'Smn. Torque',
         Ring1 = 'Vivian Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = 'Errant Cape',
+        Sub = 'Staff Strap',
         Waist = 'Jungle Rope',
-        Legs = 'Summoner\'s Spats',
-        Feet = 'Summoner\'s Pgch.',
     },
     ['Resting'] = {
-        Main = 'Chatoyant Staff',
-        Sub = 'Staff Strap',
         Ammo = 'Hedgehog Bomb',
-        Neck = 'Smn. Torque',
+        Back = 'Errant Cape',
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
-        Body = 'Vermillion Cloake',
+        Feet = 'Summoner\'s Pgch.',
         Hands = 'Summoner\'s Brcr.',
+        Head = 'Summoner\'s Horn',
+        Legs = 'Summoner\'s Spats',
+        Main = 'Chatoyant Staff',
+        Neck = 'Smn. Torque',
         Ring1 = 'Vivian Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = 'Errant Cape',
+        Sub = 'Staff Strap',
         Waist = 'Jungle Rope',
-        Legs = 'Summoner\'s Spats',
+    },
+    ['BP'] = {
+        -- Body = 'Yinyang Robe',
+        Ammo = 'Hedgehog Bomb',
+        Back = 'Errant Cape',
+        Body = 'Austere Cape',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
+        Hands = 'Summoner\'s Brcr.',
+        Head = 'Summoner\'s Horn',
+        Legs = 'Summoner\'s Spats',
+        Main = 'Chatoyant Staff',
+        Neck = 'Smn. Torque',
+        Ring1 = 'Vivian Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Sub = 'Staff Strap',
+        Waist = 'Jungle Rope',
     },
     ['Mog'] = {
         Main = 'Chatoyant Staff',
@@ -149,6 +168,13 @@ profile.HandleDefault = function()
 end
 
 profile.HandleAbility = function()
+    local ability = gData.GetAction();
+    if (ability.Name == 'Release') or (ability.Name == 'Avatar\'s Favor') or (ability.Name == 'Assault') or (ability.Name == 'Retreat') or (ability.Name == 'Apogee') then return end
+    if (ability.Name == 'Elemental Siphon') then
+        gFunc.EquipSet(sets.Siphon);
+    else
+        gFunc.EquipSet(sets.BP);
+    end
 end
 
 profile.HandleItem = function()
