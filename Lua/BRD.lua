@@ -28,13 +28,16 @@ local sets = {
         Ring1 = 'Trumpet Ring',
         Ring2 = 'Trumpet Ring',
     },
-    ['Precast'] = {
+    ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Ear2 = 'Loquac. Earring',
+    },
+    ['PrecastMagic'] = {
+        Back = 'Veela cape',
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
@@ -50,7 +53,7 @@ local sets = {
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
         Ring2 = 'Trumpet Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Gleeman\'s Belt',
     },
     ['Debuff'] = {
         Back = 'Birdman Cape',
@@ -308,7 +311,12 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    gFunc.EquipSet(sets.Precast);
+    local spell = gData.GetAction();
+    if (spell.Skill == 'Singing') then
+        gFunc.EquipSet(sets.PrecastSong);
+    else
+        gFunc.EquipSet(sets.PrecastMagic);
+    end
 end
 
 profile.HandleMidcast = function()
