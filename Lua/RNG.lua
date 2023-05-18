@@ -37,15 +37,6 @@ local sets = {
 };
 profile.Sets = sets;
 
--- Sleep for lockstyleset
-local clock = os.clock;
-function Sleep(n)
-    local t0 = clock();
-    while clock() - t0 <= n do
-    end
-    ;
-end
-
 profile.Packer = {
 };
 
@@ -53,9 +44,11 @@ profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 6');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo RNG loading!');
-    Sleep(1);
-    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 6 echo');end
+    (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 6 echo') end):once(2)
+end
 
 profile.OnUnload = function()
 end
@@ -74,15 +67,44 @@ profile.HandleDefault = function()
 end
 
 profile.HandleAbility = function()
+    local action = gData.GetAction();
+    local sneak = gData.GetBuffCount('Sneak');
+
+    if (string.contains(action.Name, 'Waltz')) then
+        gFunc.EquipSet(sets.CHR);
+    elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
+        gFunc.CancelAction();
+        AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig" <me>') end):once(2)
+    end
 end
 
 profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
+    local action = gData.GetAction()
+
+    gFunc.EquipSet(sets.Precast);
+    if (action.Name == 'Utsusemi: Ichi') then
+        local delay = 2.2
+        if (gData.GetBuffCount(66) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+        elseif (gData.GetBuffCount(444) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+        elseif (gData.GetBuffCount(445) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+        elseif (gData.GetBuffCount(446) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
+        end
+    end
 end
 
 profile.HandleMidcast = function()
+    local spell = gData.GetAction();
+    if (spell.Skill == 'Ninjutsu') then
+        gFunc.EquipSet(sets.NIN);
+    end
 end
 
 profile.HandlePreshot = function()

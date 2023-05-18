@@ -24,7 +24,7 @@ local sets = {
     },
     ['TP'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Rapparee Harness',
+        Body = 'Pahluwan Khazagand',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
@@ -38,7 +38,7 @@ local sets = {
     },
     ['TH'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Rapparee Harness',
+        Body = 'Pahluwan Khazagand',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
@@ -52,7 +52,7 @@ local sets = {
     },
     ['TPACC'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = 'Pahluwan Khazagand',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
@@ -120,7 +120,8 @@ local sets = {
     },
     ['WSAGI'] = {
         Back = 'Commander\'s Cape',
-        Body = 'Dragon Harness',
+        Body = 'Pahluwan Khazagand',
+        -- Body = 'Dragon Harness',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Draggon Leggings',
@@ -130,7 +131,7 @@ local sets = {
         Neck = 'Fotia Gorget',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
-        Waist = 'Grenadier Belt',
+        Waist = 'Potent Belt',
     },
     ['CHR'] = {
         Back = 'Corse Cape',
@@ -142,11 +143,14 @@ local sets = {
         Ring2 = 'Light Ring',
         Waist = 'Corsette',
     },
-    ['NIN'] = {
+    ['Precast'] = {
+        Ear2 = 'Loquac. Earring',
+    },
+    ['Casting'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Rapparee Harness',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Loquac. Earring',
+        Ear2 = 'Ocl. Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
@@ -172,7 +176,7 @@ local sets = {
     },
     ['RA'] = {
         Back = 'Lynx Mantle',
-        Body = 'Scp. Harness +1',
+        Body = 'Pahluwan Khazagand',
         Ear2 = 'Vision Earring',
         Feet = 'Dragon Leggings',
         Hands = 'Deadeye Gloves',
@@ -195,22 +199,14 @@ local Settings = {
     TH = true,
 };
 
--- Sleep for lockstyleset
-local clock = os.clock;
-function Sleep(n)
-    local t0 = clock();
-    while clock() - t0 <= n do
-    end
-    ;
-end
-
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
-    Sleep(1);
-    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 11 echo');
+    (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 7 echo') end):once(2)
 end
 
 profile.OnUnload = function()
@@ -285,6 +281,8 @@ end
 
 profile.HandleAbility = function()
     local action = gData.GetAction();
+    local sneak = gData.GetBuffCount('Sneak');
+
     if action.Name == 'Flee' then
         gFunc.Equip('Feet', 'Rogue\'s Poulaines');
     elseif action.Name == 'Hide' then
@@ -295,6 +293,10 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Steal);
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
+    elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
+		gFunc.CancelAction();
+		AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig" <me>') end):once(2)
     end
 end
 
@@ -302,13 +304,25 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local action = gData.GetAction();
-    if (action.Skill == 'Ninjutsu') then
-        gFunc.EquipSet(sets.NIN);
+    local action = gData.GetAction()
+
+    gFunc.EquipSet(sets.Precast);
+    if (action.Name == 'Utsusemi: Ichi') then
+        local delay = 2.2
+        if (gData.GetBuffCount(66) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+        elseif (gData.GetBuffCount(444) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+        elseif (gData.GetBuffCount(445) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+        elseif (gData.GetBuffCount(446) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
+        end
     end
 end
 
 profile.HandleMidcast = function()
+    gFunc.EquipSet(sets.Casting);
 end
 
 profile.HandlePreshot = function()

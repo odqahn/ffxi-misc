@@ -5,10 +5,16 @@ local sets = {
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -20,7 +26,10 @@ local sets = {
         Body = 'Kupo Suit',
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Neck = 'Orochi Nodowa',
@@ -31,13 +40,19 @@ local sets = {
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
+        },
         Ear2 = 'Loquac. Earring',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
+        },
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
@@ -45,10 +60,16 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Wind Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -63,7 +84,10 @@ local sets = {
         Feet = 'Sha\'ir Crackows',
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Piper\'s Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -71,11 +95,14 @@ local sets = {
         Waist = 'Gleeman\'s Belt',
     },
     ['CastingMagic'] = {
-        Back = 'Veela cape',
+        Back = 'Errant Cape',
         Body = 'Sha\'ir Manteel',
-        Ear1 = 'Musical Earring',
+        Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = 'Bricta\'s Cuffs',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -87,10 +114,13 @@ local sets = {
     },
     ['NIN'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Sha\'ir Manteel',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Body = 'Scp. Harness +1',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -105,7 +135,8 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Dusk Gloves',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -197,10 +228,12 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = { Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Opo-opo Necklace',
         Range = 'Hamelin Flute',
         Ring1 = 'Coral Ring',
@@ -219,22 +252,14 @@ local Settings = {
     Fight = false,
 };
 
--- Sleep for lockstyleset
-local clock = os.clock;
-function Sleep(n)
-    local t0 = clock();
-    while clock() - t0 <= n do
-    end
-    ;
-end
-
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo BRD loading!');
-    Sleep(1);
-    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 2 echo');
+    (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 2 echo') end):once(2)
 end
 
 profile.OnUnload = function()
@@ -302,8 +327,14 @@ end
 
 profile.HandleAbility = function()
     local action = gData.GetAction();
+    local sneak = gData.GetBuffCount('Sneak');
+
     if (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
+    elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
+        gFunc.CancelAction();
+        AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig" <me>') end):once(2)
     end
 end
 
@@ -314,6 +345,18 @@ profile.HandlePrecast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.PrecastSong);
+    elseif (action.Name == 'Utsusemi: Ichi') then
+        gFunc.EquipSet(sets.PrecastMagic);
+        local delay = 2.2
+        if (gData.GetBuffCount(66) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+        elseif (gData.GetBuffCount(444) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+        elseif (gData.GetBuffCount(445) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+        elseif (gData.GetBuffCount(446) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
+        end
     else
         gFunc.EquipSet(sets.PrecastMagic);
     end

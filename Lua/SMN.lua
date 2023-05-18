@@ -75,15 +75,6 @@ local Settings = {
     Mog = false,
 };
 
--- Sleep for lockstyleset
-local clock = os.clock;
-function Sleep(n)
-    local t0 = clock();
-    while clock() - t0 <= n do
-    end
-    ;
-end
-
 profile.Packer = {
 };
 
@@ -91,9 +82,10 @@ profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 8');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
-    Sleep(1);
-    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 5 echo');
+    (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 5 echo') end):once(2)
 end
 
 profile.OnUnload = function()

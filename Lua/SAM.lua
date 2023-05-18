@@ -9,7 +9,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Rajas Ring',
@@ -24,7 +24,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
         Hands = 'Dusk Gloves',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +2%' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Ecphoria Ring',
         Ring2 = 'Sniper\'s Ring',
@@ -37,7 +37,7 @@ local sets = {
         Feet = 'Hmn. Sune-Ate',
         Hands = 'Hachiman Kote',
         Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2',[2] = 'Crit. hit damage +2%' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = '"Store TP"+2', [2] = 'Crit. hit damage +2%' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
@@ -57,7 +57,7 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
-    ['Mediate'] = {
+    ['Meditate'] = {
         Hands = 'Saotome Kote',
         Head = 'Myochin Kabuto',
     },
@@ -68,6 +68,30 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Legs = 'Saotome Haidate',
         Neck = 'Evasion Torque',
+    },
+    ['Precast'] = {
+        Ear2 = 'Loquac. Earring',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+    },
+    ['Utsu'] = {
+        Ammo = 'Goblin Cracker',
+        Back = 'Boxer\'s Mantle',
+        Body = 'Scp. Harness +1',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Neck = 'Evasion Torque',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Breeze Ring',
+        Waist = 'Swift Belt',
     },
     ['Mog'] = {
         Body = 'Kupo Suit',
@@ -115,22 +139,14 @@ local Settings = {
     Accuracy = false,
 };
 
--- Sleep for lockstyleset
-local clock = os.clock;
-function Sleep(n)
-    local t0 = clock();
-    while clock() - t0 <= n do
-    end
-    ;
-end
-
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 4');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 10');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo SAM loading!');
-    Sleep(1);
-    AshitaCore:GetChatManager():QueueCommand(1, '/lockstyleset 1 echo');
+    (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 1 echo') end):once(2)
 end
 
 profile.OnUnload = function()
@@ -195,8 +211,16 @@ end
 
 profile.HandleAbility = function()
     local action = gData.GetAction();
-    if action.Name == 'Meditate' then
-        gFunc.EquipSet(sets['Mediate']);
+    local sneak = gData.GetBuffCount('Sneak');
+
+    if (action.Name == 'Meditate') then
+        gFunc.EquipSet(sets.Meditate);
+    elseif (action.Name == 'Third Eye') then
+        gFunc.EquipSet(sets.ThirdEye);
+    elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
+        gFunc.CancelAction();
+        AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig" <me>') end):once(2)
     end
 end
 
@@ -204,13 +228,29 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local action = gData.GetAction();
-    if action.Skill == 'Ninjutsu' then
-        gFunc.EquipSet(sets.NIN);
+    local action = gData.GetAction()
+
+    gFunc.EquipSet(sets.Precast);
+    if (action.Name == 'Utsusemi: Ichi') then
+        local delay = 2.2
+        if (gData.GetBuffCount(66) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+        elseif (gData.GetBuffCount(444) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+        elseif (gData.GetBuffCount(445) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+        elseif (gData.GetBuffCount(446) == 1) then
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
+        end
     end
 end
 
 profile.HandleMidcast = function()
+    local action = gData.GetAction();
+
+    if action.Skill == 'Ninjutsu' then
+        gFunc.EquipSet(sets.Utsu);
+    end
 end
 
 profile.HandlePreshot = function()
