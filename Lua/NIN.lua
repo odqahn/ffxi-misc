@@ -518,9 +518,11 @@ profile.HandleAbility = function()
     local yonin = gData.GetBuffCount('Yonin');
 
     if (yonin == 1) then
-        if (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') or (action.Name == 'Bersek') or (action.Name == 'Defender') or (action.Name == 'Warcry') then
+        if (action.Name == 'Bersek') or (action.Name == 'Defender') or (action.Name == 'Warcry') then
             gFunc.EquipSet(sets.EnmityJA);
         end
+    elseif (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') then
+        gFunc.EquipSet(sets.EnmityJA);
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
     elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
