@@ -60,10 +60,7 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
-        },
+        Feet = 'Sha\'ir Crackows',
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
         Legs = {
@@ -135,8 +132,10 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = 'Dusk Gloves',
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -182,7 +181,7 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Choral Slippers',
-        Hands = 'Dusk Gloves',
+        Hands = 'Seiru\'s Kote',
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
@@ -228,12 +227,16 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
-        Legs = { Name = 'Chl. Cannions +1',
-            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Opo-opo Necklace',
         Range = 'Hamelin Flute',
         Ring1 = 'Coral Ring',
@@ -257,7 +260,6 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo BRD loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 2 echo') end):once(2)
 end
@@ -311,12 +313,10 @@ profile.HandleDefault = function()
         end
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Idle);
+    elseif (Settings.Mog == true) then
+        gFunc.EquipSet(sets.Mog);
     else
-        if (Settings.Mog == true) then
-            gFunc.EquipSet(sets.Mog);
-        else
-            gFunc.EquipSet(sets.Idle);
-        end
+        gFunc.EquipSet(sets.Idle);
     end
 
     -- Flagellant's in case of para
@@ -345,9 +345,9 @@ profile.HandlePrecast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.PrecastSong);
-    elseif (action.Name == 'Utsusemi: Ichi') then
+    elseif (spell.Name == 'Utsusemi: Ichi') then
         gFunc.EquipSet(sets.PrecastMagic);
-        local delay = 2.2
+        local delay = 2.4
         if (gData.GetBuffCount(66) == 1) then
             (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
         elseif (gData.GetBuffCount(444) == 1) then
@@ -370,10 +370,10 @@ profile.HandleMidcast = function()
         else
             gFunc.EquipSet(sets.Buff);
         end
-    elseif (spell.Skill == 'Healing Magic') or (spell.Skill == 'Enhancing Magic') then
-        gFunc.EquipSet(sets.CastingMagic);
     elseif (spell.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.NIN);
+    else
+        gFunc.EquipSet(sets.CastingMagic);
     end
 end
 

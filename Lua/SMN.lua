@@ -83,7 +83,6 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 8');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 5 echo') end):once(2)
 end
@@ -163,7 +162,7 @@ profile.HandleAbility = function()
     local ability = gData.GetAction();
     if (ability.Name == 'Release') or (ability.Name == 'Avatar\'s Favor') or (ability.Name == 'Assault') or (ability.Name == 'Retreat') or (ability.Name == 'Apogee') then return end
     if (ability.Name == 'Elemental Siphon') then
-        gFunc.EquipSet(sets.Siphon);
+        gFunc.EquipSet(sets.Idle);
     else
         gFunc.EquipSet(sets.BP);
     end

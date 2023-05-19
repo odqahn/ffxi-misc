@@ -45,7 +45,6 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 6');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo RNG loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 6 echo') end):once(2)
 end

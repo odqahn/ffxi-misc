@@ -5,7 +5,7 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
         Legs = 'Dragon Subligar',
         Neck = 'Orochi Nodowa',
@@ -17,18 +17,18 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
     },
     ['TP'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Pahluwan Khazagand',
+        Body = 'Pln. Khazagand',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
-        Hands = 'Dusk Gloves',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Walahra Turban',
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
@@ -38,11 +38,11 @@ local sets = {
     },
     ['TH'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Pahluwan Khazagand',
+        Body = 'Pln. Khazagand',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
-        Hands = 'Assassin\'s Armlets',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Wh. Rarab Cap +1',
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
@@ -52,11 +52,11 @@ local sets = {
     },
     ['TPACC'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Pahluwan Khazagand',
+        Body = 'Pln. Khazagand',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dusk Ledelsens',
-        Hands = 'Dusk Gloves',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
@@ -70,7 +70,7 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Ring1 = 'Thunder Ring',
@@ -83,7 +83,7 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Maat\'s Cap',
         Legs = 'Rogue\'s Culottes',
         Ring1 = 'Breeze Ring',
@@ -110,7 +110,7 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Draggon Leggings',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Neck = 'Fotia Gorget',
@@ -125,7 +125,7 @@ local sets = {
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Draggon Leggings',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
         Neck = 'Fotia Gorget',
@@ -152,7 +152,7 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Dusk Ledelsens',
-        Hands = 'Dusk Gloves',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Walahra Turban',
         Neck = 'Evasion Torque',
         Waist = 'Swift Belt',
@@ -176,7 +176,7 @@ local sets = {
     },
     ['RA'] = {
         Back = 'Lynx Mantle',
-        Body = 'Pahluwan Khazagand',
+        Body = 'Pln. Khazagand',
         Ear2 = 'Vision Earring',
         Feet = 'Dragon Leggings',
         Hands = 'Deadeye Gloves',
@@ -204,7 +204,6 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 7 echo') end):once(2)
 end
@@ -251,14 +250,14 @@ profile.HandleDefault = function()
 
     local player = gData.GetPlayer();
 
-    if (player.Status == 'Engaged') then
-        if (sleep == 1) then
-            gFunc.EquipSet(sets.Sleep);
-        elseif (sa == 1) then
-            gFunc.EquipSet(sets.SA);
-        elseif (ta == 1) then
-            gFunc.EquipSet(sets.TA);
-        elseif (Settings.TH == true) then
+    if (sleep == 1) then
+        gFunc.EquipSet(sets.Sleep);
+    elseif (ta == 1) then
+        gFunc.EquipSet(sets.TA);
+    elseif (sa == 1) then
+        gFunc.EquipSet(sets.SA);
+    elseif (player.Status == 'Engaged') then
+        if (Settings.TH == true) then
             gFunc.EquipSet(sets.TH);
         elseif (Settings.Accuracy == true) then
             gFunc.EquipSet(sets.TPACC);
@@ -283,19 +282,19 @@ profile.HandleAbility = function()
     local action = gData.GetAction();
     local sneak = gData.GetBuffCount('Sneak');
 
-    if action.Name == 'Flee' then
+    if (action.Name == 'Flee') then
         gFunc.Equip('Feet', 'Rogue\'s Poulaines');
-    elseif action.Name == 'Hide' then
+    elseif (action.Name == 'Hide') then
         gFunc.Equip('Body', 'Rogue\'s Vest');
-    elseif action.Name == 'Mug' then
+    elseif (action.Name == 'Mug') then
         gFunc.Equip('Head', 'Assassin\'s Bonnet');
     elseif (action.Name == 'Steal') then
         gFunc.EquipSet(sets.Steal);
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
     elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
-		gFunc.CancelAction();
-		AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
+        gFunc.CancelAction();
+        AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
         (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig" <me>') end):once(2)
     end
 end
@@ -308,7 +307,7 @@ profile.HandlePrecast = function()
 
     gFunc.EquipSet(sets.Precast);
     if (action.Name == 'Utsusemi: Ichi') then
-        local delay = 2.2
+        local delay = 2.4
         if (gData.GetBuffCount(66) == 1) then
             (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
         elseif (gData.GetBuffCount(444) == 1) then
@@ -330,7 +329,7 @@ profile.HandlePreshot = function()
 end
 
 profile.HandleMidshot = function()
-    -- gFunc.EquipSet(sets.RA);
+    gFunc.EquipSet(sets.RA);
 end
 
 profile.HandleWeaponskill = function()

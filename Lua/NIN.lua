@@ -3,11 +3,11 @@ local sets = {
     ['Idle'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = 'Koga Chainmail',
+        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = 'Ninja Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Orochi Nodowa',
@@ -21,18 +21,20 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Ninja Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Neck = 'Orochi Nodowa',
     },
     ['Damage_Haste'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+6', [2] = '"Dual Wield"+1' } },
+        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Dusk Gloves',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
@@ -43,12 +45,14 @@ local sets = {
     ['Damage_Acc'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = 'Koga Chainmail',
+        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Dusk Gloves',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
@@ -59,12 +63,14 @@ local sets = {
     ['Damage_Night'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+6', [2] = '"Dual Wield"+1' } },
+        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Koga Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
@@ -75,12 +81,14 @@ local sets = {
     ['Damage_Night_Acc'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = 'Koga Chainmail',
+        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Koga Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
@@ -95,9 +103,11 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Yasha Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
@@ -109,12 +119,14 @@ local sets = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Body = 'Scp. Harness +1',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Yasha Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
@@ -129,9 +141,11 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Yasha Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
@@ -141,8 +155,10 @@ local sets = {
     },
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
     },
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
@@ -150,9 +166,11 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Yasha Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
@@ -246,7 +264,7 @@ local sets = {
         Ear1 = 'Vision Earring',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Dusk Ledelsens',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
         Legs = 'Dusk Trousers',
         Neck = 'Peacock Amulet',
@@ -261,7 +279,7 @@ local sets = {
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
@@ -277,7 +295,7 @@ local sets = {
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
@@ -295,7 +313,7 @@ local sets = {
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
@@ -312,7 +330,7 @@ local sets = {
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Koga Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
@@ -327,7 +345,7 @@ local sets = {
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Maat\'s Cap',
         Legs = 'Yasha Hakama',
         Neck = 'Fotia Gorget',
@@ -341,9 +359,11 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' } },
-        Hands = 'Ninja Tekko',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Orochi Nodowa',
@@ -358,7 +378,7 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Dusk Ledelsens',
-        Hands = 'Ninja Tekko',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Opo-opo Necklace',
@@ -385,7 +405,6 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 7');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon load debuff');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo NIN loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 4 echo') end):once(2)
 end
@@ -496,9 +515,12 @@ end
 profile.HandleAbility = function()
     local action = gData.GetAction();
     local sneak = gData.GetBuffCount('Sneak');
+    local yonin = gData.GetBuffCount('Yonin');
 
-    if (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') or (action.Name == 'Bersek') or (action.Name == 'Defender') or (action.Name == 'Warcry') then
-        gFunc.EquipSet(sets.EnmityJA);
+    if (yonin == 1) then
+        if (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') or (action.Name == 'Bersek') or (action.Name == 'Defender') or (action.Name == 'Warcry') then
+            gFunc.EquipSet(sets.EnmityJA);
+        end
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
     elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
@@ -516,7 +538,7 @@ profile.HandlePrecast = function()
 
     gFunc.EquipSet(sets.Precast);
     if (action.Name == 'Utsusemi: Ichi') then
-        local delay = 2.2
+        local delay = 2.4
         if (gData.GetBuffCount(66) == 1) then
             (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
         elseif (gData.GetBuffCount(444) == 1) then
