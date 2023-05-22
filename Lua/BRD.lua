@@ -1,10 +1,10 @@
 local profile = {};
 local sets = {
     ['Idle'] = {
-        Back = 'Veela cape',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Loquac. Earring',
+        Back = 'Boxer\'s Mantle',
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
@@ -17,9 +17,9 @@ local sets = {
         },
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Trumpet Ring',
-        Waist = 'Gleeman\'s Belt',
+        Ring1 = 'Coral Ring',
+        Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
         Back = 'Veela cape',
@@ -40,6 +40,7 @@ local sets = {
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
+        Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' } },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
@@ -224,7 +225,7 @@ local sets = {
     },
     ['Sleep'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
         Feet = {

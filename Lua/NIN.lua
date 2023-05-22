@@ -100,7 +100,7 @@ local sets = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = {

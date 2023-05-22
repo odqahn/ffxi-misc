@@ -1,36 +1,41 @@
 local profile = {};
 local sets = {
     ['Idle'] = {
+        Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
-        Legs = 'Dragon Subligar',
+        Legs = 'Homam Cosciales',
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
+        Back = 'Boxer\'s Mantle',
         Body = 'Kupo Suit',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = 'Optical Hat',
         Neck = 'Orochi Nodowa',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
     },
     ['TP'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Pln. Khazagand',
+        Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Walahra Turban',
-        Legs = 'Dusk Trousers',
+        Head = 'Homam Zucchetto',
+        Legs = 'Homam Cosciales',
         Neck = 'Peacock Amulet',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Rajas Ring',
@@ -38,13 +43,13 @@ local sets = {
     },
     ['TH'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Pln. Khazagand',
+        Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Wh. Rarab Cap +1',
-        Legs = 'Dusk Trousers',
+        Legs = 'Homam Cosciales',
         Neck = 'Peacock Amulet',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Rajas Ring',
@@ -52,16 +57,30 @@ local sets = {
     },
     ['TPACC'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Pln. Khazagand',
+        Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
-        Legs = 'Dusk Trousers',
+        Legs = 'Homam Cosciales',
         Neck = 'Peacock Amulet',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Sniper\'s Ring',
+        Waist = 'Swift Belt',
+    },
+    ['THACC'] = {
+        Back = 'Boxer\'s Mantle',
+        Body = 'Homam Corazza',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Suppanomimi',
+        Feet = 'Homam Gambieras',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = 'Wh. Rarab Cap +1',
+        Legs = 'Homam Cosciales',
+        Neck = 'Peacock Amulet',
+        Ring1 = 'Toreador\'s ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['SA'] = {
@@ -119,15 +138,15 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['WSAGI'] = {
-        Back = 'Commander\'s Cape',
-        Body = 'Pahluwan Khazagand',
+        Back = 'Cerberus Mantle',
+        Body = 'Homam Corazza',
         -- Body = 'Dragon Harness',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
-        Feet = 'Draggon Leggings',
+        Feet = 'Homam Gambieras ',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
-        Legs = 'Rogue\'s Culottes',
+        Legs = 'Homam Cosciales',
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Breeze Ring',
@@ -145,14 +164,16 @@ local sets = {
     },
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
+        Legs = 'Homam Cosciales',
     },
     ['Casting'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Rapparee Harness',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Legs = 'Homam Cosciales',
         Head = 'Walahra Turban',
         Neck = 'Evasion Torque',
         Waist = 'Swift Belt',
@@ -166,6 +187,17 @@ local sets = {
         Neck = 'Opo-opo Necklace',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
+    },
+    ['KirinAF'] = {
+        Back = 'Boxer\'s Mantle',
+        Body = 'Homam Corazza',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Head = 'Black Ribbon',
+        Ring1 = 'Coral Ring',
+        Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
     },
     ['Steal'] = {
         Feet = 'Rogue\'s Poulaines',
@@ -178,7 +210,7 @@ local sets = {
         Back = 'Lynx Mantle',
         Body = 'Pln. Khazagand',
         Ear2 = 'Vision Earring',
-        Feet = 'Dragon Leggings',
+        Feet = 'Homam Gambieras ',
         Hands = 'Deadeye Gloves',
         Head = 'Optical Hat',
         Legs = 'Dusk Trousers',
@@ -197,6 +229,7 @@ local Settings = {
     Mog = false,
     Accuracy = false,
     TH = true,
+    Kirin = false,
 };
 
 profile.OnLoad = function()
@@ -239,6 +272,15 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
+    if (args[1] == 'kirin') then
+        if (Settings.Kirin == true) then
+            Settings.Kirin = false;
+            gFunc.Message('Kirin Set Off');
+        else
+            Settings.Kirin = true;
+            gFunc.Message('Kirin Set On');
+        end
+    end
 end
 
 -- TODO: un set TH et un EquipSet
@@ -252,17 +294,25 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
+    elseif(kirin == 1) then
+        gFunc.EquipSet(sets.KirinAF);
     elseif (ta == 1) then
         gFunc.EquipSet(sets.TA);
     elseif (sa == 1) then
         gFunc.EquipSet(sets.SA);
     elseif (player.Status == 'Engaged') then
         if (Settings.TH == true) then
-            gFunc.EquipSet(sets.TH);
-        elseif (Settings.Accuracy == true) then
-            gFunc.EquipSet(sets.TPACC);
+            if (Settings.Accuracy == true) then
+                gFunc.EquipSet(sets.THACC);
+            else
+                gFunc.EquipSet(sets.TH);
+            end
         else
-            gFunc.EquipSet(sets.TP);
+            if (Settings.Accuracy == true) then
+                gFunc.EquipSet(sets.TPACC);
+            else
+                gFunc.EquipSet(sets.TP);
+            end
         end
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Idle);
