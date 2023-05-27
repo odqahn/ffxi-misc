@@ -1,15 +1,51 @@
 local profile = {};
 local sets = {
-    ['Normal'] = {
-        -- Body = 'Yinyang Robe',
+    ['Idle'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
         Hands = 'Summoner\'s Brcr.',
-        Head = 'Summoner\'s Horn',
+        Head = { Name = 'Evk. Horn +1', Augment = { [1] = 'MP recovered while healing +4', [2] = '"Refresh"+1' } },
+        Legs = 'Summoner\'s Spats',
+        Main = 'Terra\'s Staff',
+        Neck = 'Orochi Nodowa',
+        Ring1 = 'Vivian Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Sub = 'Staff Strap',
+        Waist = 'Jungle Rope',
+    },
+    ['Summoned'] = {
+        Ammo = 'Hedgehog Bomb',
+        Back = 'Errant Cape',
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Ear1 = 'Star Earring',
+        Ear2 = 'Loquac. Earring',
+        Feet = 'Summoner\'s Pgch.',
+        Hands = 'Summoner\'s Brcr.',
+        Head = { Name = 'Evk. Horn +1', Augment = { [1] = 'MP recovered while healing +4', [2] = '"Refresh"+1' } },
+        Legs = 'Summoner\'s Spats',
+        Main = 'Chatoyant Staff',
+        Neck = 'Smn. Torque',
+        Ring1 = 'Vivian Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Sub = 'Staff Strap',
+        Waist = 'Jungle Rope',
+    },
+    ['Casting'] = {
+        Ammo = 'Hedgehog Bomb',
+        Back = 'Errant Cape',
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Ear1 = 'Star Earring',
+        Ear2 = 'Loquac. Earring',
+        Feet = 'Summoner\'s Pgch.',
+        Hands = 'Summoner\'s Brcr.',
+        Head = { Name = 'Evk. Horn +1', Augment = { [1] = 'MP recovered while healing +4', [2] = '"Refresh"+1' } },
         Legs = 'Summoner\'s Spats',
         Main = 'Chatoyant Staff',
         Neck = 'Smn. Torque',
@@ -21,12 +57,13 @@ local sets = {
     ['Resting'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+2' } },
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
         Hands = 'Summoner\'s Brcr.',
-        Head = 'Summoner\'s Horn',
+        Head = { Name = 'Evk. Horn +1', Augment = { [1] = 'MP recovered while healing +4', [2] = '"Refresh"+1' } },
         Legs = 'Summoner\'s Spats',
         Main = 'Chatoyant Staff',
         Neck = 'Smn. Torque',
@@ -36,7 +73,6 @@ local sets = {
         Waist = 'Jungle Rope',
     },
     ['BP'] = {
-        -- Body = 'Yinyang Robe',
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
         Body = 'Austere Cape',
@@ -54,19 +90,20 @@ local sets = {
         Waist = 'Jungle Rope',
     },
     ['Mog'] = {
-        Main = 'Chatoyant Staff',
-        Sub = 'Staff Strap',
         Ammo = 'Hedgehog Bomb',
-        Neck = 'Smn. Torque',
+        Back = 'Errant Cape',
+        Body = 'Kupo Suit',
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
-        Body = 'Kupo Suit',
+        Feet = 'Summoner\'s Pgch.',
+        Head = { Name = 'Evk. Horn +1', Augment = { [1] = 'MP recovered while healing +4', [2] = '"Refresh"+1' } },
         Hands = 'Summoner\'s Brcr.',
+        Main = 'Terra\'s Staff',
+        Neck = 'Orochi Nodowa',
         Ring1 = 'Vivian Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = 'Errant Cape',
+        Sub = 'Staff Strap',
         Waist = 'Jungle Rope',
-        Feet = 'Summoner\'s Pgch.',
     },
 };
 profile.Sets = sets;
@@ -82,12 +119,14 @@ profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 8');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load petinfo');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 5 echo') end):once(2)
 end
 
 profile.OnUnload = function()
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon unload petinfo');
 end
 
 profile.HandleCommand = function(args)
@@ -101,39 +140,39 @@ profile.HandleCommand = function(args)
         end
     end
     if (args[1] == 'siphon') then
-        local game = gData.GetEnvironment();
+        local environment = gData.GetEnvironment();
         local spirit = "unknown";
-        if (game.Weather == "Fire x2") then
+        if (environment.Weather == "Fire x2") then
             spirit = "Fire Spirit";
-        elseif (game.Weather == "Water x2") then
+        elseif (environment.Weather == "Water x2") then
             spirit = "Water Spirit";
-        elseif (game.Weather == "Earth x2") then
+        elseif (environment.Weather == "Earth x2") then
             spirit = "Earth Spirit";
-        elseif (game.Weather == "Wind x2") then
+        elseif (environment.Weather == "Wind x2") then
             spirit = "Wind Spirit";
-        elseif (game.Weather == "Ice x2") then
+        elseif (environment.Weather == "Ice x2") then
             spirit = "Ice Spirit";
-        elseif (game.Weather == "Thunder x2") then
+        elseif (environment.Weather == "Thunder x2") then
             spirit = "Thunder Spirit";
-        elseif (game.Weather == "Light x2") then
+        elseif (environment.Weather == "Light x2") then
             spirit = "Light Spirit";
-        elseif (game.Weather == "Dark x2") then
+        elseif (environment.Weather == "Dark x2") then
             spirit = "Dark Spirit";
-        elseif (game.DayElement == "Fire") then
+        elseif (environment.DayElement == "Fire") then
             spirit = "Fire Spirit";
-        elseif (game.DayElement == "Water") then
+        elseif (environment.DayElement == "Water") then
             spirit = "Water Spirit";
-        elseif (game.DayElement == "Earth") then
+        elseif (environment.DayElement == "Earth") then
             spirit = "Earth Spirit";
-        elseif (game.DayElement == "Wind") then
+        elseif (environment.DayElement == "Wind") then
             spirit = "Wind Spirit";
-        elseif (game.DayElement == "Ice") then
+        elseif (environment.DayElement == "Ice") then
             spirit = "Ice Spirit";
-        elseif (game.DayElement == "Thunder") then
+        elseif (environment.DayElement == "Thunder") then
             spirit = "Thunder Spirit";
-        elseif (game.DayElement == "Light") then
+        elseif (environment.DayElement == "Light") then
             spirit = "Light Spirit";
-        elseif (game.DayElement == "Dark") then
+        elseif (environment.DayElement == "Dark") then
             spirit = "Dark Spirit";
         end
         if (spirit ~= "unknown") then
@@ -143,29 +182,76 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
+    local pet = gData.GetPet()
     local player = gData.GetPlayer();
+    local environment = gData.GetEnvironment();
 
-    if (player.Status == 'Engaged') then
-        gFunc.EquipSet(sets.Normal);
+    if (pet ~= nil) then
+        gFunc.EquipSet(sets.Summoned);
+        if (environment.WeatherElement == "Fire") and (pet.Name == 'Ifrit') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Water") and (pet.Name == 'Leviathan') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Earth") and (pet.Name == 'Titan') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Wind") and (pet.Name == 'Garuda') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Ice") and (pet.Name == 'Shiva') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Thunder") and (pet.Name == 'Ramuh') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Light") and (pet.Name == 'Carbuncle') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Dark") and (pet.Name == 'Fenrir') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        elseif (environment.WeatherElement == "Dark") and (pet.Name == 'Diabolos') then
+            gFunc.Equip('Head', 'Summoner\'s Horn');
+        end
+
+        if (environment.DayElement == "Fire") and (pet.Name == 'Ifrit') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Water") and (pet.Name == 'Leviathan') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Earth") and (pet.Name == 'Titan') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Wind") and (pet.Name == 'Garuda') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Ice") and (pet.Name == 'Shiva') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Thunder") and (pet.Name == 'Ramuh') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Light") and (pet.Name == 'Carbuncle') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Dark") and (pet.Name == 'Fenrir') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        elseif (environment.DayElement == "Dark") and (pet.Name == 'Diabolos') then
+            gFunc.Equip('Body', 'Summoner\'s Dblt.');
+        end
+
+        if (pet.Name == 'Carbuncle') then
+            gFunc.Equip('Hands', 'Carbuncle Mitts');
+        end
+
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Resting);
+    elseif (Settings.Mog == true) then
+        gFunc.EquipSet(sets.Mog);
     else
-        if (Settings.Mog == true) then
-            gFunc.EquipSet(sets.Mog);
-        else
-            gFunc.EquipSet(sets.Normal);
-        end
+        gFunc.EquipSet(sets.Idle);
     end
 end
 
 profile.HandleAbility = function()
     local ability = gData.GetAction();
-    if (ability.Name == 'Release') or (ability.Name == 'Avatar\'s Favor') or (ability.Name == 'Assault') or (ability.Name == 'Retreat') or (ability.Name == 'Apogee') then return end
-    if (ability.Name == 'Elemental Siphon') then
-        gFunc.EquipSet(sets.Idle);
-    else
-        gFunc.EquipSet(sets.BP);
-    end
+    if (ability.Name == 'Release') or (ability.Name == 'Avatar\'s Favor')  or (ability.Name == 'Assault') or (ability.Name == 'Retreat') or (ability.Name == 'Apogee') then return end
+    
+    gFunc.EquipSet(sets.BP);
+
+    -- if (ability.Name == 'Elemental Siphon') then
+    --     gFunc.EquipSet(sets.Idle);
+    -- else
+    --     gFunc.EquipSet(sets.BP);
+    -- end
 end
 
 profile.HandleItem = function()
@@ -175,6 +261,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
+    gFunc.EquipSet(sets.Casting);
 end
 
 profile.HandlePreshot = function()
