@@ -28,6 +28,8 @@ local sets = {
         Waist = 'Lieutenant\'s Sash',
     },
     ['TP'] = {
+        Main = 'Blau Dolch',
+        Sub = 'Mercurial Kris',
         Back = 'Boxer\'s Mantle',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
@@ -42,6 +44,8 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['TH'] = {
+        Main = 'Thief\'s Knife',
+        Sub = 'Mercurial Kris',
         Back = 'Boxer\'s Mantle',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
@@ -56,6 +60,8 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['TPACC'] = {
+        Main = 'Blau Dolch',
+        Sub = 'Mercurial Kris',
         Back = 'Boxer\'s Mantle',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
@@ -67,20 +73,6 @@ local sets = {
         Neck = 'Peacock Amulet',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Sniper\'s Ring',
-        Waist = 'Swift Belt',
-    },
-    ['THACC'] = {
-        Back = 'Boxer\'s Mantle',
-        Body = 'Homam Corazza',
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Suppanomimi',
-        Feet = 'Homam Gambieras',
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Wh. Rarab Cap +1',
-        Legs = 'Homam Cosciales',
-        Neck = 'Peacock Amulet',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['SA'] = {
@@ -229,6 +221,7 @@ local Settings = {
     Mog = false,
     Accuracy = false,
     TH = true,
+    THswap = false,
     Kirin = false,
 };
 
@@ -272,6 +265,16 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
+    if (args[1] == 'thswap') then
+        if (Settings.THswap == true) then
+            Settings.THswap = false;
+            gFunc.Message('TH swap Off');
+        else
+            Settings.THswap = true;
+            Settings.TH = false;
+            gFunc.Message('TH swap On');
+        end
+    end
     if (args[1] == 'kirin') then
         if (Settings.Kirin == true) then
             Settings.Kirin = false;
@@ -294,34 +297,27 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
-    elseif(kirin == 1) then
+    elseif (kirin == 1) then
         gFunc.EquipSet(sets.KirinAF);
     elseif (ta == 1) then
         gFunc.EquipSet(sets.TA);
     elseif (sa == 1) then
         gFunc.EquipSet(sets.SA);
     elseif (player.Status == 'Engaged') then
-        if (Settings.TH == true) then
-            if (Settings.Accuracy == true) then
-                gFunc.EquipSet(sets.THACC);
-            else
-                gFunc.EquipSet(sets.TH);
-            end
+        if (Settings.THswap == true) then
+            gFunc.EquipSet(sets.TH);
+            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lac fwd thswap') end):once(10)
+        elseif (Settings.TH == true) then
+            gFunc.EquipSet(sets.TH);
+        elseif (Settings.Accuracy == true) then
+            gFunc.EquipSet(sets.TPACC);
         else
-            if (Settings.Accuracy == true) then
-                gFunc.EquipSet(sets.TPACC);
-            else
-                gFunc.EquipSet(sets.TP);
-            end
+            gFunc.EquipSet(sets.TP);
         end
-    elseif (player.Status == 'Resting') then
-        gFunc.EquipSet(sets.Idle);
+    elseif (Settings.Mog == true) then
+        gFunc.EquipSet(sets.Mog);
     else
-        if (Settings.Mog == true) then
-            gFunc.EquipSet(sets.Mog);
-        else
-            gFunc.EquipSet(sets.Idle);
-        end
+        gFunc.EquipSet(sets.Idle);
     end
     if (para == 1) then
         gFunc.Equip('Waist', 'Flagellant\'s Rope');
