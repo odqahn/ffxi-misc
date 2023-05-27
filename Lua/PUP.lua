@@ -17,6 +17,22 @@ local sets = {
         Legs = 'Pantin Churidars',
         Feet = 'Pantin Babouches',
     },
+    ['Mog'] = {
+        Main = 'Acantha Shavers',
+        Range = 'Turbo Animator',
+        Ammo = 'Automat. Oil +2',
+        Head = 'Pantin Taj',
+        Neck = 'Orochi Nodowa',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Body = 'Kupo Suit',
+        Hands = 'Pantin Dastanas',
+        Ring1 = 'Coral Ring',
+        Ring2 = 'Coral Ring',
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Lieutenant\'s Sash',
+        Feet = 'Pantin Babouches',
+    },
     ['Meele'] = {
         Main = 'Acantha Shavers',
         Range = 'Turbo Animator',
@@ -94,6 +110,7 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     DT = false,
+    TH = false,
 };
 
 profile.OnLoad = function()
@@ -111,8 +128,6 @@ profile.OnUnload = function()
 end
 
 profile.HandleCommand = function(args)
-    local pet = gData.GetPet()
-
     if (args[1] == 'mog') then
         if (Settings.Mog == true) then
             Settings.Mog = false;
@@ -120,6 +135,15 @@ profile.HandleCommand = function(args)
         else
             Settings.Mog = true;
             gFunc.Message('Mog Set On');
+        end
+    end
+    if (args[1] == 'th') then
+        if (Settings.TH == true) then
+            Settings.TH = false;
+            gFunc.Message('TH Set Off');
+        else
+            Settings.TH = true;
+            gFunc.Message('TH Set On');
         end
     end
     if (args[1] == 'dt') then
@@ -132,8 +156,9 @@ profile.HandleCommand = function(args)
         end
     end
     if (args[1] == 'deact') then
+        local pet = gData.GetPet()
         if (pet.HPP ~= 100) then
-            gFunc.Message('Heal your pet!');
+            gFunc.Message('!Heal your pet!');
         else
             AshitaCore:GetChatManager():QueueCommand(1, '/pet Deactivate <me>');
         end
@@ -154,6 +179,8 @@ profile.HandleDefault = function()
         if (Settings.TH == true) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
         end
+    elseif (Settings.Mog == true) then
+        gFunc.EquipSet(sets.Mog);
     else
         gFunc.EquipSet(sets.Idle);
     end
