@@ -1,8 +1,35 @@
 local profile = {};
 local sets = {
     ['Idle'] = {
+        Main = 'Terra\'s Staff',
+        Sub = 'Staff Strap',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
+        },
+        Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
+        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
+        Neck = 'Orochi Nodowa',
+        Range = 'Gjallarhorn',
+        Ring1 = 'Coral Ring',
+        Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
+    },
+    ['IdleFighting'] = {
+        Main = 'Blau Dolch',
+        Sub = 'Mercurial Kris',
+        Back = 'Boxer\'s Mantle',
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = {
@@ -40,7 +67,8 @@ local sets = {
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' } },
+        Legs = { Name = 'Zenith Slacks',
+            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' } },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
@@ -129,7 +157,7 @@ local sets = {
         Waist = 'Tarutaru Sash',
     },
     ['Fighting'] = {
-        Back = 'Boxer\'s Mantle',
+        Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
@@ -141,7 +169,7 @@ local sets = {
         Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
-        Range = 'Oliphant',
+        Range = 'Angel Lyre',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
@@ -162,7 +190,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['DEX'] = {
-        Back = 'Commander\'s Cape',
+        Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Aesir Ear Pendant',
@@ -177,8 +205,8 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['AGI'] = {
-        Back = 'Amemet Mantle +1',
-        Body = 'Scp. Harness +1',
+        Back = 'Bard\'s Cape',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Choral Slippers',
@@ -225,7 +253,8 @@ local sets = {
     },
     ['Sleep'] = {
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Body = { Name = 'Dalmatica',
+            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
         Feet = {
@@ -306,16 +335,20 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
-    elseif (player.Status == 'Engaged') or (Settings.Fight == true) then
+    elseif (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Fighting);
+        if (Settings.Fight == true) then
+            gFunc.Equip('Main', 'Blau Dolch');
+            gFunc.Equip('Sub', 'Mercurial Kris');
+        end
         -- Equip TH set during battle
         if (Settings.TH == true) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
         end
-    elseif (player.Status == 'Resting') then
-        gFunc.EquipSet(sets.Idle);
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
+    elseif (Settings.Fight == true) then
+        gFunc.EquipSet(sets.IdleFighting);
     else
         gFunc.EquipSet(sets.Idle);
     end
@@ -335,7 +368,7 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
         gFunc.CancelAction();
         AshitaCore:GetChatManager():QueueCommand(-1, '/debuff Sneak');
-        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig" <me>') end):once(2)
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/ja "Spectral Jig"<me>') end):once(2)
     end
 end
 
@@ -368,13 +401,29 @@ profile.HandleMidcast = function()
     if (spell.Skill == 'Singing') then
         if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Elegy')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
             gFunc.EquipSet(sets.Debuff);
+            if (Settings.Fight == false) then
+                gFunc.Equip('Main', 'Chatoyant Staff');
+                gFunc.Equip('Sub', 'Staff Strap');
+            end
         else
             gFunc.EquipSet(sets.Buff);
+            if (Settings.Fight == false) then
+                gFunc.Equip('Main', 'Chatoyant Staff');
+                gFunc.Equip('Sub', 'Staff Strap');
+            end
         end
     elseif (spell.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.NIN);
+        if (Settings.Fight == false) then
+            gFunc.Equip('Main', 'Terra\'s Staff');
+            gFunc.Equip('Sub', 'Staff Strap');
+        end
     else
         gFunc.EquipSet(sets.CastingMagic);
+        if (Settings.Fight == false) then
+            gFunc.Equip('Main', 'Chatoyant Staff');
+            gFunc.Equip('Sub', 'Staff Strap');
+        end
     end
 end
 
@@ -390,6 +439,7 @@ profile.HandleWeaponskill = function()
     local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
     local STR = T { 'Mercy Stroke' };
     local AGI = T { 'Exenterator' };
+    -- local CHR = T { 'Mordant Ryme' };
 
     if (AGI:contains(action.Name)) then
         gFunc.EquipSet(sets.AGI);
