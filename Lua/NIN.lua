@@ -3,10 +3,10 @@ local sets = {
     ['Idle'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
-        Feet = 'Ninja Kyahan',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -20,14 +20,14 @@ local sets = {
         Body = 'Kupo Suit',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
-        Feet = 'Ninja Kyahan',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Neck = 'Orochi Nodowa',
     },
     ['Damage_Haste'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = {
@@ -45,43 +45,7 @@ local sets = {
     ['Damage_Acc'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Brutal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
-        },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Peacock Amulet',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Sniper\'s Ring',
-        Waist = 'Potent Belt',
-    },
-    ['Damage_Night'] = {
-        Ammo = 'Fuma Shuriken',
-        Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Brutal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
-        },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Peacock Amulet',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Koga Sarashi',
-    },
-    ['Damage_Night_Acc'] = {
-        Ammo = 'Fuma Shuriken',
-        Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = {
@@ -100,7 +64,7 @@ local sets = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = {
@@ -119,7 +83,7 @@ local sets = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Brutal Earring',
         Feet = {
@@ -163,7 +127,7 @@ local sets = {
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = {
@@ -180,13 +144,13 @@ local sets = {
     },
     ['Jutsu'] = {
         Ammo = 'Fuma Shuriken',
-        Back = 'Cerberus Mantle',
+        Back = 'Boxer\'s Mantle',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Ninjutsu Earring',
-        Feet = 'Koga Kyahan',
-        Hands = 'Yasha Tekko',
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Ear1 = 'Ninjutsu Earring',
+        Ear2 = 'Moldavite Earring',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
@@ -200,9 +164,9 @@ local sets = {
         Body = 'Yasha Samue',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Eris\' Earring',
-        Feet = 'Yasha Sune-Ate',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = 'Yasha Tekko',
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
@@ -218,7 +182,7 @@ local sets = {
         Ear2 = 'Ninjutsu Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
@@ -309,7 +273,7 @@ local sets = {
         Ammo = 'Bomb Core',
         Back = 'Commander\'s Cape',
         -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
-        Body = 'Koga Chainmail',
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
@@ -460,7 +424,6 @@ profile.HandleDefault = function()
     local sleep = gData.GetBuffCount('Sleep');
     local para = gData.GetBuffCount('Paralysis');
     local game = gData.GetEnvironment();
-
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
@@ -478,19 +441,9 @@ profile.HandleDefault = function()
                 gFunc.EquipSet(sets.Tanking);
             end
         elseif (Settings.Accuracy == true) then
-            -- Equipe night hands if night
-            if (game.Time < 6.00) or (game.Time > 18.00) then
-                gFunc.EquipSet(sets.Damage_Night_Acc);
-            else
-                gFunc.EquipSet(sets.Damage_Acc);
-            end
+            gFunc.EquipSet(sets.Damage_Acc);
         else
-            -- Equipe night hands if night
-            if (game.Time < 6.00) or (game.Time > 18.00) then
-                gFunc.EquipSet(sets.Damage_Night);
-            else
-                gFunc.EquipSet(sets.Damage_Haste);
-            end
+            gFunc.EquipSet(sets.Damage_Haste);
         end
         -- Equip TH set during battle
         if (Settings.TH == true) then
