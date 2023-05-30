@@ -12,10 +12,27 @@ local sets = {
         Hands = 'Pantin Dastanas',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
+        Back = 'Pantin Cape',
+        Waist = 'Lieutenant\'s Sash',
+        Legs = 'Pantin Churidars',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
+    },
+    ['Resting'] = {
+        Main = 'Chatoyant Staff',
+        Range = 'Turbo Animator',
+        Ammo = 'Automat. Oil +2',
+        Head = 'Pantin Taj',
+        Neck = 'Orochi Nodowa',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Body = 'Pantin Tobe',
+        Hands = 'Pantin Dastanas',
+        Ring1 = 'Coral Ring',
+        Ring2 = 'Coral Ring',
         Back = 'Boxer\'s Mantle',
         Waist = 'Lieutenant\'s Sash',
         Legs = 'Pantin Churidars',
-        Feet = 'Pantin Babouches',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Mog'] = {
         Main = 'Acantha Shavers',
@@ -31,7 +48,7 @@ local sets = {
         Ring2 = 'Coral Ring',
         Back = 'Boxer\'s Mantle',
         Waist = 'Lieutenant\'s Sash',
-        Feet = 'Pantin Babouches',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Meele'] = {
         Main = 'Acantha Shavers',
@@ -52,21 +69,22 @@ local sets = {
     },
     ['DT'] = {
         Main = 'Terra\'s Staff',
+        -- Main = 'Chatoyant Staff',
         Sub = 'Staff Strap',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
-        Head = 'Optical Hat',
-        Neck = 'Orochi Nodowa',
-        Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Head = 'Pantin Taj',
+        Neck = 'Bfn. Collar +1',
+        Ear1 = 'Coral Earring',
+        Ear2 = 'Coral Earring',
         Body = 'Pantin Tobe',
         Hands = 'Pantin Dastanas',
         Ring1 = 'Coral Ring',
         Ring2 = 'Coral Ring',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Pantin Cape',
         Waist = 'Lieutenant\'s Sash',
         Legs = 'Pantin Churidars',
-        Feet = 'Pantin Babouches',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Sleep'] = {
         Range = 'Turbo Animator',
@@ -92,7 +110,7 @@ local sets = {
         Hands = 'Pantin Dastanas',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Sniper\'s Ring',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Pantin Cape',
         Waist = 'Potent Belt',
         Legs = 'Pantin Churidars',
         Feet = 'Pantin Babouches',
@@ -100,6 +118,91 @@ local sets = {
     ['Precast'] = {
         Back = 'Veela cape',
         Ear2 = 'Loquac. Earring',
+    },
+    ['FireManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Hands = 'Pup. Dastanas',
+        Ear1 = 'Bushinomimi',
+        Ring1 = 'Rajas Ring',
+        Ring2 = 'Flame Ring',
+        Waist = 'Potent Belt',
+        Legs = 'Pantin Churidars',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
+    },
+    ['EarthManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Hands = 'Pup. Dastanas',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Breeze Ring',
+        Legs = 'Pantin Churidars',
+    },
+    ['WaterManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Hands = 'Pup. Dastanas',
+        Ring1 = 'Thunder Ring',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Druid\'s Rope',
+        Legs = 'Magic Slacks',
+        Feet = 'Pantin Babouches',
+    },
+    ['WindManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Ear1 = 'Suppanomimi',
+        Hands = 'Pup. Dastanas',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Breeze Ring',
+        Waist = 'Flagellant\'s Rope',
+    },
+    ['IceManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Hands = 'Pup. Dastanas',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Jungle Rope',
+        Legs = 'Magic Slacks',
+        Feet = 'Pantin Babouches',
+    },
+    ['ThunderManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Ear1 = 'Pixie Earring',
+        Hands = 'Pup. Dastanas',
+        Ring1 = 'Thunder Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Flagellant\'s Rope',
+    },
+    ['LightManeuver'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Bfn. Collar +1',
+        Hands = 'Pantin Dastanas',
+        Ring1 = 'Light Ring',
+        Ring2 = 'Light Ring',
+        Back = 'Birdman Cape',
+        Waist = 'Corsette',
+        Legs = 'Pup. Churidars',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
+    },
+    ['DarkManeuver'] = {
+        Head = 'Walahra Turban',
+        Neck = 'Bfn. Collar +1',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Hands = 'Pup. Dastanas',
+        Ring1 = 'Vivian Ring',
+        Ring2 = 'Tamas Ring',
+        Back = 'Errant Cape',
+        Waist = 'Jungle Rope',
+    },
+    ['Repair'] = {
+        -- Ear1 = 'Guignol Earring',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
 };
 profile.Sets = sets;
@@ -111,6 +214,7 @@ local Settings = {
     Mog = false,
     DT = false,
     TH = false,
+    Cure = false,
 };
 
 profile.OnLoad = function()
@@ -163,6 +267,17 @@ profile.HandleCommand = function(args)
             AshitaCore:GetChatManager():QueueCommand(1, '/pet Deactivate <me>');
         end
     end
+    if (args[1] == 'whm') then
+        if (Settings.Cure == true) then
+            Settings.Cure = false;
+            gFunc.Message('PUP cure Set Off');
+        else
+            Settings.Cure = true;
+            AshitaCore:GetChatManager():QueueCommand(1, '/pupsets load WHM');
+            gFunc.Message('PUP cure Set On');
+        end
+        local pet = gData.GetPet() 
+    end
 end
 
 profile.HandleDefault = function()
@@ -179,18 +294,42 @@ profile.HandleDefault = function()
         if (Settings.TH == true) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
         end
+    elseif (player.Status == 'Resting') then
+        gFunc.EquipSet(sets.Resting);
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
     else
         gFunc.EquipSet(sets.Idle);
     end
-
+    if (Settings.Cure == true) and (Settings.Mog == false) then
+        gFunc.Equip('Legs', 'Pup. Churidars');
+    end
     if (para == 1) then
         gFunc.Equip('Waist', 'Flagellant\'s Rope');
     end
 end
 
 profile.HandleAbility = function()
+    local action = gData.GetAction();
+    if (action.Name == 'Fire Maneuver') then
+        gFunc.EquipSet(sets.FireManeuver);
+    elseif (action.Name == 'Earth Maneuver') then
+        gFunc.EquipSet(sets.EarthManeuver);
+    elseif (action.Name == 'Water Maneuver') then
+        gFunc.EquipSet(sets.WaterManeuver);
+    elseif (action.Name == 'Wind Maneuver') then
+        gFunc.EquipSet(sets.WindManeuver);
+    elseif (action.Name == 'Ice Maneuver') then
+        gFunc.EquipSet(sets.IceManeuver);
+    elseif (action.Name == 'Thunder Maneuver') then
+        gFunc.EquipSet(sets.ThunderManeuver);
+    elseif (action.Name == 'Light Maneuver') then
+        gFunc.EquipSet(sets.LightManeuver);
+    elseif (action.Name == 'Dark Maneuver') then
+        gFunc.EquipSet(sets.DarkManeuver);
+    elseif (action.Name == 'Repair') then
+        gFunc.EquipSet(sets.Repair);
+    end
 end
 
 profile.HandleItem = function()
