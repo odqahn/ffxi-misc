@@ -459,10 +459,10 @@ profile.HandleDefault = function()
         end
     end
 
-    -- Flagellant's in case of para
-    if (para == 1) then
-        gFunc.Equip('Waist', 'Flagellant\'s Rope');
-    end
+    -- NO NEED, 25% haste cap reached - Flagellant's in case of para
+    -- if (para == 1) then
+    --     gFunc.Equip('Waist', 'Flagellant\'s Rope');
+    -- end
 end
 
 profile.HandleAbility = function()
