@@ -1,11 +1,27 @@
 local profile = {};
 local sets = {
     ['Idle'] = {
+        Ammo = 'Acid Bolt',
+        Range = 'Staurobow',
         Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = 'Optical Hat',
+        Legs = 'Homam Cosciales',
+        Neck = 'Orochi Nodowa',
+        Ring1 = 'Coral Ring',
+        Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
+    },
+    ['Resting'] = {
+        Back = 'Boxer\'s Mantle',
+        Body = 'Dusk Jerkin',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
         Legs = 'Homam Cosciales',
@@ -30,15 +46,15 @@ local sets = {
     ['TP'] = {
         Main = 'Blau Dolch',
         Sub = 'Mercurial Kris',
-        Back = 'Boxer\'s Mantle',
-        Body = 'Homam Corazza',
+        Back = 'Amemet Mantle +1',
+        Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Homam Zucchetto',
         Legs = 'Homam Cosciales',
-        Neck = 'Peacock Amulet',
+        Neck = 'Love Torque',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
@@ -46,15 +62,15 @@ local sets = {
     ['TH'] = {
         Main = 'Thief\'s Knife',
         Sub = 'Mercurial Kris',
-        Back = 'Boxer\'s Mantle',
-        Body = 'Homam Corazza',
+        Back = 'Amemet Mantle +1',
+        Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Wh. Rarab Cap +1',
         Legs = 'Homam Cosciales',
-        Neck = 'Peacock Amulet',
+        Neck = 'Love Torque',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
@@ -62,7 +78,7 @@ local sets = {
     ['TPACC'] = {
         Main = 'Blau Dolch',
         Sub = 'Mercurial Kris',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Amemet Mantle +1',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
@@ -70,9 +86,25 @@ local sets = {
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
         Legs = 'Homam Cosciales',
-        Neck = 'Peacock Amulet',
+        Neck = 'Love Torque',
         Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Sniper\'s Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Swift Belt',
+    },
+    ['THACC'] = {
+        Main = 'Thief\'s Knife',
+        Sub = 'Mercurial Kris',
+        Back = 'Amemet Mantle +1',
+        Body = 'Homam Corazza',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Suppanomimi',
+        Feet = 'Homam Gambieras',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = 'Wh. Rarab Cap +1',
+        Legs = 'Homam Cosciales',
+        Neck = 'Love Torque',
+        Ring1 = 'Toreador\'s ring',
+        Ring2 = 'Rajas Ring',
         Waist = 'Swift Belt',
     },
     ['SA'] = {
@@ -84,6 +116,7 @@ local sets = {
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
+        Neck = 'Love Torque',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
@@ -96,6 +129,7 @@ local sets = {
         Feet = 'Dragon Leggings',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Maat\'s Cap',
+        Neck = 'Love Torque',
         Legs = 'Rogue\'s Culottes',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
@@ -181,7 +215,7 @@ local sets = {
         Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
     },
-    ['KirinAF'] = {
+    ['DT'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Homam Corazza',
         Ear1 = 'Ocl. Earring',
@@ -221,8 +255,7 @@ local Settings = {
     Mog = false,
     Accuracy = false,
     TH = true,
-    THswap = false,
-    Kirin = false,
+    DT = false,
 };
 
 profile.OnLoad = function()
@@ -265,23 +298,13 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
-    if (args[1] == 'thswap') then
-        if (Settings.THswap == true) then
-            Settings.THswap = false;
-            gFunc.Message('TH swap Off');
-        else
-            Settings.THswap = true;
-            Settings.TH = false;
-            gFunc.Message('TH swap On');
-        end
-    end
-    if (args[1] == 'kirin') then
+    if (args[1] == 'dt') then
         if (Settings.Kirin == true) then
             Settings.Kirin = false;
-            gFunc.Message('Kirin Set Off');
+            gFunc.Message('DT Set Off');
         else
             Settings.Kirin = true;
-            gFunc.Message('Kirin Set On');
+            gFunc.Message('DT Set On');
         end
     end
 end
@@ -297,27 +320,35 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
-    elseif (kirin == 1) then
-        gFunc.EquipSet(sets.KirinAF);
+    elseif (dt == 1) then
+        gFunc.EquipSet(sets.DT);
     elseif (ta == 1) then
         gFunc.EquipSet(sets.TA);
     elseif (sa == 1) then
         gFunc.EquipSet(sets.SA);
     elseif (player.Status == 'Engaged') then
-        if (Settings.THswap == true) then
-            gFunc.EquipSet(sets.TH);
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lac fwd thswap') end):once(10)
-        elseif (Settings.TH == true) then
-            gFunc.EquipSet(sets.TH);
-        elseif (Settings.Accuracy == true) then
-            gFunc.EquipSet(sets.TPACC);
+        if (Settings.TH == true) then
+            if (Settings.Accuracy == true) then
+                gFunc.EquipSet(sets.THACC);
+            else
+                gFunc.EquipSet(sets.TH);
+            end
         else
-            gFunc.EquipSet(sets.TP);
+            if (Settings.Accuracy == true) then
+                gFunc.EquipSet(sets.TPACC);
+            else
+                gFunc.EquipSet(sets.TP);
+            end
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
+    elseif (player.Status == 'Resting') then
+        gFunc.EquipSet(sets.Resting);
     else
         gFunc.EquipSet(sets.Idle);
+        -- if (Settings.TH == false) then
+        --     AshitaCore:GetChatManager():QueueCommand(-1, '/lac fwd th')
+        -- end
     end
     if (para == 1) then
         gFunc.Equip('Waist', 'Flagellant\'s Rope');
