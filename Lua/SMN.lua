@@ -3,8 +3,7 @@ local sets = {
     ['Idle'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
-        Body = { Name = 'Dalmatica',
-            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
@@ -21,8 +20,7 @@ local sets = {
     ['Summoned'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
-        Body = { Name = 'Dalmatica',
-            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
@@ -39,8 +37,7 @@ local sets = {
     ['Casting'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
-        Body = { Name = 'Dalmatica',
-            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
@@ -57,8 +54,7 @@ local sets = {
     ['Resting'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
-        Body = { Name = 'Dalmatica',
-            Augment = { [1] = 'MP+15', [2] = 'Occ. quickens spellcasting +3%', [3] = '"Mag. Atk. Bns."+4' } },
+        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
         Feet = 'Summoner\'s Pgch.',
