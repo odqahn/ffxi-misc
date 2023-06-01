@@ -12,7 +12,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
+        Ring2 = 'Succor Ring',
         Waist = 'Koga Sarashi',
     },
     ['Mog'] = {
@@ -113,7 +113,7 @@ local sets = {
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
-        Ring1 = 'Coral Ring',
+        Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
         Waist = 'Koga Sarashi',
     },
@@ -150,28 +150,12 @@ local sets = {
         Ear2 = 'Moldavite Earring',
         Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Ninjutsu Torque',
-        Ring1 = 'Snow Ring',
-        Ring2 = 'Snow Ring',
-        Waist = 'Koga Sarashi',
-    },
-    ['JutsuElementEnmity'] = {
-        -- Ammo = 'Nokizaru Shuriken',
-        Ammo = 'Fuma Shuriken',
-        Back = 'Cerberus Mantle',
-        Body = 'Yasha Samue',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Eris\' Earring',
-        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
-        Hands = 'Yasha Tekko',
         Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
-        Ring2 = 'Snow Ring',
-        Waist = 'Warwolf Belt',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Koga Sarashi',
     },
     ['JutsuDebuffEnmity'] = {
         -- Ammo = 'Nokizaru Shuriken',
@@ -240,8 +224,8 @@ local sets = {
         Ammo = 'Bomb Core',
         Back = 'Commander\'s Cape',
         Body = 'Haubergeon +1',
-        Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Brutal Earring',
+        Ear1 = 'Pixie Earring',
+        Ear2 = 'Bushinomimi',
         Feet = 'Koga Kyahan',
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Optical Hat',
@@ -256,7 +240,7 @@ local sets = {
         Back = 'Cerberus Mantle',
         -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Body = 'Haubergeon +1',
-        Ear1 = 'Aesir Ear Pendant',
+        Ear1 = 'Pixie Earring',
         Ear2 = 'Brutal Earring',
         Feet = 'Koga Kyahan',
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
@@ -266,8 +250,7 @@ local sets = {
         Ring1 = 'Toreador\'s ring',
         -- Ring1 = 'Thunder Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Potent Belt',
-        -- Waist = 'Warwolf Belt',
+        Waist = 'Fatality Belt',
     },
     ['WSAGI'] = {
         Ammo = 'Bomb Core',
@@ -292,7 +275,7 @@ local sets = {
         Back = 'Commander\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Ear1 = 'Moldavite Earring',
-        Ear2 = 'Aesir Ear Pendant',
+        Ear2 = 'Pixie Earring',
         Feet = 'Koga Kyahan',
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = 'Maat\'s Cap',
@@ -476,6 +459,8 @@ profile.HandleAbility = function()
         end
     elseif (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') then
         gFunc.EquipSet(sets.EnmityJA);
+    elseif (action.Name == 'Mijin Gakure') then
+        gFunc.Equip('Ammo', 'Reacton arm');
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
     elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
@@ -511,14 +496,16 @@ profile.HandleMidcast = function()
     local yonin = gData.GetBuffCount('Yonin');
 
     if (action.Skill == 'Ninjutsu') then
-        if (string.contains(action.Name, 'Utsusemi:')) then
+        if (string.contains(action.Name, 'Utsusemi')) then
             gFunc.EquipSet(sets.Utsu);
         elseif (yonin == 1) then
-            if (string.contains(action.Name, 'Dokumori:')) or (string.contains(action.Name, 'Jubaku:')) or (string.contains(action.Name, 'Hojo:')) then
+            if (string.contains(action.Name, 'Dokumori')) or (string.contains(action.Name, 'Jubaku')) or (string.contains(action.Name, 'Hojo')) then
                 gFunc.EquipSet(sets.JutsuDebuffEnmity);
             else
-                gFunc.EquipSet(sets.JutsuElementEnmity);
+                gFunc.EquipSet(sets.Jutsu);
             end
+        -- elseif (string.contains(action.Name, 'Katon')) or (string.contains(action.Name, 'Suiton')) or (string.contains(action.Name, 'Doton')) or (string.contains(action.Name, 'Hyoton')) or (string.contains(action.Name, 'Huton')) or (string.contains(action.Name, 'Raiton')) then
+        --     gFunc.EquipSet(sets.Jutsu);
         else
             gFunc.EquipSet(sets.Jutsu);
         end
