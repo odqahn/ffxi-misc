@@ -9,7 +9,7 @@ local sets = {
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Optical Hat',
+        Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = 'Homam Cosciales',
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
@@ -23,7 +23,7 @@ local sets = {
         Ear2 = 'Ocl. Earring',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Optical Hat',
+        Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = 'Homam Cosciales',
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
@@ -37,7 +37,7 @@ local sets = {
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Optical Hat',
+        Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
@@ -53,7 +53,7 @@ local sets = {
         Ear2 = 'Suppanomimi',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Homam Zucchetto',
+        Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = 'Homam Cosciales',
         Neck = 'Love Torque',
         Ring1 = 'Toreador\'s ring',
@@ -123,21 +123,21 @@ local sets = {
         Waist = 'Fatality Belt',
     },
     ['TA'] = {
-        Back = 'Commander\'s Cape',
+        Back = 'Cerberus Mantle',
         Body = 'Dragon Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Suppanomimi',
         Feet = 'Dragon Leggings',
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Hands = 'Dragon Mittens',
         Head = 'Maat\'s Cap',
         Neck = 'Love Torque',
         Legs = 'Rogue\'s Culottes',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
-        Waist = 'Grenadier Belt',
+        Waist = 'Warwolf Belt',
     },
     ['MAB'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Amemet Mantle +1',
         Body = 'Dragon Harness',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Moldavite Earring',
@@ -164,20 +164,35 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Fatality Belt',
     },
-    ['WSAGI'] = {
-        Back = 'Cerberus Mantle',
-        Body = 'Homam Corazza',
+    ['Exenterator'] = {
         -- Body = 'Dragon Harness',
+        Back = 'Amemet Mantle +1',
+        Body = 'Homam Corazza',
         Ear1 = 'Suppanomimi',
-        Ear2 = 'Aesir Ear Pendant',
-        Feet = 'Homam Gambieras ',
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Ear2 = 'Pixie Earring',
+        Feet = 'Dragon Leggings',
+        Hands = 'Draggon Mittens',
         Head = 'Optical Hat',
-        Legs = 'Homam Cosciales',
+        Legs = 'War Brais',
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Breeze Ring',
+        Ring2 = 'Sniper\'s Ring',
         Waist = 'Potent Belt',
+    },
+    ['ExenteratorTA'] = {
+        -- Body = 'Dragon Harness',
+        Back = 'Cerberus Mantle',
+        Body = 'Homam Corazza',
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Pixie Earring',
+        Feet = 'Dragon Leggings',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = 'Optical Hat',
+        Legs = 'Assassin\'s Culottes',
+        Neck = 'Fotia Gorget',
+        Ring1 = 'Toreador\'s ring',
+        Ring2 = 'Sniper\'s Ring',
+        Waist = 'Warwolf Belt',
     },
     ['CHR'] = {
         Back = 'Corse Cape',
@@ -412,13 +427,18 @@ end
 
 profile.HandleWeaponskill = function()
     local action = gData.GetAction();
+    local ta = gData.GetBuffCount('Trick Attack');
 
     local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
     local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
     local AGI = T { 'Exenterator' };
 
     if (AGI:contains(action.Name)) then
-        gFunc.EquipSet(sets.WSAGI);
+        if (ta == 1) then
+            gFunc.EquipSet(sets.ExenteratorTA);
+        else
+            gFunc.EquipSet(sets.Exenterator);
+        end
     elseif (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
     elseif (MAB:contains(action.Name)) then
