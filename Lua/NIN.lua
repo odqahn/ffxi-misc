@@ -13,7 +13,7 @@ local sets = {
         Neck = 'Orochi Nodowa',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Succor Ring',
-        Waist = 'Koga Sarashi',
+        Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
         Ammo = 'Fuma Shuriken',
@@ -79,26 +79,7 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Koga Sarashi',
     },
-    ['BigTanking'] = {
-        -- Ammo = 'Nokizaru Shuriken',
-        Ammo = 'Fuma Shuriken',
-        Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Brutal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
-        },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Evasion Torque',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Koga Sarashi',
-    },
-    ['BigTankingNoShadow'] = {
+    ['TankingNoShadow'] = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
@@ -109,13 +90,13 @@ local sets = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+3', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+3' }
         },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Hands = 'Denali Wristbands',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+4' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
-        Waist = 'Koga Sarashi',
+        Waist = 'Lieutenant\'s Sash',
     },
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
@@ -341,7 +322,7 @@ local Settings = {
     Mog = false,
     Accuracy = false,
     TH = false,
-    BigTanking = false,
+    Tanking = false,
 };
 
 profile.Packer = {
@@ -387,41 +368,25 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
-    if (args[1] == 'btank') then
-        if (Settings.BigTanking == true) then
-            Settings.BigTanking = false;
-            gFunc.Message('Big taking Set Off');
-        else
-            Settings.BigTanking = true;
-            gFunc.Message('Big taking Set On');
-        end
-    end
 end
 
 profile.HandleDefault = function()
-    local yonin = gData.GetBuffCount('Yonin');
     local shadow = gData.GetBuffCount(66)
     local shadow2 = gData.GetBuffCount(444)
     local shadow3 = gData.GetBuffCount(445)
     local shadow4 = gData.GetBuffCount(446)
     local sleep = gData.GetBuffCount('Sleep');
-    local para = gData.GetBuffCount('Paralysis');
-    local game = gData.GetEnvironment();
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
         if (sleep == 1) then
             gFunc.EquipSet(sets.Sleep);
-        elseif (yonin == 1) then
+        elseif (Settings.Tanking == true) then
             -- Equipe big tanking time gear
-            if (BigTanking == true) then
-                if (shadow == 1) or (shadow2 == 1) or (shadow3 == 1) or (shadow4 == 1) then
-                    gFunc.EquipSet(sets.BigTanking);
-                else
-                    gFunc.EquipSet(sets.BigTankingNoShadow);
-                end
-            else
+            if (shadow == 1) or (shadow2 == 1) or (shadow3 == 1) or (shadow4 == 1) then
                 gFunc.EquipSet(sets.Tanking);
+            else
+                gFunc.EquipSet(sets.TankingNoShadow);
             end
         elseif (Settings.Accuracy == true) then
             gFunc.EquipSet(sets.Damage_Acc);
@@ -504,13 +469,19 @@ profile.HandleMidcast = function()
             else
                 gFunc.EquipSet(sets.Jutsu);
             end
-        -- elseif (string.contains(action.Name, 'Katon')) or (string.contains(action.Name, 'Suiton')) or (string.contains(action.Name, 'Doton')) or (string.contains(action.Name, 'Hyoton')) or (string.contains(action.Name, 'Huton')) or (string.contains(action.Name, 'Raiton')) then
-        --     gFunc.EquipSet(sets.Jutsu);
+            -- elseif (string.contains(action.Name, 'Katon')) or (string.contains(action.Name, 'Suiton')) or (string.contains(action.Name, 'Doton')) or (string.contains(action.Name, 'Hyoton')) or (string.contains(action.Name, 'Huton')) or (string.contains(action.Name, 'Raiton')) then
+            --     gFunc.EquipSet(sets.Jutsu);
         else
             gFunc.EquipSet(sets.Jutsu);
         end
     elseif (string.contains(action.Name, 'Sleep')) or (string.contains(action.Name, 'Stun')) or (string.contains(action.Name, 'Drain')) or (string.contains(action.Name, 'Aspir')) then
         gFunc.EquipSet(sets.EnmityMA);
+    elseif (action.Name == 'Yonin') then
+        Settings.Tanking = true;
+        gFunc.Message('Tanking Mode On');
+    elseif (action.Name == 'Innin') then
+        Settings.Tanking = false;
+        gFunc.Message('Tanking Mode Off');
     end
 end
 
