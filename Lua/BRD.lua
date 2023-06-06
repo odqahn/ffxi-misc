@@ -3,7 +3,7 @@ local sets = {
     ['Idle'] = {
         Main = 'Terra\'s Staff',
         Sub = 'Staff Strap',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Bard\'s Cape',
         Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
@@ -26,7 +26,7 @@ local sets = {
     ['IdleFighting'] = {
         Main = 'Blau Dolch',
         Sub = 'Mercurial Kris',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Bard\'s Cape',
         Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
@@ -47,7 +47,7 @@ local sets = {
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
-        Back = 'Veela cape',
+        Back = 'Bard\'s Cape',
         Body = 'Kupo Suit',
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
@@ -65,8 +65,10 @@ local sets = {
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Legs = { Name = 'Zenith Slacks',
-            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' } },
+        Legs = {
+            Name = 'Zenith Slacks',
+            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
+        },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
@@ -83,7 +85,7 @@ local sets = {
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
-        Back = 'Birdman Cape',
+        Back = 'Echo Cape',
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
@@ -101,22 +103,35 @@ local sets = {
         Waist = 'Gleeman\'s Belt',
     },
     ['Debuff'] = {
-        Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
+        Head = 'Maat\'s Cap',
+        Neck = 'Piper\'s Torque',
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = 'Sha\'ir Crackows',
+        Body = { Name = 'Shadow Coat', Augment = { [1] = 'Magic crit. hit rate +3', [2] = 'Mag. Acc.+3' } },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
-        Head = 'Bard\'s Roundlet',
+        Ring1 = 'Light Ring',
+        Ring2 = 'Balrahn\'s Ring',
+        Back = 'Birdman Cape',
+        Waist = 'Gleeman\'s Belt',
+        Legs = 'Bard\'s Cannions',
+        Feet = 'Sha\'ir Crackows',
+    },
+    ['DebuffEarth'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Piper\'s Torque',
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Wind Earring',
+        Body = { Name = 'Shadow Coat', Augment = { [1] = 'Magic crit. hit rate +3', [2] = 'Mag. Acc.+3' } },
+        Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
+        Ring1 = 'Light Ring',
+        Ring2 = 'Balrahn\'s Ring',
+        Back = 'Birdman Cape',
+        Waist = 'Gleeman\'s Belt',
+        Feet = 'Sha\'ir Crackows',
         Legs = {
             Name = 'Chl. Cannions +1',
             Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
         },
-        Neck = 'Piper\'s Torque',
-        Range = 'Gjallarhorn',
-        Ring1 = 'Trumpet Ring',
-        Ring2 = 'Balrahn\'s Ring',
-        Waist = 'Gleeman\'s Belt',
     },
     ['CastingMagic'] = {
         Back = 'Errant Cape',
@@ -137,7 +152,7 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['NIN'] = {
-        Back = 'Boxer\'s Mantle',
+        Back = 'Bard\'s Cape',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
@@ -151,7 +166,7 @@ local sets = {
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
         Ring1 = 'Coral Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Succor Ring',
         Waist = 'Tarutaru Sash',
     },
     ['Fighting'] = {
@@ -250,7 +265,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['Sleep'] = {
-        Back = 'Boxer\'s Mantle',
+        Back = 'Bard\'s Cape',
         Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
@@ -396,17 +411,23 @@ end
 profile.HandleMidcast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
-        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Elegy')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
+        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
             gFunc.EquipSet(sets.Debuff);
             if (Settings.Fight == false) then
                 gFunc.Equip('Main', 'Chatoyant Staff');
-                gFunc.Equip('Sub', 'Staff Strap');
+                gFunc.Equip('Sub', 'Bugard Strap');
+            end
+        elseif (string.contains(spell.Name, 'Elegy')) then
+            gFunc.EquipSet(sets.DebuffEarth);
+            if (Settings.Fight == false) then
+                gFunc.Equip('Main', 'Chatoyant Staff');
+                gFunc.Equip('Sub', 'Bugard Strap');
             end
         else
             gFunc.EquipSet(sets.Buff);
             if (Settings.Fight == false) then
                 gFunc.Equip('Main', 'Chatoyant Staff');
-                gFunc.Equip('Sub', 'Staff Strap');
+                gFunc.Equip('Sub', 'Magic Strap');
             end
         end
     elseif (spell.Skill == 'Ninjutsu') then
