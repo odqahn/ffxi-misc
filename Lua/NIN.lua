@@ -123,6 +123,21 @@ local sets = {
         Ring2 = 'Breeze Ring',
         Waist = 'Koga Sarashi',
     },
+    ['Mijin'] = {
+        Ammo = 'Reacton arm',
+        Back = 'Boxer\'s Mantle',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Ear1 = 'Ninjutsu Earring',
+        Ear2 = 'Moldavite Earring',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Head = 'Yasha Jinpachi',
+        Legs = 'Yasha Hakama',
+        Neck = 'Ninjutsu Torque',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Koga Sarashi',
+    },
     ['Jutsu'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
@@ -425,7 +440,7 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') then
         gFunc.EquipSet(sets.EnmityJA);
     elseif (action.Name == 'Mijin Gakure') then
-        gFunc.Equip('Ammo', 'Reacton arm');
+        gFunc.EquipSet(sets.Mijin);
     elseif (string.contains(action.Name, 'Waltz')) then
         gFunc.EquipSet(sets.CHR);
     elseif (action.Name == 'Spectral Jig') and (sneak ~= 0) then
