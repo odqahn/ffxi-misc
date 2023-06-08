@@ -4,7 +4,7 @@ local sets = {
         Main = 'Terra\'s Staff',
         Sub = 'Staff Strap',
         Back = 'Bard\'s Cape',
-        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = {
@@ -27,7 +27,7 @@ local sets = {
         Main = 'Blau Dolch',
         Sub = 'Mercurial Kris',
         Back = 'Bard\'s Cape',
-        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = {
@@ -77,7 +77,7 @@ local sets = {
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
-        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
@@ -268,7 +268,7 @@ local sets = {
     },
     ['Sleep'] = {
         Back = 'Bard\'s Cape',
-        Body = { Name = 'Dalmatica', Augment = 'Ice resistance+4' },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
         Feet = {
