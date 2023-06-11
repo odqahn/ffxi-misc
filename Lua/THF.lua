@@ -132,7 +132,7 @@ local sets = {
         Head = 'Maat\'s Cap',
         Neck = 'Love Torque',
         Legs = 'Rogue\'s Culottes',
-        Ring1 = 'Breeze Ring',
+        Ring1 = 'Sattva Ring',
         Ring2 = 'Breeze Ring',
         Waist = 'Warwolf Belt',
     },
@@ -191,7 +191,7 @@ local sets = {
         Legs = 'Assassin\'s Culottes',
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Sniper\'s Ring',
+        Ring2 = 'Sattva Ring',
         Waist = 'Warwolf Belt',
     },
     ['CHR'] = {
