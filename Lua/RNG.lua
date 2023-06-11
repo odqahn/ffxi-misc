@@ -3,7 +3,7 @@ local sets = {
     ['TP'] = {
         Ammo = 'Kabura Arrow',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Vision Earring',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Scout\'s Socks',
@@ -20,7 +20,7 @@ local sets = {
     ['WS'] = {
         Ammo = 'Kabura Arrow',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Suppanomimi',
         Ear2 = 'Aesir Ear Pendant',
         Feet = 'Scout\'s Socks',

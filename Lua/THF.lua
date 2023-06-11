@@ -1,8 +1,6 @@
 local profile = {};
 local sets = {
     ['Idle'] = {
-        Ammo = 'Acid Bolt',
-        Range = 'Staurobow',
         Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
@@ -44,9 +42,9 @@ local sets = {
         Waist = 'Lieutenant\'s Sash',
     },
     ['TP'] = {
-        Main = 'Vajra',
+        -- Main = 'Vajra',
         -- Main = 'Blau Dolch',
-        Sub = 'Mercurial Kris',
+        -- Sub = 'Mercurial Kris',
         Back = 'Amemet Mantle +1',
         Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
@@ -61,8 +59,8 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['TH'] = {
-        Main = 'Thief\'s Knife',
-        Sub = 'Mercurial Kris',
+        -- Main = 'Thief\'s Knife',
+        -- Sub = 'Mercurial Kris',
         Back = 'Amemet Mantle +1',
         Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
@@ -77,8 +75,9 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['TPACC'] = {
-        Main = 'Blau Dolch',
-        Sub = 'Mercurial Kris',
+        -- Main = 'Blau Dolch',
+        -- Sub = 'Mercurial Kris',
+        Range = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
@@ -93,8 +92,9 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['THACC'] = {
-        Main = 'Thief\'s Knife',
-        Sub = 'Mercurial Kris',
+        -- Main = 'Thief\'s Knife',
+        -- Sub = 'Mercurial Kris',
+        Range = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
@@ -280,6 +280,10 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
+    gFunc.Equip('Main', 'Thief\'s Knife');
+    gFunc.Equip('Sub', 'Mercurial Kris');
+    gFunc.Equip('Ammo', 'Acid Bolt');
+    gFunc.Equip('Range', 'Staurobow');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 7 echo') end):once(2)
 end
 
