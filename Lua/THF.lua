@@ -2,7 +2,7 @@ local profile = {};
 local sets = {
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Trotter Boots',
@@ -16,7 +16,7 @@ local sets = {
     },
     ['Resting'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Dusk Jerkin',
+        Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = 'Homam Gambieras',
@@ -248,6 +248,20 @@ local sets = {
         Legs = 'Assassin\'s Culottes',
         Neck = 'Rabbit Charm',
     },
+    ['Hide'] = {
+        Back = 'Boxer\'s Mantle',
+        Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = 'Trotter Boots',
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Legs = 'Homam Cosciales',
+        Neck = 'Orochi Nodowa',
+        Ring1 = 'Succor Ring',
+        Ring2 = 'Coral Ring',
+        Waist = 'Lieutenant\'s Sash',
+    },
     ['RA'] = {
         Back = 'Lynx Mantle',
         Body = 'Pln. Khazagand',
@@ -382,7 +396,7 @@ profile.HandleAbility = function()
     if (action.Name == 'Flee') then
         gFunc.Equip('Feet', 'Rogue\'s Poulaines');
     elseif (action.Name == 'Hide') then
-        gFunc.Equip('Body', 'Rogue\'s Vest');
+        gFunc.EquipSet(sets.Hide);
     elseif (action.Name == 'Mug') then
         gFunc.Equip('Head', 'Assassin\'s Bonnet');
     elseif (action.Name == 'Steal') then

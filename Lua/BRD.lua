@@ -60,19 +60,13 @@ local sets = {
             Name = 'Zenith Slacks',
             Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
         },
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
         Ear2 = 'Loquac. Earring',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = 'Pet: Mag. Evasion+4', [2] = '"Fast Cast"+3', [3] = 'Haste+3' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
