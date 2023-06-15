@@ -93,7 +93,7 @@ local sets = {
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
+        Body = 'Yasha Samue',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
@@ -127,12 +127,12 @@ local sets = {
         Ear1 = 'Ninjutsu Earring',
         Ear2 = 'Moldavite Earring',
         Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Hands = 'Yasha Tekko',
         Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
         Ring1 = 'Snow Ring',
-        Ring2 = 'Tamas Ring',
+        Ring2 = 'Balrahn\'s Ring',
         Waist = 'Koga Sarashi',
     },
     ['JutsuDebuffEnmity'] = {
@@ -142,12 +142,12 @@ local sets = {
         Body = 'Yasha Samue',
         Ear1 = 'Eris\' Earring',
         Ear2 = 'Ninjutsu Earring',
-        Feet = 'Yasha Sune-Ate',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = 'Yasha Tekko',
         Head = 'Yasha Jinpachi',
         Legs = 'Yasha Hakama',
         Neck = 'Ninjutsu Torque',
-        Ring1 = 'Sattva Ring',
+        Ring1 = 'Snow Ring',
         Ring2 = 'Balrahn\'s Ring',
         Waist = 'Koga Sarashi',
     },
@@ -372,11 +372,15 @@ profile.HandleDefault = function()
     local shadow3 = gData.GetBuffCount(445)
     local shadow4 = gData.GetBuffCount(446)
     local sleep = gData.GetBuffCount('Sleep');
+    local para = gData.GetBuffCount('Paralysis');
+    local silenced = gData.GetBuffCount('Silenced');
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
         if (sleep == 1) then
             gFunc.EquipSet(sets.Sleep);
+        elseif (silenced == true) then
+            AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
         elseif (Settings.Tanking == true) then
             -- Equipe big tanking time gear
             if (shadow == 1) or (shadow2 == 1) or (shadow3 == 1) or (shadow4 == 1) then
@@ -403,10 +407,10 @@ profile.HandleDefault = function()
         end
     end
 
-    -- NO NEED, 25% haste cap reached - Flagellant's in case of para
-    -- if (para == 1) then
-    --     gFunc.Equip('Waist', 'Flagellant\'s Rope');
-    -- end
+    -- Flagellant's in case of para
+    if (para == 1) then
+        gFunc.Equip('Waist', 'Flagellant\'s Rope');
+    end
 end
 
 profile.HandleAbility = function()
