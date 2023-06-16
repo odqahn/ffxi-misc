@@ -373,14 +373,14 @@ profile.HandleDefault = function()
     local shadow4 = gData.GetBuffCount(446)
     local sleep = gData.GetBuffCount('Sleep');
     local para = gData.GetBuffCount('Paralysis');
-    local silenced = gData.GetBuffCount('Silenced');
+    -- local silenced = gData.GetBuffCount('Silenced');
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
         if (sleep == 1) then
             gFunc.EquipSet(sets.Sleep);
-        elseif (silenced == true) then
-            AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
+        -- elseif (silenced == true) then
+        --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
         elseif (Settings.Tanking == true) then
             -- Equipe big tanking time gear
             if (shadow == 1) or (shadow2 == 1) or (shadow3 == 1) or (shadow4 == 1) then

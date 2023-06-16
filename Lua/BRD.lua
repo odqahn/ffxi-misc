@@ -358,7 +358,7 @@ end
 profile.HandleDefault = function()
     local sleep = gData.GetBuffCount('Sleep');
     local para = gData.GetBuffCount('Paralysis');
-    local silenced = gData.GetBuffCount('Silenced');
+    -- local silenced = gData.GetBuffCount('Silenced');
 
     local player = gData.GetPlayer();
 
@@ -367,8 +367,8 @@ profile.HandleDefault = function()
         if (player.HPP <= 25 ) then
             gFunc.Equip('Ear2', 'Minstrel\'s Earring');
         end
-    elseif (silenced == true) then
-        AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
+    -- elseif (silenced == true) then
+    --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
     elseif (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Fighting);
         -- Equip TH set during battle
