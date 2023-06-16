@@ -85,6 +85,17 @@ local sets = {
         Sub = 'Staff Strap',
         Waist = 'Jungle Rope',
     },
+    ['Cure'] = {
+        Ammo = 'Hedgehog Bomb',
+        Back = 'Dew Silk Cape +1',
+        Body = 'Errant Hpl.',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Head = 'Maat\'s Cap',
+        Neck = 'Fylgja Torque +1',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Swift Belt',
+    },
     ['Mog'] = {
         Ammo = 'Hedgehog Bomb',
         Back = 'Errant Cape',
@@ -227,7 +238,6 @@ profile.HandleDefault = function()
         if (pet.Name == 'Carbuncle') then
             gFunc.Equip('Hands', 'Carbuncle Mitts');
         end
-
     elseif (player.Status == 'Resting') then
         gFunc.EquipSet(sets.Resting);
     elseif (Settings.Mog == true) then
@@ -239,8 +249,8 @@ end
 
 profile.HandleAbility = function()
     local ability = gData.GetAction();
-    if (ability.Name == 'Release') or (ability.Name == 'Avatar\'s Favor')  or (ability.Name == 'Assault') or (ability.Name == 'Retreat') or (ability.Name == 'Apogee') then return end
-    
+    if (ability.Name == 'Release') or (ability.Name == 'Avatar\'s Favor') or (ability.Name == 'Assault') or (ability.Name == 'Retreat') or (ability.Name == 'Apogee') then return end
+
     gFunc.EquipSet(sets.BP);
 
     -- if (ability.Name == 'Elemental Siphon') then
@@ -257,7 +267,12 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gFunc.EquipSet(sets.Casting);
+    local spell = gData.GetAction();
+    if (string.contains(spell.Name, 'Cure')) then
+        gFunc.EquipSet(sets.Cure);
+    else
+        gFunc.EquipSet(sets.Casting);
+    end
 end
 
 profile.HandlePreshot = function()

@@ -24,6 +24,10 @@ local sets = {
         Main = 'Chatoyant Staff',
         Sub = 'Bugard Strap',
     },
+    ['ChatoyantEarth'] = {
+        Main = 'Chatoyant Staff',
+        Sub = 'Earth Grip',
+    },
     ['ChatoyantSpellInterrupt'] = {
         Main = 'Chatoyant Staff',
         Sub = 'Magic Strap',
@@ -78,6 +82,7 @@ local sets = {
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
         },
         Ear2 = 'Loquac. Earring',
+        Ring1 = 'Minstrel\'s Ring',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
@@ -146,7 +151,7 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['Cure'] = {
-        Back = 'Errant Cape',
+        Back = 'Dew Silk Cape +1',
         Body = 'Errant Hpl.',
         Ear1 = 'Star Earring',
         Ear2 = 'Star Earring',
@@ -156,8 +161,8 @@ local sets = {
         },
         Hands = 'Bricta\'s Cuffs',
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Evasion Torque',
+        Legs = 'Bard\'s Cannions',
+        Neck = 'Fylgja Torque +1',
         Range = 'Angel Lyre',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Thunder Ring',
@@ -359,6 +364,9 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
+        if (player.HPP <= 25 ) then
+            gFunc.Equip('Ear2', 'Minstrel\'s Earring');
+        end
     elseif (silenced == true) then
         AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
     elseif (player.Status == 'Engaged') then
@@ -366,6 +374,9 @@ profile.HandleDefault = function()
         -- Equip TH set during battle
         if (Settings.TH == true) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
+        end
+        if (player.HPP <= 25 ) then
+            gFunc.Equip('Ear2', 'Minstrel\'s Earring');
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
@@ -377,6 +388,9 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.DualWeapons);
         else
             gFunc.EquipSet(sets.SingleWeapon);
+        end
+        if (player.HPP <= 25 ) then
+            gFunc.Equip('Ear2', 'Minstrel\'s Earring');
         end
     end
 
@@ -426,15 +440,20 @@ end
 profile.HandleMidcast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
-        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Elegy')) or (string.contains(spell.Name, 'Requiem')) then
+        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
             gFunc.EquipSet(sets.Debuff);
             if (Settings.Fight == false) then
                 gFunc.EquipSet(sets.ChatoyantChr);
             end
+        elseif (string.contains(spell.Name, 'Elegy')) then
+                gFunc.EquipSet(sets.Debuff);
+                if (Settings.Fight == false) then
+                    gFunc.EquipSet(sets.ChatoyantEarth);
+                end
         else
             gFunc.EquipSet(sets.Buff);
             if (Settings.Fight == false) then
-                gFunc.EquipSet(sets.ChatoyantSpellInterrupt);
+                gFunc.EquipSet(sets.ChatoyantChr);
             end
         end
     elseif (spell.Skill == 'Ninjutsu') then
