@@ -471,7 +471,7 @@ profile.HandleMidcast = function()
         if (string.contains(action.Name, 'Utsusemi')) then
             gFunc.EquipSet(sets.Utsu);
         elseif (yonin == 1) then
-            if (string.contains(action.Name, 'Dokumori')) or (string.contains(action.Name, 'Jubaku')) or (string.contains(action.Name, 'Hojo')) then
+            if (action.Name == '"Dokumori: Ichi"') or (action.Name == 'Jubaku: Ichi') or (action.Name == 'Hojo: Ni') or (action.Name == 'Kurayami: Ni') then
                 gFunc.EquipSet(sets.JutsuDebuffEnmity);
             else
                 gFunc.EquipSet(sets.Jutsu);
@@ -481,7 +481,7 @@ profile.HandleMidcast = function()
         else
             gFunc.EquipSet(sets.Jutsu);
         end
-    elseif (string.contains(action.Name, 'Sleep')) or (string.contains(action.Name, 'Stun')) or (string.contains(action.Name, 'Drain')) or (string.contains(action.Name, 'Aspir')) then
+    elseif (action.Name == 'Sleep') or (action.Name == 'Stun') or (action.Name == 'Drain') or (action.Name == 'Aspir') then
         gFunc.EquipSet(sets.EnmityMA);
     end
 end
