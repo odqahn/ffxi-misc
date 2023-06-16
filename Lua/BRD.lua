@@ -362,36 +362,36 @@ profile.HandleDefault = function()
 
     local player = gData.GetPlayer();
 
+    -- Set management
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
-        if (player.HPP <= 25 ) then
-            gFunc.Equip('Ear2', 'Minstrel\'s Earring');
-        end
-    -- elseif (silenced == true) then
-    --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
+        -- elseif (silenced == true) then
+        --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
     elseif (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Fighting);
+        -- Equip
         -- Equip TH set during battle
         if (Settings.TH == true) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
-        end
-        if (player.HPP <= 25 ) then
-            gFunc.Equip('Ear2', 'Minstrel\'s Earring');
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
     else
         gFunc.EquipSet(sets.Idle);
-        if (Settings.Fight == false) then
-            gFunc.EquipSet(sets.Terra);
-        elseif (player.SubJob == 'NIN') or (player.SubJob == 'DNC') then
-            gFunc.EquipSet(sets.DualWeapons);
-        else
-            gFunc.EquipSet(sets.SingleWeapon);
-        end
-        if (player.HPP <= 25 ) then
-            gFunc.Equip('Ear2', 'Minstrel\'s Earring');
-        end
+    end
+
+    -- Weapons management
+    if (Settings.Fight == false) then
+        gFunc.EquipSet(sets.Terra);
+    elseif (player.SubJob == 'NIN') or (player.SubJob == 'DNC') then
+        gFunc.EquipSet(sets.DualWeapons);
+    else
+        gFunc.EquipSet(sets.SingleWeapon);
+    end
+
+    -- In cast hp drop, equip PDR earring
+    if (player.HPP <= 25) then
+        gFunc.Equip('Ear2', 'Minstrel\'s Earring');
     end
 
     -- Flagellant's in case of para
@@ -420,7 +420,11 @@ profile.HandlePrecast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.PrecastSong);
-    elseif (spell.Name == 'Utsusemi: Ichi') then
+    else
+        gFunc.EquipSet(sets.PrecastMagic);
+    end
+
+    if (spell.Name == 'Utsusemi: Ichi') then
         gFunc.EquipSet(sets.PrecastMagic);
         local delay = 2.4
         if (gData.GetBuffCount(66) == 1) then
@@ -432,8 +436,6 @@ profile.HandlePrecast = function()
         elseif (gData.GetBuffCount(446) == 1) then
             (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
         end
-    else
-        gFunc.EquipSet(sets.PrecastMagic);
     end
 end
 
@@ -446,10 +448,10 @@ profile.HandleMidcast = function()
                 gFunc.EquipSet(sets.ChatoyantChr);
             end
         elseif (string.contains(spell.Name, 'Elegy')) then
-                gFunc.EquipSet(sets.Debuff);
-                if (Settings.Fight == false) then
-                    gFunc.EquipSet(sets.ChatoyantEarth);
-                end
+            gFunc.EquipSet(sets.Debuff);
+            if (Settings.Fight == false) then
+                gFunc.EquipSet(sets.ChatoyantEarth);
+            end
         else
             gFunc.EquipSet(sets.Buff);
             if (Settings.Fight == false) then
