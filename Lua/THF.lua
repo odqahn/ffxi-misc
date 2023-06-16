@@ -438,7 +438,6 @@ profile.HandleMidcast = function()
 end
 
 profile.HandlePreshot = function()
-    gFunc.EquipSet(sets.RA);
 end
 
 profile.HandleMidshot = function()
