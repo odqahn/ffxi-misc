@@ -173,7 +173,7 @@ local sets = {
         Back = 'Cerberus Mantle',
         Body = 'Yasha Samue',
         Ear1 = 'Eris\' Earring',
-        Ear2 = 'Loquac. Earring',
+        Ear2 = 'Eris\' Earring',
         Feet = 'Yasha Sune-Ate',
         Hands = 'Yasha Tekko',
         Head = 'Yasha Jinpachi',
@@ -422,8 +422,15 @@ profile.HandleAbility = function()
         if (action.Name == 'Bersek') or (action.Name == 'Defender') or (action.Name == 'Warcry') then
             gFunc.EquipSet(sets.EnmityJA);
         end
-    elseif (action.Name == 'Provoke') or (action.Name == 'Yonin') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') then
+    elseif (action.Name == 'Provoke') or (action.Name == 'Last Resort') or (action.Name == 'Souleater') then
         gFunc.EquipSet(sets.EnmityJA);
+    elseif (action.Name == 'Yonin') then
+        gFunc.EquipSet(sets.EnmityJA);
+        Settings.Tanking = true;
+        gFunc.Message('Tanking Mode On');
+    elseif (action.Name == 'Innin') then
+        Settings.Tanking = false;
+        gFunc.Message('Tanking Mode Off');
     elseif (action.Name == 'Mijin Gakure') then
         gFunc.EquipSet(sets.Mijin);
     elseif (string.contains(action.Name, 'Waltz')) then
@@ -476,17 +483,10 @@ profile.HandleMidcast = function()
         end
     elseif (string.contains(action.Name, 'Sleep')) or (string.contains(action.Name, 'Stun')) or (string.contains(action.Name, 'Drain')) or (string.contains(action.Name, 'Aspir')) then
         gFunc.EquipSet(sets.EnmityMA);
-    elseif (action.Name == 'Yonin') then
-        Settings.Tanking = true;
-        gFunc.Message('Tanking Mode On');
-    elseif (action.Name == 'Innin') then
-        Settings.Tanking = false;
-        gFunc.Message('Tanking Mode Off');
     end
 end
 
 profile.HandlePreshot = function()
-    gFunc.EquipSet(sets.RA);
 end
 
 profile.HandleMidshot = function()
