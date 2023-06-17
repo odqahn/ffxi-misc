@@ -85,6 +85,24 @@ local sets = {
         Legs = 'Pantin Churidars',
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
+    ['Cure'] = {
+        Main = 'Chatoyant Staff',
+        Sub = 'Staff Strap',
+        Range = 'Turbo Animator',
+        Ammo = 'Automat. Oil +2',
+        Head = 'Maat\'s Cap',
+        Neck = 'Fylgja Torque +1',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Body = 'Pantin Tobe',
+        Hands = 'Pantin Dastanas',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Vivian Ring',
+        Back = 'Dew Silk Cape +1',
+        Waist = 'Swift Belt',
+        Legs = 'Pantin Churidars',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
+    },
     ['Sleep'] = {
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
@@ -343,6 +361,12 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
+    local spell = gData.GetAction();
+    if (string.contains(spell.Name, 'Cure')) then
+        gFunc.EquipSet(sets.Cure);
+    elseif (spell.Name == 'Stoneskin') then
+        gFunc.Equip('Neck', 'Stone Gorget');
+    end
 end
 
 profile.HandlePreshot = function()

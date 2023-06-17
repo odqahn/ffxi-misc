@@ -270,6 +270,8 @@ profile.HandleMidcast = function()
     local spell = gData.GetAction();
     if (string.contains(spell.Name, 'Cure')) then
         gFunc.EquipSet(sets.Cure);
+    elseif (spell.Name == 'Stoneskin') then
+        gFunc.Equip('Neck', 'Stone Gorget');
     else
         gFunc.EquipSet(sets.Casting);
     end

@@ -150,6 +150,24 @@ local sets = {
         Ring2 = 'Succor Ring',
         Waist = 'Swift Belt',
     },
+    ['Stoneskin'] = {
+        Back = 'Errant Cape',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
+        Feet = {
+            Name = 'Suzaku\'s Sune-Ate',
+            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
+        },
+        Hands = 'Bricta\'s Cuffs',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Neck = 'Stone Gorget',
+        Range = 'Angel Lyre',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Succor Ring',
+        Waist = 'Swift Belt',
+    },
     ['Cure'] = {
         Range = 'Angel Lyre',
         Head = 'Maat\'s Cap',
@@ -468,6 +486,11 @@ profile.HandleMidcast = function()
         end
     elseif (string.contains(spell.Name, 'Cure')) then
         gFunc.EquipSet(sets.Cure);
+        if (Settings.Fight == false) then
+            gFunc.EquipSet(sets.ChatoyantEnmity);
+        end
+    elseif (spell.Name == 'Stoneskin') then
+        gFunc.EquipSet(sets.Stoneskin);
         if (Settings.Fight == false) then
             gFunc.EquipSet(sets.ChatoyantEnmity);
         end
