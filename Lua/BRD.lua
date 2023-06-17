@@ -210,28 +210,10 @@ local sets = {
         Ring2 = 'Succor Ring',
         Waist = 'Ninurta\'s Sash',
     },
-    ['FightingSingle'] = {
+    ['Fighting'] = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
-        Hands = 'Dusk Gloves',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Love Torque',
-        Range = 'Angel Lyre',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Ninurta\'s Sash',
-    },
-    ['FightingDual'] = {
-        Back = 'Bard\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Suppanomimi',
         Ear2 = 'Ethereal Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
@@ -280,7 +262,7 @@ local sets = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Suppanomimi',
+        Ear2 = 'Ethereal Earring',
         Feet = 'Choral Slippers',
         Hands = 'Seiru\'s Kote',
         Head = 'Optical Hat',
@@ -410,11 +392,7 @@ profile.HandleDefault = function()
         -- elseif (silenced == true) then
         --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
     elseif (player.Status == 'Engaged') then
-        if (player.SubJob == 'NIN') or (player.SubJob == 'DNC') then
-            gFunc.EquipSet(sets.FightingDual);
-        else
-            gFunc.EquipSet(sets.FightingSingle);
-        end
+        gFunc.EquipSet(sets.Fighting);
         -- Equip
         -- Equip TH set during battle
         if (Settings.TH == true) then
