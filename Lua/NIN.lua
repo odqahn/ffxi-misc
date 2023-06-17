@@ -3,16 +3,16 @@ local sets = {
     ['Idle'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Brutal Earring',
+        Body = 'Arhat\'s Gi +1',
+        Ear1 = 'Ocl. Earring',
+        Ear2 = 'Ocl. Earring',
         Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Hands = 'Denali Wristbands',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Orochi Nodowa',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Succor Ring',
+        Ring1 = 'Succor Ring',
+        Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
@@ -74,7 +74,7 @@ local sets = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = 'Arhat\'s Gi +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
@@ -83,7 +83,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['Precast'] = {
@@ -97,7 +97,7 @@ local sets = {
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Hands = 'Denali Wristbands',
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
@@ -296,11 +296,11 @@ local sets = {
     ['Sleep'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = 'Arhat\'s Gi +1',
         Ear1 = 'Ocl. Earring',
         Ear2 = 'Ocl. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Hands = 'Denali Wristbands',
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Opo-opo Necklace',
@@ -381,6 +381,8 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.Sleep);
         -- elseif (silenced == true) then
         --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
+        elseif (player.HPP <= 50) then
+            gFunc.EquipSet(sets.TankingNoShadow);
         elseif (Settings.Tanking == true) then
             -- Equipe big tanking time gear
             if (shadow == 1) or (shadow2 == 1) or (shadow3 == 1) or (shadow4 == 1) then
