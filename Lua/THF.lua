@@ -3,7 +3,7 @@ local sets = {
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
@@ -17,7 +17,7 @@ local sets = {
     ['Resting'] = {
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
@@ -31,7 +31,7 @@ local sets = {
     ['Mog'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Kupo Suit',
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
@@ -211,7 +211,7 @@ local sets = {
     ['Casting'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Rapparee Harness',
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
@@ -225,7 +225,7 @@ local sets = {
     ['Sleep'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Head = 'Optical Hat',
         Neck = 'Opo-opo Necklace',
@@ -236,7 +236,7 @@ local sets = {
     ['DT'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Homam Corazza',
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Head = 'Black Ribbon',
         Ring1 = 'Succor Ring',
@@ -253,7 +253,7 @@ local sets = {
     ['Hide'] = {
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
-        Ear1 = 'Ocl. Earring',
+        Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = 'Trotter Boots',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
