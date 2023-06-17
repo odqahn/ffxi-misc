@@ -151,22 +151,25 @@ local sets = {
         Waist = 'Swift Belt',
     },
     ['Stoneskin'] = {
-        Back = 'Errant Cape',
+        Range = 'Angel Lyre',
+        Head = 'Maat\'s Cap',
+        Neck = 'Stone Gorget',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Hands = 'Bricta\'s Cuffs',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Vivian Ring',
+        Back = 'Dew Silk Cape +1',
+        Waist = 'Swift Belt',
+        Legs = {
+            Name = 'Zenith Slacks',
+            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
+        },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
         },
-        Hands = 'Bricta\'s Cuffs',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Stone Gorget',
-        Range = 'Angel Lyre',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Succor Ring',
-        Waist = 'Swift Belt',
     },
     ['Cure'] = {
         Range = 'Angel Lyre',

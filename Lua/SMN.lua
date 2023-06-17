@@ -86,6 +86,8 @@ local sets = {
         Waist = 'Jungle Rope',
     },
     ['Cure'] = {
+        Main = 'Chatoyant Staff',
+        Sub = 'Staff Strap',
         Ammo = 'Hedgehog Bomb',
         Back = 'Dew Silk Cape +1',
         Body = 'Errant Hpl.',
@@ -93,6 +95,19 @@ local sets = {
         Ear2 = 'Star Earring',
         Head = 'Maat\'s Cap',
         Neck = 'Fylgja Torque +1',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Swift Belt',
+    },
+    ['Stoneskin'] = {
+        Main = 'Chatoyant Staff',
+        Sub = 'Staff Strap',
+        Ammo = 'Hedgehog Bomb',
+        Back = 'Dew Silk Cape +1',
+        Body = 'Errant Hpl.',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Head = 'Maat\'s Cap',
+        Neck = 'Stone Gorget',
         Ring2 = 'Tamas Ring',
         Waist = 'Swift Belt',
     },
@@ -271,7 +286,7 @@ profile.HandleMidcast = function()
     if (string.contains(spell.Name, 'Cure')) then
         gFunc.EquipSet(sets.Cure);
     elseif (spell.Name == 'Stoneskin') then
-        gFunc.Equip('Neck', 'Stone Gorget');
+        gFunc.EquipSet(sets.Stoneskin);
     else
         gFunc.EquipSet(sets.Casting);
     end
