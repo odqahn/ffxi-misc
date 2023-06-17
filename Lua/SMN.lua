@@ -96,7 +96,7 @@ local sets = {
         Head = 'Maat\'s Cap',
         Neck = 'Fylgja Torque +1',
         Ring2 = 'Tamas Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Ninurta\'s Sash',
     },
     ['Stoneskin'] = {
         Main = 'Chatoyant Staff',
@@ -109,7 +109,7 @@ local sets = {
         Head = 'Maat\'s Cap',
         Neck = 'Stone Gorget',
         Ring2 = 'Tamas Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Ninurta\'s Sash',
     },
     ['Mog'] = {
         Ammo = 'Hedgehog Bomb',

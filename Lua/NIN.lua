@@ -88,7 +88,7 @@ local sets = {
         Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
-        Waist = 'Warwolf Belt',
+        Waist = 'Koga Sarashi',
     },
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
