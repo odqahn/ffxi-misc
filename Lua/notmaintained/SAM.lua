@@ -1,3 +1,4 @@
+-- TODO refaire les sets - profile non maintenu
 local profile = {};
 local sets = {
     ['TP'] = {
@@ -85,7 +86,7 @@ local sets = {
         Neck = 'Evasion Torque',
         Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
-        Waist = 'Swift Belt',
+        Waist = 'Ninurta\'s Sash',
     },
     ['Mog'] = {
         Body = 'Kupo Suit',
