@@ -36,7 +36,7 @@ local sets = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Ethereal Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -57,7 +57,7 @@ local sets = {
         Back = 'Bard\'s Cape',
         Body = 'Kupo Suit',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Ethereal Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -136,7 +136,7 @@ local sets = {
         Back = 'Errant Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Ethereal Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -196,7 +196,7 @@ local sets = {
         Back = 'Bard\'s Cape',
         Body = 'Scp. Harness +1',
         Ear1 = 'Ocl. Earring',
-        Ear2 = 'Ocl. Earring',
+        Ear2 = 'Ethereal Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -213,8 +213,8 @@ local sets = {
     ['Fighting'] = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Suppanomimi',
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Ethereal Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -232,7 +232,7 @@ local sets = {
         Back = 'Cerberus Mantle',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Aesir Ear Pendant',
+        Ear2 = 'Ethereal Earring',
         Feet = 'Dusk Ledelsens',
         Hands = 'Alkyoneus\'s Brc.',
         Head = 'Maat\'s Cap',
