@@ -33,7 +33,7 @@ local sets = {
         Sub = 'Magic Strap',
     },
     ['Idle'] = {
-        Back = 'Bard\'s Cape',
+        Back = 'Boxer\'s Mantle',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
@@ -54,7 +54,7 @@ local sets = {
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
-        Back = 'Bard\'s Cape',
+        Back = 'Boxer\'s Mantle',
         Body = 'Kupo Suit',
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
@@ -98,11 +98,9 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        }, Hands = {
-        Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
+        Feet = 'Shadow Clogs',
+        Hands = {
+            Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
         Legs = {
             Name = 'Chl. Cannions +1',
@@ -119,7 +117,7 @@ local sets = {
         Body = { Name = 'Shadow Coat', Augment = { [1] = 'Magic crit. hit rate +3', [2] = 'Mag. Acc.+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = 'Sha\'ir Crackows',
+        Feet = 'Shadow Clogs',
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Maat\'s Cap',
         Neck = 'Piper\'s Torque',
@@ -193,7 +191,7 @@ local sets = {
         },
     },
     ['Utsusemi'] = {
-        Back = 'Bard\'s Cape',
+        Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
@@ -279,7 +277,7 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = 'Sha\'ir Crackows',
+        Feet = 'Shadow Clogs',
         Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
         Legs = 'Bard\'s Cannions',
