@@ -27,7 +27,7 @@ local sets = {
     ['Damage_Haste'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate',
@@ -41,15 +41,15 @@ local sets = {
         Waist = 'Ninurta\'s Sash',
     },
     ['Damage_Acc'] = {
-        Ammo = 'Fuma Shuriken',
+        Ammo = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = 'Optical Hat',
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Peacock Amulet',
         Ring1 = 'Toreador\'s ring',
@@ -60,7 +60,7 @@ local sets = {
         -- Ammo = 'Nokizaru Shuriken',
         Ammo = 'Fuma Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Nin. Chainmail +1', Augment = { [1] = 'Accuracy+8', [2] = '"Dual Wield"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate',
@@ -98,7 +98,7 @@ local sets = {
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
-        Body = 'Yasha Samue',
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate',
@@ -220,7 +220,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['WSDEX'] = {
-        Ammo = 'Bomb Core',
+        Ammo = 'Fire Bomblet',
         Back = 'Cerberus Mantle',
         -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Body = 'Haubergeon +1',
@@ -237,7 +237,7 @@ local sets = {
         Waist = 'Fatality Belt',
     },
     ['WSAGI'] = {
-        Ammo = 'Bomb Core',
+        Ammo = 'Fire Bomblet',
         Back = 'Commander\'s Cape',
         -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
@@ -370,6 +370,15 @@ profile.HandleCommand = function(args)
         else
             Settings.TH = true;
             gFunc.Message('TH Set On');
+        end
+    end
+    if (args[1] == 'tank') then
+        if (Settings.Tanking == true) then
+            Settings.Tanking = false;
+            gFunc.Message('Tanking Set Off');
+        else
+            Settings.Tanking = true;
+            gFunc.Message('Tanking Set On');
         end
     end
 end
