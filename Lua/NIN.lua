@@ -512,9 +512,9 @@ profile.HandleMidcast = function()
         end
     elseif (action.Name == 'Sleep') or (action.Name == 'Stun') or (action.Name == 'Drain') or (action.Name == 'Aspir') then
         gFunc.EquipSet(sets.EnmityMA);
-    elseif (string.contains(spell.Name, 'Cure')) then
+    elseif (string.contains(action.Name, 'Cure')) then
         gFunc.EquipSet(sets.Cure);
-    elseif (spell.Name == 'Stoneskin') then
+    elseif (action.Name == 'Stoneskin') then
         gFunc.EquipSet(sets.Stoneskin);
     end
 end
