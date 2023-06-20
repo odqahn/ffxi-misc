@@ -8,6 +8,10 @@ local sets = {
         Main = 'Blau Dolch',
         Sub = 'Mercurial Kris',
     },
+    ['Silktone'] = {
+        Main = 'Silktone',
+        Sub = { Name = 'Genbu\'s Shield', Augment = { [1] = 'HP+3', [2] = '"Cure" potency +2%' } },
+    },
     ['Terra'] = {
         Main = 'Terra\'s Staff',
         Sub = 'Staff Strap',
@@ -114,7 +118,7 @@ local sets = {
     },
     ['Debuff'] = {
         Back = 'Birdman Cape',
-        Body = { Name = 'Shadow Coat', Augment = { [1] = 'Magic crit. hit rate +3', [2] = 'Mag. Acc.+3' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
         Feet = 'Shadow Clogs',
@@ -123,7 +127,7 @@ local sets = {
         Neck = 'Piper\'s Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Light Ring',
-        Ring2 = 'Balrahn\'s Ring',
+        Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
         Legs = {
             Name = 'Chl. Cannions +1',
@@ -477,7 +481,7 @@ profile.HandleMidcast = function()
         else
             gFunc.EquipSet(sets.Buff);
             if (Settings.Fight == false) then
-                gFunc.EquipSet(sets.ChatoyantChr);
+                gFunc.EquipSet(sets.Silktone);
             end
         end
     elseif (spell.Skill == 'Ninjutsu') then
