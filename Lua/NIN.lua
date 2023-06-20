@@ -112,6 +112,7 @@ local sets = {
         Waist = 'Ninurta\'s Sash',
     },
     ['Mijin'] = {
+        Main = 'Nagi',
         Ammo = 'Reacton arm',
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
@@ -204,37 +205,21 @@ local sets = {
         Ring2 = 'Behemoth Ring',
         Waist = 'Precise Belt',
     },
-    ['WSSTRDEX'] = {
-        Ammo = 'Bomb Core',
-        Back = 'Commander\'s Cape',
-        Body = 'Haubergeon +1',
-        Ear1 = 'Pixie Earring',
-        Ear2 = 'Bushinomimi',
-        Feet = 'Koga Kyahan',
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Fotia Gorget',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Warwolf Belt',
-    },
     ['WSDEX'] = {
         Ammo = 'Fire Bomblet',
-        Back = 'Cerberus Mantle',
-        -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
-        Body = 'Haubergeon +1',
-        Ear1 = 'Pixie Earring',
-        Ear2 = 'Brutal Earring',
-        Feet = 'Koga Kyahan',
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = 'Optical Hat',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        -- Head = 'Optical Hat',
+        Head = 'Maat\'s Cap',
         Neck = 'Fotia Gorget',
-        Ring1 = 'Toreador\'s ring',
-        -- Ring1 = 'Thunder Ring',
+        Ear1 = 'Aesir Ear Pendant',
+        Ear2 = 'Pixie Earring',
+        Body = 'Haubergeon +1',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Rajas Ring',
+        Back = 'Commander\'s Cape',
         Waist = 'Fatality Belt',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Feet = 'Koga Kyahan',
     },
     ['WSAGI'] = {
         Ammo = 'Fire Bomblet',
@@ -249,40 +234,38 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s ring',
-        -- Ring1 = 'Breeze Ring',
         Ring2 = 'Breeze Ring',
         Waist = 'Potent Belt',
-        -- Waist = 'Warwolf Belt',
     },
     ['WSDEXINT'] = {
-        Ammo = 'Bomb Core',
-        Back = 'Commander\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Pixie Earring',
-        Feet = 'Koga Kyahan',
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Ammo = 'Fire Bomblet',
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
+        Ear1 = 'Aesir Ear Pendant',
+        Ear2 = 'Pixie Earring',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Ring1 = 'Snow Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Warwolf Belt',
+        Back = 'Commander\'s Cape',
+        Waist = 'Fatality Belt',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
     },
     ['WSSTRINT'] = {
-        Ammo = 'Bomb Core',
-        Back = 'Commander\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Brutal Earring',
-        Feet = 'Koga Kyahan',
-        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Ammo = 'Fire Bomblet',
         Head = 'Maat\'s Cap',
-        Legs = 'Yasha Hakama',
         Neck = 'Fotia Gorget',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Rajas Ring',
+        Ear1 = 'Aesir Ear Pendant',
+        Ear2 = 'Bushinomimi',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Hands = 'Alkyoneus\'s Brc.',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Commander\'s Cape',
         Waist = 'Warwolf Belt',
+        Legs = 'Dusk Trousers',
+        Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
     },
     ['CHR'] = {
         Ammo = 'Goblin Cracker',
@@ -299,6 +282,36 @@ local sets = {
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Corsette',
+    },
+    ['Cure'] = {
+        Ammo = 'Goblin Cracker',
+        Head = 'Maat\'s Cap',
+        Neck = 'Evasion Torque',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Hands = 'Denali Wristbands',
+        Ring1 = 'Vivian Ring',
+        Ring2 = 'Tamas Ring',
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Ninurta\'s Sash',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
+    },
+    ['Stoneskin'] = {
+        Ammo = 'Goblin Cracker',
+        Head = 'Maat\'s Cap',
+        Neck = 'Stone Gorget',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Hands = 'Denali Wristbands',
+        Ring1 = 'Vivian Ring',
+        Ring2 = 'Tamas Ring',
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Ninurta\'s Sash',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' } },
     },
     ['Sleep'] = {
         Ammo = 'Goblin Cracker',
@@ -499,6 +512,10 @@ profile.HandleMidcast = function()
         end
     elseif (action.Name == 'Sleep') or (action.Name == 'Stun') or (action.Name == 'Drain') or (action.Name == 'Aspir') then
         gFunc.EquipSet(sets.EnmityMA);
+    elseif (string.contains(spell.Name, 'Cure')) then
+        gFunc.EquipSet(sets.Cure);
+    elseif (spell.Name == 'Stoneskin') then
+        gFunc.EquipSet(sets.Stoneskin);
     end
 end
 
@@ -519,14 +536,14 @@ profile.HandleWeaponskill = function()
     local DEXINT = T { 'Blade: Yu' };
     if (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
+    elseif (STRINT:contains(action.Name)) then
+        gFunc.EquipSet(sets.WSSTRINT);
     elseif (AGI:contains(action.Name)) then
         gFunc.EquipSet(sets.WSAGI);
     elseif (STRDEX:contains(action.Name)) then
-        gFunc.EquipSet(sets.WSSTRDEX);
+        gFunc.EquipSet(sets.WSDEX);
     elseif (DEXINT:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEXINT);
-    elseif (STRINT:contains(action.Name)) then
-        gFunc.EquipSet(sets.WSSTRINT);
     end
 end
 
