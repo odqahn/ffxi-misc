@@ -137,8 +137,8 @@ local sets = {
     ['Magic'] = {
         Back = 'Errant Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Helenus\'s Earring',
+        Ear2 = 'Cass. Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -163,7 +163,7 @@ local sets = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Vivian Ring',
         Back = 'Dew Silk Cape +1',
-        Waist = 'Ninurta\'s Sash',
+        Waist = 'Salire Belt',
         Legs = {
             Name = 'Zenith Slacks',
             Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
@@ -184,7 +184,7 @@ local sets = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Vivian Ring',
         Back = 'Dew Silk Cape +1',
-        Waist = 'Ninurta\'s Sash',
+        Waist = 'Salire Belt',
         Legs = {
             Name = 'Zenith Slacks',
             Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
@@ -443,25 +443,23 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
+    local delay = 2.4
     local spell = gData.GetAction();
+    
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.PrecastSong);
     else
         gFunc.EquipSet(sets.PrecastMagic);
     end
 
-    if (spell.Name == 'Utsusemi: Ichi') then
-        gFunc.EquipSet(sets.PrecastMagic);
-        local delay = 2.4
-        if (gData.GetBuffCount(66) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
-        elseif (gData.GetBuffCount(444) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
-        elseif (gData.GetBuffCount(445) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
-        elseif (gData.GetBuffCount(446) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
-        end
+    if (gData.GetBuffCount(66) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+    elseif (gData.GetBuffCount(444) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+    elseif (gData.GetBuffCount(445) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+    elseif (gData.GetBuffCount(446) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
     end
 end
 

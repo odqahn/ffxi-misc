@@ -414,20 +414,17 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
-    local action = gData.GetAction()
+    local delay = 2.4
 
     gFunc.EquipSet(sets.Precast);
-    if (action.Name == 'Utsusemi: Ichi') then
-        local delay = 2.4
-        if (gData.GetBuffCount(66) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
-        elseif (gData.GetBuffCount(444) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
-        elseif (gData.GetBuffCount(445) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
-        elseif (gData.GetBuffCount(446) == 1) then
-            (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
-        end
+    if (gData.GetBuffCount(66) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+    elseif (gData.GetBuffCount(444) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+    elseif (gData.GetBuffCount(445) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+    elseif (gData.GetBuffCount(446) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
     end
 end
 

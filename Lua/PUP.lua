@@ -97,7 +97,7 @@ local sets = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Vivian Ring',
         Back = 'Dew Silk Cape +1',
-        Waist = 'Ninurta\'s Sash',
+        Waist = 'Salire Belt',
         Legs = 'Pantin Churidars',
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
@@ -113,7 +113,7 @@ local sets = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Vivian Ring',
         Back = 'Dew Silk Cape +1',
-        Waist = 'Ninurta\'s Sash',
+        Waist = 'Salire Belt',
         Legs = 'Pantin Churidars',
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
@@ -179,7 +179,7 @@ local sets = {
         Hands = 'Pup. Dastanas',
         Ring1 = 'Thunder Ring',
         Ring2 = 'Tamas Ring',
-        Waist = 'Druid\'s Rope',
+        Waist = 'Salire Belt',
         Legs = 'Magic Slacks',
         Feet = 'Pantin Babouches',
     },
@@ -371,7 +371,18 @@ profile.HandleItem = function()
 end
 
 profile.HandlePrecast = function()
+    local delay = 2.4
+
     gFunc.EquipSet(sets.Precast);
+    if (gData.GetBuffCount(66) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
+    elseif (gData.GetBuffCount(444) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 444') end):once(delay)
+    elseif (gData.GetBuffCount(445) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 445') end):once(delay)
+    elseif (gData.GetBuffCount(446) == 1) then
+        (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 446') end):once(delay)
+    end
 end
 
 profile.HandleMidcast = function()
