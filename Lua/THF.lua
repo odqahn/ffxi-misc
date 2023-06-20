@@ -133,7 +133,7 @@ local sets = {
         Neck = 'Love Torque',
         Legs = 'Rogue\'s Culottes',
         Ring1 = 'Sattva Ring',
-        Ring2 = 'Breeze Ring',
+        Ring2 = 'Blobnag Ring',
         Waist = 'Warwolf Belt',
     },
     ['MAB'] = {
@@ -175,7 +175,7 @@ local sets = {
         Legs = 'Rogue\'s Culottes',
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Breeze Ring',
+        Ring2 = 'Blobnag Ring',
         Waist = 'Potent Belt',
     },
     ['ExenteratorTA'] = {

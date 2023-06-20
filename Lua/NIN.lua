@@ -119,7 +119,7 @@ local sets = {
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
-        Ring1 = 'Breeze Ring',
+        Ring1 = 'Blobnag Ring',
         Ring2 = 'Breeze Ring',
         Waist = 'Ninurta\'s Sash',
     },
@@ -184,7 +184,7 @@ local sets = {
         Legs = 'Yasha Hakama',
         Neck = 'Harmonia\'s Torque',
         Ring1 = 'Sattva Ring',
-        Ring2 = 'Breeze Ring',
+        Ring2 = 'Blobnag Ring',
         Waist = 'Warwolf Belt',
     },
     ['EnmityMA'] = {
@@ -247,7 +247,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Breeze Ring',
+        Ring2 = 'Blobnag Ring',
         Waist = 'Potent Belt',
     },
     ['WSDEXINT'] = {
