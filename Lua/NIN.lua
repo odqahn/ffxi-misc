@@ -270,7 +270,7 @@ local sets = {
         Head = 'Maat\'s Cap',
         Neck = 'Fotia Gorget',
         Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Bushinomimi',
+        Ear2 = 'Eris\' Earring',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Hands = 'Alkyoneus\'s Brc.',
         Ring1 = 'Snow Ring',
