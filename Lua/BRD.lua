@@ -38,7 +38,7 @@ local sets = {
     },
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = {
@@ -90,7 +90,7 @@ local sets = {
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -308,7 +308,7 @@ local sets = {
     },
     ['Sleep'] = {
         Back = 'Bard\'s Cape',
-        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = 'Mag. Acc.+1' } },
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
         Feet = {
