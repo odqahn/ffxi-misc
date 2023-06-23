@@ -61,8 +61,7 @@ local sets = {
         Waist = 'Potent Belt',
     },
     ['Tanking'] = {
-        -- Ammo = 'Nokizaru Shuriken',
-        Ammo = 'Fuma Shuriken',
+        Ammo = 'Nokizaru Shuriken',
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
@@ -141,7 +140,7 @@ local sets = {
         Waist = 'Koga Sarashi',
     },
     ['Jutsu'] = {
-        Ammo = 'Fuma Shuriken',
+        Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Helenus\'s Earring',
@@ -156,8 +155,7 @@ local sets = {
         Waist = 'Salire Belt',
     },
     ['JutsuDebuffEnmity'] = {
-        -- Ammo = 'Nokizaru Shuriken',
-        Ammo = 'Fuma Shuriken',
+        Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
         Body = 'Yasha Samue',
         Ear1 = 'Eris\' Earring',
@@ -172,8 +170,7 @@ local sets = {
         Waist = 'Salire Belt',
     },
     ['EnmityJA'] = {
-        -- Ammo = 'Nokizaru Shuriken',
-        Ammo = 'Fuma Shuriken',
+        Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
         Body = 'Yasha Samue',
         Ear1 = 'Eris\' Earring',
@@ -188,8 +185,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['EnmityMA'] = {
-        -- Ammo = 'Nokizaru Shuriken',
-        Ammo = 'Fuma Shuriken',
+        Ammo = 'Nokizaru Shuriken',
         Back = 'Cerberus Mantle',
         Body = 'Yasha Samue',
         Ear1 = 'Eris\' Earring',
