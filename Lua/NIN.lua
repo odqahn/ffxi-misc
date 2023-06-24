@@ -345,6 +345,21 @@ local sets = {
         Legs = 'Yasha Hakama',
         Feet = 'Yasha Sune-Ate',
     },
+    ['EnmitySongs'] = {
+        Range = 'Marvelous Cheer',
+        Back = 'Cerberus Mantle',
+        Body = 'Yasha Samue',
+        Ear1 = 'Eris\' Earring',
+        Ear2 = 'Eris\' Earring',
+        Feet = 'Yasha Sune-Ate',
+        Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
+        Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Neck = 'Harmonia\'s Torque',
+        Ring1 = 'Sattva Ring',
+        Ring2 = 'Blobnag Ring',
+        Waist = 'Ninurta\'s Sash',
+    },
     ['Sleep'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
@@ -520,7 +535,7 @@ profile.HandlePrecast = function()
     else
         gFunc.EquipSet(sets.Precast);
     end
-    
+
     if (gData.GetBuffCount(66) == 1) then
         (function() AshitaCore:GetChatManager():QueueCommand(-1, '/debuff 66') end):once(delay)
     elseif (gData.GetBuffCount(444) == 1) then
@@ -553,8 +568,8 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Cure);
     elseif (action.Name == 'Stoneskin') then
         gFunc.EquipSet(sets.Stoneskin);
-    elseif (string.contains(action.Name, 'Mazurka')) then
-        gFunc.EquipSet(sets.EnmityJA);
+    elseif (string.contains(action.Name, 'Mazurka')) or (string.contains(action.Name, 'Lullaby')) then
+        gFunc.EquipSet(sets.EnmitySongs);
     elseif (action.Skill == 'Singing') then
         gFunc.EquipSet(sets.Songs);
     end
