@@ -20,6 +20,14 @@ local sets = {
         Main = 'Terra\'s Staff',
         Sub = 'Magic Strap',
     },
+    ['MajestasChr'] = {
+        Main = { Name = 'Majestas', Augment = { [1] = 'Mag. Acc.+8', [2] = 'MP+9', [3] = '"Mag. Atk. Bns."+5' } },
+        Sub = 'Bugard Strap',
+    },
+    ['MajestasEarth'] = {
+        Main = { Name = 'Majestas', Augment = { [1] = 'Mag. Acc.+8', [2] = 'MP+9', [3] = '"Mag. Atk. Bns."+5' } },
+        Sub = 'Earth Grip',
+    },
     ['ChatoyantEnmity'] = {
         Main = 'Chatoyant Staff',
         Sub = 'Staff Strap',
@@ -469,12 +477,12 @@ profile.HandleMidcast = function()
         if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
             gFunc.EquipSet(sets.Debuff);
             if (Settings.Fight == false) then
-                gFunc.EquipSet(sets.ChatoyantChr);
+                gFunc.EquipSet(sets.MajestasChr);
             end
         elseif (string.contains(spell.Name, 'Elegy')) then
             gFunc.EquipSet(sets.Debuff);
             if (Settings.Fight == false) then
-                gFunc.EquipSet(sets.ChatoyantEarth);
+                gFunc.EquipSet(sets.MajestasEarth);
             end
         else
             gFunc.EquipSet(sets.Buff);
