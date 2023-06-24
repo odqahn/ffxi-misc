@@ -216,8 +216,8 @@ local sets = {
     },
     ['WSDEX'] = {
         Ammo = 'Fire Bomblet',
-        -- Head = 'Optical Hat',
-        Head = 'Maat\'s Cap',
+        Head = 'Optical Hat',
+        -- Head = 'Maat\'s Cap',
         Neck = 'Fotia Gorget',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Pixie Earring',
@@ -329,6 +329,21 @@ local sets = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
         },
+    },
+    ['Songs'] = {
+        Range = 'Marvelous Cheer',
+        Head = 'Yasha Jinpachi',
+        Neck = 'Wind Torque',
+        Ear1 = 'Musical Earring',
+        Ear2 = 'Wind Earring',
+        Body = 'Yasha Samue',
+        Hands = 'Yasha Tekko',
+        Ring1 = 'Trumpet Ring',
+        Ring2 = 'Trumpet Ring',
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Ninurta\'s Sash',
+        Legs = 'Yasha Hakama',
+        Feet = 'Yasha Sune-Ate',
     },
     ['Sleep'] = {
         Ammo = 'Goblin Cracker',
@@ -538,6 +553,10 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Cure);
     elseif (action.Name == 'Stoneskin') then
         gFunc.EquipSet(sets.Stoneskin);
+    elseif (string.contains(action.Name, 'Mazurka')) then
+        gFunc.EquipSet(sets.EnmityJA);
+    elseif (action.Skill == 'Singing') then
+        gFunc.EquipSet(sets.Songs);
     end
 end
 
