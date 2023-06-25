@@ -2,7 +2,7 @@ local profile = {};
 local sets = {
     ['Idle'] = {
         Ammo = 'Hedgehog Bomb',
-        Back = 'Errant Cape',
+        Back = 'Astute Cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
@@ -19,7 +19,7 @@ local sets = {
     },
     ['Summoned'] = {
         Ammo = 'Hedgehog Bomb',
-        Back = 'Errant Cape',
+        Back = 'Astute Cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
@@ -71,7 +71,7 @@ local sets = {
     },
     ['BP'] = {
         Ammo = 'Hedgehog Bomb',
-        Back = 'Errant Cape',
+        Back = 'Astute Cape',
         Body = 'Yinyang Robe',
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',
@@ -114,7 +114,7 @@ local sets = {
     },
     ['Mog'] = {
         Ammo = 'Hedgehog Bomb',
-        Back = 'Errant Cape',
+        Back = 'Astute Cape',
         Body = 'Kupo Suit',
         Ear1 = 'Star Earring',
         Ear2 = 'Loquac. Earring',

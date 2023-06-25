@@ -106,7 +106,7 @@ local sets = {
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
-        Back = 'Echo Cape',
+        Back = 'Astute Cape',
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',

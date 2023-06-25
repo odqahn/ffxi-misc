@@ -141,7 +141,7 @@ local sets = {
     },
     ['Jutsu'] = {
         Ammo = 'Nokizaru Shuriken',
-        Back = 'Cerberus Mantle',
+        Back = 'Astute Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
@@ -340,7 +340,7 @@ local sets = {
         Hands = 'Yasha Tekko',
         Ring1 = 'Trumpet Ring',
         Ring2 = 'Trumpet Ring',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Astute Cape',
         Waist = 'Ninurta\'s Sash',
         Legs = 'Yasha Hakama',
         Feet = 'Yasha Sune-Ate',
@@ -456,15 +456,17 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer();
 
     if (player.Status == 'Engaged') then
-        if (sleep == 1) then
+        if (player.HPP <= 50) then
+            gFunc.EquipSet(sets.TankingNoShadow);
+        elseif (sleep == 1) then
             gFunc.EquipSet(sets.Sleep);
             -- elseif (silenced == true) then
             --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
-        elseif (player.HPP <= 50) then
-            gFunc.EquipSet(sets.TankingNoShadow);
         elseif (Settings.Tanking == true) then
             -- Equipe big tanking time gear
             if (shadow == 1) or (shadow2 == 1) or (shadow3 == 1) or (shadow4 == 1) then
+                gFunc.EquipSet(sets.Tanking);
+            elseif (player.HPP >= 70) then
                 gFunc.EquipSet(sets.Tanking);
             else
                 gFunc.EquipSet(sets.TankingNoShadow);
