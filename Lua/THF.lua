@@ -212,7 +212,7 @@ local sets = {
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Alert Ring',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Legs = 'Homam Cosciales',

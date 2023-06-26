@@ -45,7 +45,7 @@ local sets = {
         Sub = 'Magic Strap',
     },
     ['Idle'] = {
-        Back = 'Boxer\'s Mantle',
+        Back = 'Cheviot Cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
@@ -55,7 +55,7 @@ local sets = {
         },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
-        Legs = { 'Goliard Trews' },
+        Legs = 'Goliard Trews',
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
         Ring1 = 'Succor Ring',
@@ -63,7 +63,7 @@ local sets = {
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
-        Back = 'Boxer\'s Mantle',
+        Back = 'Cheviot Cape',
         Body = 'Kupo Suit',
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
@@ -214,7 +214,7 @@ local sets = {
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
         Ring1 = 'Blobnag Ring',
-        Ring2 = 'Succor Ring',
+        Ring2 = 'Alert Ring',
         Waist = 'Ninurta\'s Sash',
     },
     ['Fighting'] = {

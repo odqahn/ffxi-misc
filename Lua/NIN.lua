@@ -94,7 +94,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Alert Ring',
         Waist = 'Koga Sarashi',
     },
     ['Precast'] = {
@@ -119,7 +119,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Blobnag Ring',
-        Ring2 = 'Breeze Ring',
+        Ring2 = 'Alert Ring',
         Waist = 'Ninurta\'s Sash',
     },
     ['Mijin'] = {
