@@ -109,7 +109,7 @@ local sets = {
         Waist = 'Ninurta\'s Sash',
     },
     ['SA'] = {
-        Back = 'Commander\'s Cape',
+        Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
@@ -123,7 +123,7 @@ local sets = {
         Waist = 'Fatality Belt',
     },
     ['TA'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
         Ear1 = 'Suppanomimi',
         Ear2 = 'Ethereal Earring',
@@ -151,7 +151,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['WSDEX'] = {
-        Back = 'Commander\'s Cape',
+        Back = 'Assassin\'s Cape',
         Body = 'Homam Corazza',
         Ear1 = 'Pixie Earring',
         Ear2 = 'Ethereal Earring',
@@ -165,7 +165,7 @@ local sets = {
         Waist = 'Fatality Belt',
     },
     ['Exenterator'] = {
-        Back = 'Commander\'s Cape',
+        Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
         Ear1 = 'Ethereal Earring',
         Ear2 = 'Brutal Earring',
@@ -179,7 +179,7 @@ local sets = {
         Waist = 'Potent Belt',
     },
     ['ExenteratorTA'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
         Ear1 = 'Ethereal Earring',
         Ear2 = 'Brutal Earring',
