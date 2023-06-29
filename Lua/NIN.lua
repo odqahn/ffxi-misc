@@ -140,7 +140,7 @@ local sets = {
         Waist = 'Koga Sarashi',
     },
     ['Jutsu'] = {
-        Ammo = 'Nokizaru Shuriken',
+        Ammo = 'Phantom Tathlum',
         Back = 'Astute Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Helenus\'s Earring',
@@ -553,10 +553,10 @@ profile.HandleMidcast = function()
     local action = gData.GetAction();
 
     if (action.Skill == 'Ninjutsu') then
-        if (string.contains(action.Name, 'Utsusemi')) then
+        if (action.Name == 'Utsusemi: Ichi') or  (action.Name == 'Utsusemi: Ni') then
             gFunc.EquipSet(sets.Utsu);
         elseif (Settings.Tanking == true) then
-            if (action.Name == '"Dokumori: Ichi"') or (action.Name == 'Jubaku: Ichi') or (action.Name == 'Hojo: Ni') or (action.Name == 'Kurayami: Ni') then
+            if (action.Name == 'Dokumori: Ichi') or (action.Name == 'Jubaku: Ichi') or (action.Name == 'Hojo: Ni') or (action.Name == 'Kurayami: Ni') then
                 gFunc.EquipSet(sets.JutsuDebuffEnmity);
             else
                 gFunc.EquipSet(sets.Jutsu);
