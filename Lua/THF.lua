@@ -65,10 +65,6 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Ninurta\'s Sash',
     },
-    ['TH'] = {
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Wh. Rarab Cap +1',
-    },
     ['TPACC'] = {
         Range = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
@@ -354,7 +350,7 @@ profile.HandleDefault = function()
         end
         -- if (Settings.TH == true) then
         if (not isTargetTagged()) then
-            gFunc.EquipSet(sets.TH);
+            gFunc.Equip('Head', 'Wh. Rarab Cap +1');
             if (Settings.THSwapWeapons == true) then
                 gFunc.EquipSet(sets.THWeapons);
             end

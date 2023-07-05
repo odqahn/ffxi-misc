@@ -1,4 +1,6 @@
 local profile = {};
+local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
+
 local sets = {
     ['SingleWeapon'] = {
         Main = 'Blau Dolch',
@@ -107,7 +109,8 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
+        Feet = { Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
         Hands = {
             Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
@@ -126,7 +129,8 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
-        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
+        Feet = { Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Maat\'s Cap',
         Neck = 'Piper\'s Torque',
@@ -287,7 +291,8 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
+        Feet = { Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
         Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
         Legs = 'Bard\'s Cannions',
@@ -341,7 +346,6 @@ profile.Packer = {
 
 local Settings = {
     Mog = false,
-    TH = false,
     Fight = false,
 };
 
@@ -365,15 +369,6 @@ profile.HandleCommand = function(args)
         else
             Settings.Mog = true;
             gFunc.Message('Mog Set On');
-        end
-    end
-    if (args[1] == 'th') then
-        if (Settings.TH == true) then
-            Settings.TH = false;
-            gFunc.Message('TH Set Off');
-        else
-            Settings.TH = true;
-            gFunc.Message('TH Set On');
         end
     end
     if (args[1] == 'fight') then
@@ -401,9 +396,8 @@ profile.HandleDefault = function()
         --     AshitaCore:GetChatManager():QueueCommand(1, '/item "Echo Drops" <me>');
     elseif (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Fighting);
-        -- Equip
-        -- Equip TH set during battle
-        if (Settings.TH == true) then
+        -- Tagging TH during battle
+        if (not isTargetTagged()) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
         end
     elseif (Settings.Mog == true) then
@@ -451,7 +445,7 @@ end
 profile.HandlePrecast = function()
     local delay = 2.4
     local spell = gData.GetAction();
-    
+
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.PrecastSong);
     else

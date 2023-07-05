@@ -1,4 +1,6 @@
 local profile = {};
+local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
+
 local sets = {
     ['Idle'] = {
         Ammo = 'Fuma Shuriken',
@@ -385,7 +387,6 @@ local Settings = {
     Parade = false,
     Mog = false,
     Accuracy = false,
-    TH = false,
     Tanking = false,
 };
 
@@ -423,15 +424,6 @@ profile.HandleCommand = function(args)
         else
             Settings.Accuracy = true;
             gFunc.Message('Accuracy Set On');
-        end
-    end
-    if (args[1] == 'th') then
-        if (Settings.TH == true) then
-            Settings.TH = false;
-            gFunc.Message('TH Set Off');
-        else
-            Settings.TH = true;
-            gFunc.Message('TH Set On');
         end
     end
     if (args[1] == 'tank') then
@@ -476,8 +468,8 @@ profile.HandleDefault = function()
         else
             gFunc.EquipSet(sets.Damage_Haste);
         end
-        -- Equip TH set during battle
-        if (Settings.TH == true) then
+        -- Tagging TH during battle
+        if (not isTargetTagged()) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
         end
     elseif (player.Status == 'Resting') then

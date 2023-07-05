@@ -1,4 +1,6 @@
 local profile = {};
+local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
+
 local sets = {
     ['Idle'] = {
         Main = 'Acantha Shavers',
@@ -249,7 +251,6 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     DT = false,
-    TH = false,
     Cure = false,
 };
 
@@ -275,15 +276,6 @@ profile.HandleCommand = function(args)
         else
             Settings.Mog = true;
             gFunc.Message('Mog Set On');
-        end
-    end
-    if (args[1] == 'th') then
-        if (Settings.TH == true) then
-            Settings.TH = false;
-            gFunc.Message('TH Set Off');
-        else
-            Settings.TH = true;
-            gFunc.Message('TH Set On');
         end
     end
     if (args[1] == 'dt') then
@@ -327,7 +319,8 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.DT);
     elseif (player.Status == 'Engaged') then
         gFunc.EquipSet(sets.Meele);
-        if (Settings.TH == true) then
+        -- Tagging TH during battle
+        if (not isTargetTagged()) then
             gFunc.Equip('Head', 'Wh. Rarab Cap +1');
         end
     elseif (player.Status == 'Resting') then
