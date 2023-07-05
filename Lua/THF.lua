@@ -1,4 +1,5 @@
 local profile = {};
+
 local sets = {
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
@@ -118,15 +119,15 @@ local sets = {
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Neck = 'Love Torque',
-        Ring1 = 'Thunder Ring',
+        Ring1 = 'Zilant Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Fatality Belt',
     },
     ['TA'] = {
         Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
-        Ear1 = 'Suppanomimi',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Altdorf\'s Earring',
+        Ear2 = 'Wilhelm\'s Earring',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
         Head = 'Maat\'s Cap',
@@ -152,23 +153,23 @@ local sets = {
     },
     ['WSDEX'] = {
         Back = 'Assassin\'s Cape',
-        Body = 'Homam Corazza',
-        Ear1 = 'Pixie Earring',
-        Ear2 = 'Ethereal Earring',
+        Body = 'Dragon Harness',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Pixie Earring',
         Feet = 'Draggon Leggings',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Optical Hat',
+        Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Neck = 'Fotia Gorget',
-        Ring1 = 'Thunder Ring',
+        Ring1 = 'Zilant Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Fatality Belt',
     },
     ['Exenterator'] = {
         Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
-        Ear1 = 'Ethereal Earring',
-        Ear2 = 'Brutal Earring',
+        Ear1 = 'Altdorf\'s Earring',
+        Ear2 = 'Wilhelm\'s Earring',
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
         Head = 'Optical Hat',
@@ -181,8 +182,8 @@ local sets = {
     ['ExenteratorTA'] = {
         Back = 'Assassin\'s Cape',
         Body = 'Dragon Harness',
-        Ear1 = 'Ethereal Earring',
-        Ear2 = 'Brutal Earring',
+        Ear1 = 'Altdorf\'s Earring',
+        Ear2 = 'Wilhelm\'s Earring',
         Feet = 'Dragon Leggings',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
@@ -234,8 +235,8 @@ local sets = {
     ['DT'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Homam Corazza',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Coral Earring',
+        Ear2 = 'Coral Earring',
         Head = 'Black Ribbon',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
@@ -265,7 +266,8 @@ local sets = {
     ['RA'] = {
         Back = 'Lynx Mantle',
         Body = 'Pln. Khazagand',
-        Ear2 = 'Vision Earring',
+        Ear1 = 'Altdorf\'s Earring',
+        Ear2 = 'Wilhelm\'s Earring',
         Feet = 'Homam Gambieras ',
         Hands = 'Deadeye Gloves',
         Head = 'Optical Hat',
@@ -333,11 +335,11 @@ profile.HandleCommand = function(args)
         end
     end
     if (args[1] == 'dt') then
-        if (Settings.Kirin == true) then
-            Settings.Kirin = false;
+        if (Settings.DT == true) then
+            Settings.DT = false;
             gFunc.Message('DT Set Off');
         else
-            Settings.Kirin = true;
+            Settings.DT = true;
             gFunc.Message('DT Set On');
         end
     end
@@ -354,13 +356,14 @@ profile.HandleDefault = function()
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
-    elseif (dt == 1) then
+    elseif (Settings.DT == true) then
         gFunc.EquipSet(sets.DT);
     elseif (ta == 1) then
         gFunc.EquipSet(sets.TA);
     elseif (sa == 1) then
         gFunc.EquipSet(sets.SA);
     elseif (player.Status == 'Engaged') then
+
         if (Settings.TH == true) then
             if (Settings.Accuracy == true) then
                 gFunc.EquipSet(sets.THACC);
