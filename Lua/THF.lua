@@ -1,6 +1,15 @@
 local profile = {};
+local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
 
 local sets = {
+    ['DefaultWeapons'] = {
+        Main = 'Blau Dolch',
+        Sub = 'Mercurial Kris',
+    },
+    ['THWeapons'] = {
+        Main = 'Thief\'s Knife',
+        Sub = 'Mercurial Kris',
+    },
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
@@ -43,9 +52,6 @@ local sets = {
         Waist = 'Lieutenant\'s Sash',
     },
     ['TP'] = {
-        -- Main = 'Vajra',
-        -- Main = 'Blau Dolch',
-        -- Sub = 'Mercurial Kris',
         Back = 'Amemet Mantle +1',
         Body = 'Rapparee Harness',
         Ear1 = 'Brutal Earring',
@@ -60,24 +66,10 @@ local sets = {
         Waist = 'Ninurta\'s Sash',
     },
     ['TH'] = {
-        -- Main = 'Thief\'s Knife',
-        -- Sub = 'Mercurial Kris',
-        Back = 'Amemet Mantle +1',
-        Body = 'Rapparee Harness',
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Ethereal Earring',
-        Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Wh. Rarab Cap +1',
-        Legs = 'Homam Cosciales',
-        Neck = 'Love Torque',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Ninurta\'s Sash',
     },
     ['TPACC'] = {
-        -- Main = 'Blau Dolch',
-        -- Sub = 'Mercurial Kris',
         Range = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
         Body = 'Homam Corazza',
@@ -86,23 +78,6 @@ local sets = {
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = 'Optical Hat',
-        Legs = 'Homam Cosciales',
-        Neck = 'Love Torque',
-        Ring1 = 'Toreador\'s ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Ninurta\'s Sash',
-    },
-    ['THACC'] = {
-        -- Main = 'Thief\'s Knife',
-        -- Sub = 'Mercurial Kris',
-        Range = 'Fire Bomblet',
-        Back = 'Amemet Mantle +1',
-        Body = 'Homam Corazza',
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Ethereal Earring',
-        Feet = 'Homam Gambieras',
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Head = 'Wh. Rarab Cap +1',
         Legs = 'Homam Cosciales',
         Neck = 'Love Torque',
         Ring1 = 'Toreador\'s ring',
@@ -287,6 +262,7 @@ local Settings = {
     Mog = false,
     Accuracy = false,
     TH = true,
+    THSwapWeapons = false,
     DT = false,
 };
 
@@ -296,10 +272,6 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
-    gFunc.Equip('Main', 'Thief\'s Knife');
-    gFunc.Equip('Sub', 'Mercurial Kris');
-    gFunc.Equip('Ammo', 'Acid Bolt');
-    gFunc.Equip('Range', 'Staurobow');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 7 echo') end):once(2)
 end
 
@@ -334,6 +306,15 @@ profile.HandleCommand = function(args)
             gFunc.Message('TH Set On');
         end
     end
+    if (args[1] == 'thswap') then
+        if (Settings.THSwapWeapons == true) then
+            Settings.THSwapWeapons = false;
+            gFunc.Message('TH weapons swap Set Off');
+        else
+            Settings.THSwapWeapons = true;
+            gFunc.Message('TH weapons swap Set On');
+        end
+    end
     if (args[1] == 'dt') then
         if (Settings.DT == true) then
             Settings.DT = false;
@@ -363,18 +344,19 @@ profile.HandleDefault = function()
     elseif (sa == 1) then
         gFunc.EquipSet(sets.SA);
     elseif (player.Status == 'Engaged') then
-
-        if (Settings.TH == true) then
-            if (Settings.Accuracy == true) then
-                gFunc.EquipSet(sets.THACC);
-            else
-                gFunc.EquipSet(sets.TH);
-            end
+        if (Settings.Accuracy == true) then
+            gFunc.EquipSet(sets.TPACC);
         else
-            if (Settings.Accuracy == true) then
-                gFunc.EquipSet(sets.TPACC);
-            else
-                gFunc.EquipSet(sets.TP);
+            gFunc.EquipSet(sets.TP);
+        end
+        if (Settings.THSwapWeapons == true) then
+            gFunc.EquipSet(sets.DefaultWeapons);
+        end
+        -- if (Settings.TH == true) then
+        if (not isTargetTagged()) then
+            gFunc.EquipSet(sets.TH);
+            if (Settings.THSwapWeapons == true) then
+                gFunc.EquipSet(sets.THWeapons);
             end
         end
     elseif (Settings.Mog == true) then
@@ -383,9 +365,6 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.Resting);
     else
         gFunc.EquipSet(sets.Idle);
-        -- if (Settings.TH == false) then
-        --     AshitaCore:GetChatManager():QueueCommand(-1, '/lac fwd th')
-        -- end
     end
     if (para == 1) then
         gFunc.Equip('Waist', 'Flagellant\'s Rope');
