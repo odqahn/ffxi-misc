@@ -49,8 +49,8 @@ local sets = {
     ['Idle'] = {
         Back = 'Cheviot Cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -67,8 +67,8 @@ local sets = {
     ['Mog'] = {
         Back = 'Cheviot Cape',
         Body = 'Kupo Suit',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -109,8 +109,10 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = { Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
+        Feet = {
+            Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
+        },
         Hands = {
             Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
@@ -129,12 +131,35 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
-        Feet = { Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
+        Feet = {
+            Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
+        },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Maat\'s Cap',
         Neck = 'Piper\'s Torque',
         Range = 'Gjallarhorn',
+        Ring1 = 'Light Ring',
+        Ring2 = 'Light Ring',
+        Waist = 'Gleeman\'s Belt',
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
+    },
+    ['Requiem'] = {
+        Back = 'Birdman Cape',
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
+        Ear1 = 'Helenus\'s Earring',
+        Ear2 = 'Cass. Earring',
+        Feet = {
+            Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
+        },
+        Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
+        Head = 'Maat\'s Cap',
+        Neck = 'Piper\'s Torque',
+        Range = 'Requiem Flute',
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
@@ -291,8 +316,10 @@ local sets = {
         Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = { Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' } },
+        Feet = {
+            Name = 'Shadow Clogs',
+            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
+        },
         Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
         Legs = 'Bard\'s Cannions',
@@ -320,18 +347,15 @@ local sets = {
     ['Sleep'] = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Loquac. Earring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
         },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
-        Legs = {
-            Name = 'Chl. Cannions +1',
-            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
-        },
+        Legs = 'Goliard Trews',
         Neck = 'Opo-opo Necklace',
         Range = 'Hamelin Flute',
         Ring1 = 'Succor Ring',
@@ -466,8 +490,13 @@ end
 profile.HandleMidcast = function()
     local spell = gData.GetAction();
     if (spell.Skill == 'Singing') then
-        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) or (string.contains(spell.Name, 'Requiem')) then
+        if (string.contains(spell.Name, 'Lullaby')) or (string.contains(spell.Name, 'Finale')) or (string.contains(spell.Name, 'Threnody')) then
             gFunc.EquipSet(sets.Debuff);
+            if (Settings.Fight == false) then
+                gFunc.EquipSet(sets.MajestasChr);
+            end
+        elseif (string.contains(spell.Name, 'Requiem')) then
+            gFunc.EquipSet(sets.Requiem);
             if (Settings.Fight == false) then
                 gFunc.EquipSet(sets.MajestasChr);
             end
