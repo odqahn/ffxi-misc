@@ -37,6 +37,10 @@ local sets = {
         Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
     },
+    ['TH'] = {
+        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Head = 'Wh. Rarab Cap +1',
+    },
     ['TP'] = {
         Back = 'Amemet Mantle +1',
         Body = 'Rapparee Harness',
@@ -192,7 +196,7 @@ local sets = {
     },
     ['DT'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Homam Corazza',
+        Body = 'Dragon Harness',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Head = 'Black Ribbon',
@@ -200,6 +204,8 @@ local sets = {
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
+        Legs = 'Homam Cosciales',
+        Feet = 'Trotter Boots',
     },
     ['Steal'] = {
         Feet = 'Rogue\'s Poulaines',
@@ -245,7 +251,7 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     Accuracy = false,
-    TH = true,
+    TH = false,
     THSwapWeapons = false,
     DT = false,
 };
@@ -254,12 +260,13 @@ profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 2');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo THF loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 7 echo') end):once(2)
 end
 
 profile.OnUnload = function()
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon unload chains');
 end
 
 profile.HandleCommand = function(args)
@@ -315,7 +322,6 @@ profile.HandleDefault = function()
     local sa = gData.GetBuffCount('Sneak Attack');
     local ta = gData.GetBuffCount('Trick Attack');
     local sleep = gData.GetBuffCount('Sleep');
-    local para = gData.GetBuffCount('Paralysis');
 
     local player = gData.GetPlayer();
 
@@ -336,9 +342,8 @@ profile.HandleDefault = function()
         if (Settings.THSwapWeapons == true) then
             gFunc.EquipSet(sets.DefaultWeapons);
         end
-        -- if (Settings.TH == true) then
-        if (not isTargetTagged()) then
-            gFunc.Equip('Head', 'Wh. Rarab Cap +1');
+        if (not isTargetTagged()) or (Settings.TH == true) then
+            gFunc.EquipSet(sets.TH);
             if (Settings.THSwapWeapons == true) then
                 gFunc.EquipSet(sets.THWeapons);
             end
@@ -349,9 +354,6 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.Resting);
     else
         gFunc.EquipSet(sets.Idle);
-    end
-    if (para == 1) then
-        gFunc.Equip('Waist', 'Flagellant\'s Rope');
     end
 end
 
@@ -403,6 +405,9 @@ end
 
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.RA);
+    if (not isTargetTagged()) then
+        gFunc.EquipSet(sets.TH);
+    end
 end
 
 profile.HandleWeaponskill = function()

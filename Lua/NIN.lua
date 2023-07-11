@@ -399,7 +399,7 @@ profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 7');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo NIN loading!');
     gFunc.Equip('Main', 'Kikoku');
     gFunc.Equip('Sub', 'Mercurial Kris');
@@ -407,6 +407,7 @@ profile.OnLoad = function()
 end
 
 profile.OnUnload = function()
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon unload chains');
 end
 
 profile.HandleCommand = function(args)
@@ -445,7 +446,6 @@ profile.HandleDefault = function()
     local shadow3 = gData.GetBuffCount(445)
     local shadow4 = gData.GetBuffCount(446)
     local sleep = gData.GetBuffCount('Sleep');
-    local para = gData.GetBuffCount('Paralysis');
     -- local silenced = gData.GetBuffCount('Silenced');
     local player = gData.GetPlayer();
 
@@ -482,11 +482,6 @@ profile.HandleDefault = function()
         else
             gFunc.EquipSet(sets.Idle);
         end
-    end
-
-    -- Flagellant's in case of para
-    if (para == 1) then
-        gFunc.Equip('Waist', 'Flagellant\'s Rope');
     end
 end
 

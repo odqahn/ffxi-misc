@@ -377,12 +377,13 @@ profile.OnLoad = function()
     gSettings.AllowAddSet = true;
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo BRD loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 2 echo') end):once(2)
 end
 
 profile.OnUnload = function()
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon unload chains');
 end
 
 profile.HandleCommand = function(args)
@@ -408,7 +409,6 @@ end
 
 profile.HandleDefault = function()
     local sleep = gData.GetBuffCount('Sleep');
-    local para = gData.GetBuffCount('Paralysis');
     -- local silenced = gData.GetBuffCount('Silenced');
 
     local player = gData.GetPlayer();
@@ -442,11 +442,6 @@ profile.HandleDefault = function()
     -- In cast hp drop, equip PDR earring
     if (player.HPP <= 25) then
         gFunc.Equip('Ear2', 'Minstrel\'s Earring');
-    end
-
-    -- Flagellant's in case of para
-    if (para == 1) then
-        gFunc.Equip('Waist', 'Flagellant\'s Rope');
     end
 end
 

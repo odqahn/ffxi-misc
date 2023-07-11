@@ -3,7 +3,7 @@ local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
 
 local sets = {
     ['Idle'] = {
-        Main = 'Acantha Shavers',
+        Main = 'Hades Sainti',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = 'Pantin Taj',
@@ -37,7 +37,6 @@ local sets = {
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Mog'] = {
-        Main = 'Acantha Shavers',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = 'Pantin Taj',
@@ -53,10 +52,10 @@ local sets = {
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Meele'] = {
-        Main = 'Acantha Shavers',
+        Main = 'Hades Sainti',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
-        Head = 'Optical Hat',
+        Head = { Name = 'Puppetry Taj +1', Augment = { [1] = 'Haste+4', [2] = 'Pet: Haste+4' } },
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
@@ -70,11 +69,11 @@ local sets = {
         Feet = 'Pantin Babouches',
     },
     ['DT'] = {
-        Main = 'Chatoyant Staff',
+        Main = 'Terra\'s Staff',
         Sub = 'Staff Strap',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
-        Head = 'Pantin Taj',
+        Head = { Name = 'Puppetry Taj +1', Augment = { [1] = 'Haste+4', [2] = 'Pet: Haste+4' } },
         Neck = 'Beguiling Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -82,7 +81,7 @@ local sets = {
         Hands = 'Pantin Dastanas',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
-        Back = 'Cheviot Cape',
+        Back = 'Pantin Cape',
         Waist = 'Selemnus belt',
         Legs = 'Goliard Trews',
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
@@ -124,15 +123,14 @@ local sets = {
         Ammo = 'Automat. Oil +2',
         Head = 'Pantin Taj',
         Neck = 'Opo-opo Necklace',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
-        Back = 'Boxer\'s Mantle',
-        Waist = 'Lieutenant\'s Sash',
+        Back = 'Cheviot Cape',
+        Waist = 'Selemnus belt',
     },
     ['WS'] = {
-        Main = 'Acantha Shavers',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = 'Optical Hat',
@@ -167,7 +165,7 @@ local sets = {
         Head = 'Maat\'s Cap',
         Neck = 'Bfn. Collar +1',
         Hands = 'Pup. Dastanas',
-        Ring1 = 'Blobnag Ring',
+        Ring1 = 'Sattva Ring',
         Ring2 = 'Breeze Ring',
         Waist = 'Selemnus belt',
         Legs = 'Pantin Churidars',
@@ -259,12 +257,14 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 9');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon load petinfo');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon load pupsets');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 3 echo') end):once(2)
 end
 
 profile.OnUnload = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/addon unload pupsets');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon unload chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon unload petinfo');
 end
 
@@ -310,7 +310,6 @@ end
 
 profile.HandleDefault = function()
     local sleep = gData.GetBuffCount('Sleep');
-    local para = gData.GetBuffCount('Paralysis');
     local player = gData.GetPlayer();
 
     if (sleep == 1) then
@@ -332,9 +331,6 @@ profile.HandleDefault = function()
     end
     if (Settings.Cure == true) and (Settings.Mog == false) then
         gFunc.Equip('Legs', 'Pup. Churidars');
-    end
-    if (para == 1) then
-        gFunc.Equip('Waist', 'Flagellant\'s Rope');
     end
 end
 

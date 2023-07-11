@@ -143,12 +143,13 @@ profile.OnLoad = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 8');
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon load petinfo');
-    AshitaCore:GetChatManager():QueueCommand(1, '/addon reload skillchains');
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon load chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/echo SMN loading!');
     (function() AshitaCore:GetChatManager():QueueCommand(-1, '/lockstyleset 5 echo') end):once(2)
 end
 
 profile.OnUnload = function()
+    AshitaCore:GetChatManager():QueueCommand(1, '/addon unload chains');
     AshitaCore:GetChatManager():QueueCommand(1, '/addon unload petinfo');
 end
 
