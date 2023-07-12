@@ -66,7 +66,7 @@ local sets = {
         Back = 'Pantin Cape',
         Waist = 'Ninurta\'s Sash',
         Legs = 'Pantin Churidars',
-        Feet = 'Pantin Babouches',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['DT'] = {
         Main = 'Terra\'s Staff',

@@ -6,8 +6,9 @@ Scope II
 Repeater
 Optic Fiber
 Auto-Repair Kit III
-Resister
 Heatsink
-Condenser
-Mana Jammer
-
+Tension Spring III
+Armor Plate II
+Inhibitor II
+Stabilizer III
+Dynamo

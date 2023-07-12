@@ -4,9 +4,9 @@ Target Marker
 Coiler
 Dynamo
 Attuner
-Magniplug
+Tension Spring II
 Speedloader II
-Inhibitor
+Armor Plate II
 Optic Fiber
 Auto-Repair Kit III
 Turbo Charger

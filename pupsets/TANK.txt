@@ -1,14 +1,14 @@
-Soulsoother Head
+Valoredge Head
 Valoredge Frame
-Auto-Repair Kit III
 Optic Fiber
-Heat Seeker
-Barrier Module
-Analyzer
+Flashbulb
+Auto-Repair Kit
+Strobe II
+Tension Spring III
+Inhibitor II
 Armor Plate III
-Mana Jammer III
-Resister II
-Galvanizer
-Heat Capacitor
-Tension Spring
-Attuner
+Hammermill
+Equalizer
+Heatsink
+Stabilizer III
+Turbo Charger
