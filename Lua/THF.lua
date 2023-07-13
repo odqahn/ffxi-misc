@@ -28,7 +28,7 @@ local sets = {
         Legs = 'Homam Cosciales',
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
@@ -41,7 +41,7 @@ local sets = {
         Head = 'Black Ribbon',
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['TH'] = {
@@ -212,7 +212,7 @@ local sets = {
         Head = 'Black Ribbon',
         Neck = 'Opo-opo Necklace',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['DT'] = {
@@ -225,7 +225,7 @@ local sets = {
         Head = 'Black Ribbon',
         Legs = 'Homam Cosciales',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['Steal'] = {
@@ -246,7 +246,7 @@ local sets = {
         Legs = 'Homam Cosciales',
         Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['RA'] = {

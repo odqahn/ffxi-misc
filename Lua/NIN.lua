@@ -14,7 +14,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
@@ -23,7 +23,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Neck = 'Orochi Nodowa',
@@ -379,7 +379,7 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Opo-opo Necklace',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
 };

@@ -61,7 +61,7 @@ local sets = {
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['Mog'] = {
@@ -78,7 +78,7 @@ local sets = {
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
     ['PrecastSong'] = {
@@ -373,7 +373,7 @@ local sets = {
         Neck = 'Opo-opo Necklace',
         Range = 'Hamelin Flute',
         Ring1 = 'Succor Ring',
-        Ring2 = 'Coral Ring',
+        Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
 };
