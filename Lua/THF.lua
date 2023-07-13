@@ -10,6 +10,13 @@ local sets = {
         Main = 'Thief\'s Knife',
         Sub = 'Mercurial Kris',
     },
+    ['Pulling'] = {
+        Range = 'Staurobow',
+        Ammo = 'Acid Bolt',
+    },
+    ['PullingNot'] = {
+        Ammo = 'Fire Bomblet',
+    },
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
         Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
@@ -56,7 +63,6 @@ local sets = {
         Waist = 'Ninurta\'s Sash',
     },
     ['TPACC'] = {
-        Range = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
         Body = 'Homam Corazza',
         Ear1 = 'Brutal Earring',
@@ -66,6 +72,7 @@ local sets = {
         Head = 'Homan Zucchetto',
         Legs = 'Homam Cosciales',
         Neck = 'Love Torque',
+        Range = 'Fire Bomblet',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Ninurta\'s Sash',
@@ -76,13 +83,13 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
         Feet = 'Dragon Leggings',
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Sword skill +2', [2] = 'Crit. hit damage +1%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Neck = 'Love Torque',
         Ring1 = 'Zilant Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Fatality Belt',
+        Waist = 'Warwolf Belt',
     },
     ['TA'] = {
         Back = 'Assassin\'s Cape',
@@ -92,24 +99,10 @@ local sets = {
         Feet = 'Dragon Leggings',
         Hands = 'Dragon Mittens',
         Head = 'Maat\'s Cap',
-        Neck = 'Love Torque',
         Legs = 'Rogue\'s Culottes',
+        Neck = 'Love Torque',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Blobnag Ring',
-        Waist = 'Warwolf Belt',
-    },
-    ['MAB'] = {
-        Back = 'Amemet Mantle +1',
-        Body = 'Dragon Harness',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Ethereal Earring',
-        Feet = 'Dragon Leggings',
-        Hands = 'Dragon Mittens',
-        Head = 'Maat\'s Cap',
-        Legs = 'Dragon Subligar',
-        Neck = 'Fotia Gorget',
-        Ring1 = 'Thunder Ring',
-        Ring2 = 'Thunder Ring',
         Waist = 'Warwolf Belt',
     },
     ['WSDEX'] = {
@@ -118,13 +111,27 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
         Feet = 'Draggon Leggings',
-        Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
         Neck = 'Fotia Gorget',
         Ring1 = 'Zilant Ring',
         Ring2 = 'Rajas Ring',
-        Waist = 'Fatality Belt',
+        Waist = 'Warwolf Belt',
+    },
+    ['DEXINT'] = {
+        Back = 'Assassin\'s Cape',
+        Body = 'Dragon Harness',
+        Ear1 = 'Pixie Earring',
+        Ear2 = 'Aesir Ear Pendant',
+        Feet = 'Hct. Leggings',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
+        Head = 'Maat\'s Cap',
+        Legs = 'Dusk Trousers',
+        Neck = 'Fotia Gorget',
+        Ring1 = 'Galdr Ring',
+        Ring2 = 'Tamas Ring',
+        Waist = 'Warwolf Belt',
     },
     ['Exenterator'] = {
         Back = 'Assassin\'s Cape',
@@ -132,7 +139,7 @@ local sets = {
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
         Feet = 'Dragon Leggings',
-        Hands = 'Dragon Mittens',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
         Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
         Neck = 'Fotia Gorget',
@@ -154,6 +161,20 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Waist = 'Potent Belt',
     },
+    ['Mercy'] = {
+        Back = 'Cerberus Mantle',
+        Body = 'Hecatomb Harness',
+        Ear1 = 'Bushinomimi',
+        Ear2 = 'Aesir Ear Pendant',
+        Feet = 'Hct. Leggings',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
+        Head = 'Maat\'s Cap',
+        Legs = 'Dragon Subligar',
+        Neck = 'Fotia Gorget',
+        Ring1 = 'Rajas Ring',
+        Ring2 = 'Flame Ring',
+        Waist = 'Warwolf Belt',
+    },
     ['CHR'] = {
         Back = 'Corse Cape',
         Body = 'Dragon Harness',
@@ -173,13 +194,13 @@ local sets = {
         Body = 'Rapparee Harness',
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
-        Ring1 = 'Succor Ring',
-        Ring2 = 'Alert Ring',
         Feet = 'Homam Gambieras',
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
-        Legs = 'Homam Cosciales',
         Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
+        Legs = 'Homam Cosciales',
         Neck = 'Evasion Torque',
+        Ring1 = 'Succor Ring',
+        Ring2 = 'Alert Ring',
         Waist = 'Ninurta\'s Sash',
     },
     ['Sleep'] = {
@@ -187,8 +208,8 @@ local sets = {
         Body = 'Scp. Harness +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Head = 'Black Ribbon',
         Hands = 'Denali Wristbands',
+        Head = 'Black Ribbon',
         Neck = 'Opo-opo Necklace',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
@@ -199,13 +220,13 @@ local sets = {
         Body = 'Dragon Harness',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Head = 'Black Ribbon',
+        Feet = 'Trotter Boots',
         Hands = 'Denali Wristbands',
+        Head = 'Black Ribbon',
+        Legs = 'Homam Cosciales',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
-        Legs = 'Homam Cosciales',
-        Feet = 'Trotter Boots',
     },
     ['Steal'] = {
         Feet = 'Rogue\'s Poulaines',
@@ -223,7 +244,7 @@ local sets = {
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
         Head = { Name = 'Rog. Bonnet +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = 'Homam Cosciales',
-        Neck = 'Orochi Nodowa',
+        Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
         Ring2 = 'Coral Ring',
         Waist = 'Lieutenant\'s Sash',
@@ -254,6 +275,7 @@ local Settings = {
     TH = false,
     THSwapWeapons = false,
     DT = false,
+    Pulling = true,
 };
 
 profile.OnLoad = function()
@@ -315,6 +337,15 @@ profile.HandleCommand = function(args)
             gFunc.Message('DT Set On');
         end
     end
+    if (args[1] == 'pulling') then
+        if (Settings.Pulling == true) then
+            Settings.Pulling = false;
+            gFunc.Message('Pulling Set Off');
+        else
+            Settings.Pulling = true;
+            gFunc.Message('Pulling Set On');
+        end
+    end
 end
 
 -- TODO: un set TH et un EquipSet
@@ -324,6 +355,13 @@ profile.HandleDefault = function()
     local sleep = gData.GetBuffCount('Sleep');
 
     local player = gData.GetPlayer();
+
+    -- Swap ranged
+    if (Settings.Pulling == true) then
+        gFunc.EquipSet(sets.Pulling);
+    else
+        gFunc.EquipSet(sets.PullingNot);
+    end
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
@@ -350,8 +388,8 @@ profile.HandleDefault = function()
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
-    elseif (player.Status == 'Resting') then
-        gFunc.EquipSet(sets.Resting);
+        -- elseif (player.Status == 'Resting') then
+        --     gFunc.EquipSet(sets.Idle);
     else
         gFunc.EquipSet(sets.Idle);
     end
@@ -404,9 +442,14 @@ profile.HandlePreshot = function()
 end
 
 profile.HandleMidshot = function()
-    gFunc.EquipSet(sets.RA);
-    if (not isTargetTagged()) then
-        gFunc.EquipSet(sets.TH);
+    if (Settings.Pulling == true) then
+        gFunc.EquipSet(sets.RA);
+        if (not isTargetTagged()) then
+            gFunc.EquipSet(sets.TH);
+        end
+    else
+        gFunc.CancelAction();
+        gFunc.Message('Pulling Set is Off!!');
     end
 end
 
@@ -414,9 +457,10 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction();
     local ta = gData.GetBuffCount('Trick Attack');
 
-    local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
-    local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
+    local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab', 'Cyclone' };
+    local DEXINT = T { 'Gust Slash', 'Aeolian Edge' };
     local AGI = T { 'Exenterator' };
+    local STR = T { 'Mercy Stroke' };
 
     if (AGI:contains(action.Name)) then
         if (ta == 1) then
@@ -424,10 +468,21 @@ profile.HandleWeaponskill = function()
         else
             gFunc.EquipSet(sets.Exenterator);
         end
+    elseif (STR:contains(action.Name)) then
+        gFunc.EquipSet(sets.Mercy);
+        if(Settings.Pulling == false) then
+            gFunc.Equip('Sub', 'Bomb Core');
+        end
     elseif (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.WSDEX);
-    elseif (MAB:contains(action.Name)) then
-        gFunc.EquipSet(sets.MAB);
+        if(Settings.Pulling == false) then
+            gFunc.Equip('Sub', 'Bomb Core');
+        end
+    elseif (DEXINT:contains(action.Name)) then
+        gFunc.EquipSet(sets.DEXINT);
+        if(Settings.Pulling == false) then
+            gFunc.Equip('Sub', 'Bomb Core');
+        end
     end
 end
 
