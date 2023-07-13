@@ -68,6 +68,10 @@ local sets = {
         Legs = 'Pantin Churidars',
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
+    ['Enmity'] = {
+        Main = 'Hades Sainti',
+        Ring2 = 'Sattva Ring',
+    },
     ['DT'] = {
         Main = 'Terra\'s Staff',
         Sub = 'Staff Strap',
@@ -162,13 +166,13 @@ local sets = {
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['EarthManeuver'] = {
-        Head = 'Maat\'s Cap',
-        Neck = 'Bfn. Collar +1',
         Hands = 'Pup. Dastanas',
-        Ring1 = 'Sattva Ring',
-        Ring2 = 'Breeze Ring',
-        Waist = 'Selemnus belt',
+        Head = 'Maat\'s Cap',
         Legs = 'Pantin Churidars',
+        Neck = 'Bfn. Collar +1',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Sattva Ring',
+        Waist = 'Selemnus belt',
     },
     ['WaterManeuver'] = {
         Head = 'Maat\'s Cap',
@@ -249,7 +253,7 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     DT = false,
-    Cure = false,
+    Tanking = false,
 };
 
 profile.OnLoad = function()
@@ -295,16 +299,15 @@ profile.HandleCommand = function(args)
             AshitaCore:GetChatManager():QueueCommand(1, '/pet Deactivate <me>');
         end
     end
-    if (args[1] == 'whm') then
+    if (args[1] == 'tank') then
         if (Settings.Cure == true) then
             Settings.Cure = false;
-            gFunc.Message('PUP cure Set Off');
+            gFunc.Message('PUP tank mode Off');
         else
             Settings.Cure = true;
-            AshitaCore:GetChatManager():QueueCommand(1, '/pupsets load WHM');
-            gFunc.Message('PUP cure Set On');
+            AshitaCore:GetChatManager():QueueCommand(1, '/pupsets load tank');
+            gFunc.Message('PUP tank mode On');
         end
-        local pet = gData.GetPet() 
     end
 end
 
@@ -354,6 +357,12 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.DarkManeuver);
     elseif (action.Name == 'Repair') then
         gFunc.EquipSet(sets.Repair);
+    else
+        gFunc.Equip('Neck', 'Harmonia\'s Torque');
+    end
+
+    if (Settings.Tanking == true) then
+        gFunc.EquipSet(sets.Enmity);
     end
 end
 
