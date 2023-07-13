@@ -264,37 +264,52 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Waist = 'Ninurta\'s Sash',
     },
-    ['STR'] = {
-        Back = 'Cerberus Mantle',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Ethereal Earring',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Alkyoneus\'s Brc.',
-        Head = 'Maat\'s Cap',
-        Legs = 'Dusk Trousers',
-        Neck = 'Fotia Gorget',
-        Range = 'Frenzy fife',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Warwolf Belt',
-    },
     ['DEX'] = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Dusk Gloves',
+        Feet = 'Hct. Leggings',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Fotia Gorget',
         Range = 'Oliphant',
         Ring1 = 'Zilant Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
     },
-    ['AGI'] = {
+    ['DEXINT'] = {
+        Back = 'Cerberus Mantle',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Ear1 = 'Ethereal Earring',
+        Ear2 = 'Pixie Earring',
+        Feet = 'Hct. Leggings',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
+        Head = 'Maat\'s Cap',
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Neck = 'Fotia Gorget',
+        Range = 'Oliphant',
+        Ring1 = 'Galdr Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Warwolf Belt',
+    },
+    ['Mercy'] = {
+        Back = 'Cerberus Mantle',
+        Body = 'Hecatomb Harness',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Ethereal Earring',
+        Feet = 'Hct. Leggings',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
+        Head = 'Maat\'s Cap',
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Neck = 'Fotia Gorget',
+        Range = 'Frenzy fife',
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Warwolf Belt',
+    },
+    ['Exenterator'] = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Altdorf\'s Earring',
@@ -308,7 +323,21 @@ local sets = {
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Blobnag Ring',
         Waist = 'Potent Belt',
-        -- Waist = 'Grenadier Belt',
+    },
+    ['Mordant'] = {
+        Back = 'Bard\'s Cape',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Ear1 = 'Ethereal Earring',
+        Ear2 = 'Pixie Earring',
+        Feet = 'Hct. Leggings',
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Accuracy+4', [2] = 'Crit. hit damage +3%' } },
+        Head = 'Maat\'s Cap',
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Neck = 'Fotia Gorget',
+        Range = 'Oliphant',
+        Ring1 = 'Light Ring',
+        Ring2 = 'Rajas Ring',
+        Waist = 'Gleeman\'s Belt',
     },
     ['CHR'] = {
         Ammo = 'Verthandi\'s Gem',
@@ -328,21 +357,6 @@ local sets = {
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
-    },
-    ['MAB'] = {
-        Back = 'Commander\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Moldavite Earring',
-        Feet = 'Dusk Ledelsens',
-        Hands = 'Bricta\'s Cuffs',
-        Head = 'Maat\'s Cap',
-        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Fotia Gorget',
-        Range = 'Oliphant',
-        Ring1 = 'Thunder Ring',
-        Ring2 = 'Rajas Ring',
-        Waist = 'Warwolf Belt',
     },
     ['Sleep'] = {
         Back = 'Bard\'s Cape',
@@ -538,19 +552,21 @@ end
 profile.HandleWeaponskill = function()
     local action = gData.GetAction();
     local DEX = T { 'Evisceration', 'Wasp Sting', 'Viper Bite', 'Mandalic Stab' };
-    local MAB = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
+    local DEXINT = T { 'Gust Slash', 'Cyclone', 'Aeolian Edge' };
     local STR = T { 'Mercy Stroke' };
     local AGI = T { 'Exenterator' };
-    -- local CHR = T { 'Mordant Ryme' };
+    local CHR = T { 'Mordant Ryme' };
 
     if (AGI:contains(action.Name)) then
-        gFunc.EquipSet(sets.AGI);
+        gFunc.EquipSet(sets.Exenterator);
+    elseif (CHR:contains(action.Name)) then
+            gFunc.EquipSet(sets.Mordant);
     elseif (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.DEX);
-    elseif (MAB:contains(action.Name)) then
-        gFunc.EquipSet(sets.MAB);
+    elseif (DEXINT:contains(action.Name)) then
+        gFunc.EquipSet(sets.DEXINT);
     elseif (STR:contains(action.Name)) then
-        gFunc.EquipSet(sets.STR);
+        gFunc.EquipSet(sets.Mercy);
     end
 end
 
