@@ -9,6 +9,6 @@ Auto-Repair Kit III
 Heatsink
 Tension Spring III
 Armor Plate II
-Inhibitor II
-Stabilizer III
+Attuner
 Dynamo
+Mana Jammer III
