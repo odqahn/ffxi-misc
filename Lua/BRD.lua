@@ -55,7 +55,7 @@ local sets = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
         },
-        Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
+        Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Legs = 'Goliard Trews',
         Neck = 'Orochi Nodowa',
@@ -84,10 +84,7 @@ local sets = {
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Legs = {
-            Name = 'Zenith Slacks',
-            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
-        },
+        Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' } },
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -106,20 +103,14 @@ local sets = {
     },
     ['Buff'] = {
         Back = 'Astute Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
-        Feet = {
-            Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
-        },
+        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
         Hands = {
             Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Bard\'s Roundlet',
-        Legs = {
-            Name = 'Chl. Cannions +1',
-            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
-        },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Wind Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -128,13 +119,10 @@ local sets = {
     },
     ['Debuff'] = {
         Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
-        Feet = {
-            Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
-        },
+        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Maat\'s Cap',
         Neck = 'Piper\'s Torque',
@@ -142,20 +130,14 @@ local sets = {
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
-        Legs = {
-            Name = 'Chl. Cannions +1',
-            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
-        },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
     },
     ['Requiem'] = {
         Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
-        Feet = {
-            Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
-        },
+        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Maat\'s Cap',
         Neck = 'Piper\'s Torque',
@@ -163,10 +145,7 @@ local sets = {
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
-        Legs = {
-            Name = 'Chl. Cannions +1',
-            Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' }
-        },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
     },
     ['Magic'] = {
         Back = 'Errant Cape',
@@ -198,10 +177,7 @@ local sets = {
         Ring2 = 'Vivian Ring',
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
-        Legs = {
-            Name = 'Zenith Slacks',
-            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
-        },
+        Legs = 'Bard\'s Cannions',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -219,10 +195,7 @@ local sets = {
         Ring2 = 'Vivian Ring',
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
-        Legs = {
-            Name = 'Zenith Slacks',
-            Augment = { [1] = 'Song spellcasting time -4%', [2] = 'MP recovered while healing +3', [3] = 'MND+2' }
-        },
+        Legs = 'Bard\'s Cannions',
         Feet = {
             Name = 'Suzaku\'s Sune-Ate',
             Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
@@ -270,9 +243,9 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+2', [2] = 'Attack+2' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +5', [2] = 'MP+15', [3] = 'Crit. hit damage +2%' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
         Range = 'Oliphant',
         Ring1 = 'Zilant Ring',
@@ -285,9 +258,9 @@ local sets = {
         Ear1 = 'Ethereal Earring',
         Ear2 = 'Pixie Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+2', [2] = 'Attack+2' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +5', [2] = 'MP+15', [3] = 'Crit. hit damage +2%' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
         Range = 'Oliphant',
         Ring1 = 'Galdr Ring',
@@ -300,9 +273,9 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+2', [2] = 'Attack+2' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +5', [2] = 'MP+15', [3] = 'Crit. hit damage +2%' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Fotia Gorget',
         Range = 'Frenzy fife',
         Ring1 = 'Flame Ring',
@@ -315,7 +288,7 @@ local sets = {
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+2', [2] = 'Attack+2' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +5', [2] = 'MP+15', [3] = 'Crit. hit damage +2%' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
@@ -330,9 +303,9 @@ local sets = {
         Ear1 = 'Ethereal Earring',
         Ear2 = 'Pixie Earring',
         Feet = 'Hct. Leggings',
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +5', [2] = 'MP+15', [3] = 'Crit. hit damage +2%' } },
+        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -2', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Fotia Gorget',
         Range = 'Oliphant',
         Ring1 = 'Light Ring',
@@ -342,13 +315,10 @@ local sets = {
     ['CHR'] = {
         Ammo = 'Verthandi\'s Gem',
         Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +4', [2] = 'Wind instrument skill +5' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
-        Feet = {
-            Name = 'Shadow Clogs',
-            Augment = { [1] = 'Singing skill +3', [2] = 'Dark magic skill +4', [3] = 'MP+15' }
-        },
+        Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
         Hands = 'Bricta\'s Cuffs',
         Head = 'Bard\'s Roundlet',
         Legs = 'Bard\'s Cannions',
