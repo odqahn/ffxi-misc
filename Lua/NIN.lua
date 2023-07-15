@@ -31,7 +31,7 @@ local sets = {
     ['Damage_Haste'] = {
         Ammo = 'Fuma Shuriken',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = {
@@ -49,7 +49,7 @@ local sets = {
     ['Damage_Acc'] = {
         Ammo = 'Fire Bomblet',
         Back = 'Amemet Mantle +1',
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = {
@@ -67,7 +67,7 @@ local sets = {
     ['Tanking'] = {
         Ammo = 'Nokizaru Shuriken',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = {
@@ -111,7 +111,7 @@ local sets = {
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
         Feet = {
@@ -220,8 +220,7 @@ local sets = {
     },
     ['WSDEX'] = {
         Ammo = 'Fire Bomblet',
-        Head = 'Optical Hat',
-        -- Head = 'Maat\'s Cap',
+        Head = { Name = 'Shr.Znr.Kabuto', Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
         Neck = 'Fotia Gorget',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Pixie Earring',
@@ -237,13 +236,12 @@ local sets = {
     ['WSAGI'] = {
         Ammo = 'Fire Bomblet',
         Back = 'Commander\'s Cape',
-        -- Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+3', [3] = 'Evasion+4' } },
-        Body = { Name = 'Shura Togi', Augment = { [1] = 'Earth resistance+5', [2] = 'Haste+5', [3] = '"Subtle Blow"+3' } },
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
         Feet = 'Koga Kyahan',
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
-        Head = 'Optical Hat',
+        Head = { Name = 'Shr.Znr.Kabuto', Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Fotia Gorget',
         Ring1 = 'Toreador\'s ring',
@@ -252,7 +250,7 @@ local sets = {
     },
     ['WSDEXINT'] = {
         Ammo = 'Fire Bomblet',
-        Head = 'Maat\'s Cap',
+        Head = { Name = 'Shr.Znr.Kabuto', Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
         Neck = 'Fotia Gorget',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Pixie Earring',
@@ -267,7 +265,7 @@ local sets = {
     },
     ['WSSTRINT'] = {
         Ammo = 'Fire Bomblet',
-        Head = 'Maat\'s Cap',
+        Head = { Name = 'Shr.Znr.Kabuto', Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
         Neck = 'Fotia Gorget',
         Ear1 = 'Aesir Ear Pendant',
         Ear2 = 'Eris\' Earring',
