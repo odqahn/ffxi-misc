@@ -51,10 +51,7 @@ local sets = {
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Legs = 'Goliard Trews',
@@ -69,10 +66,7 @@ local sets = {
         Body = 'Kupo Suit',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Neck = 'Orochi Nodowa',
@@ -85,31 +79,24 @@ local sets = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
         Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' } },
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
         Ring1 = 'Minstrel\'s Ring',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
         Back = 'Astute Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +5', [2] = 'Wind instrument skill +6' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Wind Earring',
         Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
-        Hands = {
-            Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
-        Head = 'Bard\'s Roundlet',
+        Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
+        Head = 'Demon Helm +1',
         Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
         Neck = 'Wind Torque',
         Range = 'Gjallarhorn',
@@ -119,7 +106,7 @@ local sets = {
     },
     ['Debuff'] = {
         Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +5', [2] = 'Wind instrument skill +6' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
         Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
@@ -134,7 +121,7 @@ local sets = {
     },
     ['Requiem'] = {
         Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +5', [2] = 'Wind instrument skill +6' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
         Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
@@ -152,12 +139,9 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Bricta\'s Cuffs',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
@@ -178,10 +162,7 @@ local sets = {
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
         Legs = 'Bard\'s Cannions',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
     },
     ['Cure'] = {
         Range = 'Angel Lyre',
@@ -196,22 +177,16 @@ local sets = {
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
         Legs = 'Bard\'s Cannions',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
     },
     ['Utsusemi'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Bard\'s Cuffs',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
@@ -224,12 +199,9 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Dusk Gloves',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Love Torque',
         Range = 'Angel Lyre',
@@ -315,7 +287,7 @@ local sets = {
     ['CHR'] = {
         Ammo = 'Verthandi\'s Gem',
         Back = 'Birdman Cape',
-        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +3', [2] = 'Wind instrument skill +4' } },
+        Body = { Name = 'Chl. Jstcorps +1', Augment = { [1] = 'Singing skill +5', [2] = 'Wind instrument skill +6' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Loquac. Earring',
         Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
@@ -333,10 +305,7 @@ local sets = {
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Bard\'s Cuffs',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Legs = 'Goliard Trews',

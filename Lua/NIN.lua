@@ -10,7 +10,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Feet = { Name = 'Nin. Kyahan +1', Augment = { [1] = 'Ninjutsu skill +5', [2] = '"Mag. Atk. Bns."+10' } },
         Hands = 'Denali Wristbands',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
@@ -34,10 +34,7 @@ local sets = {
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -52,10 +49,7 @@ local sets = {
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -70,10 +64,7 @@ local sets = {
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -89,12 +80,9 @@ local sets = {
         Body = 'Arhat\'s Gi +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Denali Wristbands',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Evasion+3', [2] = 'Phys. dmg. taken -4%', [3] = 'Haste+2' } },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Ring1 = 'Succor Ring',
@@ -103,10 +91,7 @@ local sets = {
     },
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
     },
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
@@ -114,10 +99,7 @@ local sets = {
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Denali Wristbands',
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -284,10 +266,7 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Nin. Hatsuburi +1', Augment = { [1] = 'Crit.hit rate+3', [2] = 'Haste+5' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
@@ -309,10 +288,7 @@ local sets = {
         Back = 'Boxer\'s Mantle',
         Waist = 'Ninurta\'s Sash',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
     },
     ['Stoneskin'] = {
         Ammo = 'Goblin Cracker',
@@ -327,10 +303,7 @@ local sets = {
         Back = 'Boxer\'s Mantle',
         Waist = 'Ninurta\'s Sash',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
     },
     ['Songs'] = {
         Range = 'Marvelous Cheer',
@@ -368,10 +341,7 @@ local sets = {
         Body = 'Arhat\'s Gi +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = {
-            Name = 'Suzaku\'s Sune-Ate',
-            Augment = { [1] = '"Fast Cast"+2', [2] = '"Mag.Def.Bns."+4', [3] = 'Haste+2' }
-        },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
         Hands = 'Denali Wristbands',
         Head = 'Black Ribbon',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
