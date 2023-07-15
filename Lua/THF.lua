@@ -135,7 +135,7 @@ local sets = {
     },
     ['Exenterator'] = {
         Back = 'Assassin\'s Cape',
-        Body = 'Dragon Harness',
+        Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
@@ -149,7 +149,7 @@ local sets = {
     },
     ['ExenteratorTA'] = {
         Back = 'Assassin\'s Cape',
-        Body = 'Dragon Harness',
+        Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
