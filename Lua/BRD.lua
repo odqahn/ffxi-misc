@@ -4,7 +4,7 @@ local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
 local sets = {
     ['SingleWeapon'] = {
         Main = 'Blau Dolch',
-        Sub = { Name = 'Genbu\'s Shield', Augment = { [1] = 'HP+3', [2] = '"Cure" potency +2%' } },
+        Sub = { Name = 'Genbu\'s Shield', Augment = '"Cure" spellcasting time -3%' },
     },
     ['DualWeapons'] = {
         Main = 'Blau Dolch',
@@ -12,7 +12,7 @@ local sets = {
     },
     ['Silktone'] = {
         Main = 'Silktone',
-        Sub = { Name = 'Genbu\'s Shield', Augment = { [1] = 'HP+3', [2] = '"Cure" potency +2%' } },
+        Sub = { Name = 'Genbu\'s Shield', Augment = '"Cure" spellcasting time -3%' },
     },
     ['Terra'] = {
         Main = 'Terra\'s Staff',
@@ -51,12 +51,12 @@ local sets = {
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
-        Hands = 'Bard\'s Cuffs',
-        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
+        Feet = 'Dst. Leggings +1',
+        Hands = 'Dst. Mittens +1',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Phys. dmg. taken -3%', [2] = 'Haste+3' } },
         Legs = 'Goliard Trews',
-        Neck = 'Orochi Nodowa',
-        Range = 'Gjallarhorn',
+        Neck = 'Evasion Torque',
+        Range = 'Hamelin Flute',
         Ring1 = 'Succor Ring',
         Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
@@ -66,27 +66,32 @@ local sets = {
         Body = 'Kupo Suit',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
-        Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
-        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
+        Feet = 'Dst. Leggings +1',
+        Hands = 'Dst. Mittens +1',
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Phys. dmg. taken -3%', [2] = 'Haste+3' } },
         Neck = 'Orochi Nodowa',
         Range = 'Gjallarhorn',
         Ring1 = 'Succor Ring',
         Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
+    ['Regen'] = {
+        Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
+        Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
+        Neck = 'Orochi Nodowa',
+    },
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
         Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' } },
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
         Ring1 = 'Minstrel\'s Ring',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
@@ -139,9 +144,9 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Helenus\'s Earring',
         Ear2 = 'Cass. Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Hands = 'Bricta\'s Cuffs',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Phys. dmg. taken -3%', [2] = 'Haste+3' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
@@ -162,7 +167,7 @@ local sets = {
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
         Legs = 'Bard\'s Cannions',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
     },
     ['Cure'] = {
         Range = 'Angel Lyre',
@@ -177,16 +182,16 @@ local sets = {
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
         Legs = 'Bard\'s Cannions',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
     },
     ['Utsusemi'] = {
         Back = 'Boxer\'s Mantle',
         Body = 'Scp. Harness +1',
         Ear1 = 'Musical Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Hands = 'Bard\'s Cuffs',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
+        Head = { Name = 'Genbu\'s Kabuto', Augment = { [1] = 'Phys. dmg. taken -3%', [2] = 'Haste+3' } },
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Evasion Torque',
         Range = 'Angel Lyre',
@@ -199,9 +204,10 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Hands = 'Dusk Gloves',
-        Head = { Name = 'Genbu\'s Kabuto', Augment = 'MND+2' },
+        Head = 'Walahra Turban',
+        -- Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Love Torque',
         Range = 'Angel Lyre',
@@ -210,7 +216,7 @@ local sets = {
         Waist = 'Ninurta\'s Sash',
     },
     ['DEX'] = {
-        Back = 'Bard\'s Cape',
+        Back = 'Amemet Mantle +1',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
@@ -225,7 +231,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['DEXINT'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Amemet Mantle +1',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Ethereal Earring',
         Ear2 = 'Pixie Earring',
@@ -240,7 +246,7 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['Mercy'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Amemet Mantle +1',
         Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
@@ -255,8 +261,8 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['Exenterator'] = {
-        Back = 'Bard\'s Cape',
-        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Back = 'Amemet Mantle +1',
+        Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
@@ -305,8 +311,8 @@ local sets = {
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = 'Mag. Evasion+3', [2] = 'Haste+3' } },
-        Hands = 'Bard\'s Cuffs',
+        Feet = 'Dst. Leggings +1',
+        Hands = 'Dst. Mittens +1',
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
         Legs = 'Goliard Trews',
         Neck = 'Opo-opo Necklace',
@@ -379,8 +385,14 @@ profile.HandleDefault = function()
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
+        if (player.HPP <= 90 or player.MPP <= 90) then
+            gFunc.EquipSet(sets.Regen);
+        end
     else
         gFunc.EquipSet(sets.Idle);
+        if (player.HPP <= 90 or player.MPP <= 90) then
+            gFunc.EquipSet(sets.Regen);
+        end
     end
 
     -- Weapons management
@@ -421,6 +433,9 @@ profile.HandlePrecast = function()
     if (spell.Skill == 'Singing') then
         gFunc.EquipSet(sets.PrecastSong);
     else
+        if (Settings.Fight == false) then
+            gFunc.EquipSet(sets.Silktone);
+        end
         gFunc.EquipSet(sets.PrecastMagic);
     end
 
