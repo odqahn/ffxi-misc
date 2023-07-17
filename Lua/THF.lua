@@ -19,14 +19,14 @@ local sets = {
     },
     ['Idle'] = {
         Back = 'Boxer\'s Mantle',
-        Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
+        Body = 'Dragon Harness',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Feet = 'Trotter Boots',
         Hands = 'Denali Wristbands',
         Head = 'Black Ribbon',
         Legs = 'Homam Cosciales',
-        Neck = 'Orochi Nodowa',
+        Neck = 'Love Torque',
         Ring1 = 'Succor Ring',
         Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
@@ -39,10 +39,14 @@ local sets = {
         Feet = 'Trotter Boots',
         Hands = 'Denali Wristbands',
         Head = 'Black Ribbon',
-        Neck = 'Orochi Nodowa',
+        Neck = 'Love Torque',
         Ring1 = 'Succor Ring',
         Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
+    },
+    ['Regen'] = {
+        Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
+        Neck = 'Orochi Nodowa',
     },
     ['TH'] = {
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
@@ -82,7 +86,7 @@ local sets = {
         Body = 'Dragon Harness',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
-        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
+        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'Scythe skill +4', [3] = 'AGI+4' } },
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
@@ -106,11 +110,11 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['WSDEX'] = {
-        Back = 'Assassin\'s Cape',
+        Back = 'Amemet Mantle +1',
         Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
-        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
+        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'Scythe skill +4', [3] = 'AGI+4' } },
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
@@ -120,11 +124,11 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['DEXINT'] = {
-        Back = 'Assassin\'s Cape',
-        Body = 'Dragon Harness',
+        Back = 'Amemet Mantle +1',
+        Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Pixie Earring',
         Ear2 = 'Aesir Ear Pendant',
-        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
+        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'Scythe skill +4', [3] = 'AGI+4' } },
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dusk Trousers',
@@ -134,11 +138,11 @@ local sets = {
         Waist = 'Warwolf Belt',
     },
     ['Exenterator'] = {
-        Back = 'Assassin\'s Cape',
+        Back = 'Amemet Mantle +1',
         Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
-        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
+        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'Scythe skill +4', [3] = 'AGI+4' } },
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
@@ -152,7 +156,7 @@ local sets = {
         Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
         Ear1 = 'Altdorf\'s Earring',
         Ear2 = 'Wilhelm\'s Earring',
-        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
+        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'Scythe skill +4', [3] = 'AGI+4' } },
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
@@ -162,11 +166,11 @@ local sets = {
         Waist = 'Potent Belt',
     },
     ['Mercy'] = {
-        Back = 'Cerberus Mantle',
+        Back = 'Amemet Mantle +1',
         Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
-        Ear1 = 'Bushinomimi',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Aesir Ear Pendant',
-        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
+        Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'Scythe skill +4', [3] = 'AGI+4' } },
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
@@ -205,9 +209,10 @@ local sets = {
     },
     ['Sleep'] = {
         Back = 'Boxer\'s Mantle',
-        Body = 'Scp. Harness +1',
+        Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
+        Feet = 'Dst. Leggings +1',
         Hands = 'Denali Wristbands',
         Head = 'Black Ribbon',
         Neck = 'Opo-opo Necklace',
@@ -388,10 +393,16 @@ profile.HandleDefault = function()
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
+        if (player.HPP <= 95) then
+            gFunc.EquipSet(sets.Regen);
+        end
         -- elseif (player.Status == 'Resting') then
         --     gFunc.EquipSet(sets.Idle);
     else
         gFunc.EquipSet(sets.Idle);
+        if (player.HPP <= 95) then
+            gFunc.EquipSet(sets.Regen);
+        end
     end
 end
 
