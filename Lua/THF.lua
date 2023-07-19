@@ -26,7 +26,7 @@ local sets = {
         Hands = 'Denali Wristbands',
         Head = 'Black Ribbon',
         Legs = 'Homam Cosciales',
-        Neck = 'Love Torque',
+        Neck = 'Orochi Nodowa',
         Ring1 = 'Succor Ring',
         Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
@@ -46,7 +46,6 @@ local sets = {
     },
     ['Regen'] = {
         Body = { Name = 'Rog. Vest +1', Augment = { [1] = '"Dual Wield"+2', [2] = '"Regen"+2' } },
-        Neck = 'Orochi Nodowa',
     },
     ['TH'] = {
         Hands = { Name = 'Rog. Armlets +1', Augment = { [1] = 'Haste+3', [2] = '"Treasure Hunter"+1' } },
@@ -118,7 +117,7 @@ local sets = {
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
-        Neck = 'Fotia Gorget',
+        Neck = 'Love Torque',
         Ring1 = 'Zilant Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Warwolf Belt',
@@ -132,7 +131,7 @@ local sets = {
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dusk Trousers',
-        Neck = 'Fotia Gorget',
+        Neck = 'Love Torque',
         Ring1 = 'Galdr Ring',
         Ring2 = 'Tamas Ring',
         Waist = 'Warwolf Belt',
@@ -146,7 +145,7 @@ local sets = {
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
-        Neck = 'Fotia Gorget',
+        Neck = 'Love Torque',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Blobnag Ring',
         Waist = 'Potent Belt',
@@ -160,7 +159,7 @@ local sets = {
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Optical Hat',
         Legs = 'Rogue\'s Culottes',
-        Neck = 'Fotia Gorget',
+        Neck = 'Love Torque',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Sattva Ring',
         Waist = 'Potent Belt',
@@ -174,7 +173,7 @@ local sets = {
         Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
         Head = 'Maat\'s Cap',
         Legs = 'Dragon Subligar',
-        Neck = 'Fotia Gorget',
+        Neck = 'Love Torque',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Flame Ring',
         Waist = 'Warwolf Belt',
@@ -396,8 +395,6 @@ profile.HandleDefault = function()
         if (player.HPP <= 95) then
             gFunc.EquipSet(sets.Regen);
         end
-        -- elseif (player.Status == 'Resting') then
-        --     gFunc.EquipSet(sets.Idle);
     else
         gFunc.EquipSet(sets.Idle);
         if (player.HPP <= 95) then
