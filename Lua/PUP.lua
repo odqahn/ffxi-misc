@@ -56,7 +56,7 @@ local sets = {
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = { Name = 'Puppetry Taj +1', Augment = { [1] = 'Haste+4', [2] = 'Pet: Haste+4' } },
-        Neck = 'Peacock Amulet',
+        Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Body = 'Pantin Tobe',

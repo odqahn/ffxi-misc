@@ -53,7 +53,7 @@ local sets = {
         Main = 'Hades Sainti',
         Ammo = 'Astrolabe',
         Head = 'Walahra Turban',
-        Neck = 'Peacock Amulet',
+        Neck = 'Faith Torque',
         Ear1 = 'Ethereal Earring',
         Ear2 = 'Brutal Earring',
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
