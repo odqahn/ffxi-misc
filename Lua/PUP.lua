@@ -150,6 +150,20 @@ local sets = {
         Legs = 'Pantin Churidars',
         Feet = 'Pantin Babouches',
     },
+    ['Shijin'] = {
+        Head = 'Optical Hat',
+        Neck = 'Faith Torque',
+        Ear1 = 'Aesir Ear Pendant',
+        Ear2 = 'Hollow Earring',
+        Body = 'Pln. Khazagand',
+        Hands = 'Pantin Dastanas',
+        Ring1 = 'Zilant Ring',
+        Ring2 = 'Rajas Ring',
+        Back = 'Pantin Cape',
+        Waist = 'Potent Belt',
+        Legs = 'Pantin Churidars',
+        Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
+    },
     ['Precast'] = {
         Back = 'Veela cape',
         Ear2 = 'Loquac. Earring',
@@ -400,7 +414,13 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.WS);
+    local action = gData.GetAction();
+
+    if (action.Name == "Shijin Spiral") then
+        gFunc.EquipSet(sets.Shijin);
+    else
+        gFunc.EquipSet(sets.WS);
+    end
 end
 
 return profile;

@@ -19,8 +19,6 @@ local sets = {
         Feet = 'Melee Gaiters',
     },
     ['Mog'] = {
-        Main = 'Hades Sainti',
-        Ammo = 'Astrolabe',
         Head = 'Optical Hat',
         Neck = 'Orochi Nodowa',
         Ear1 = 'Merman\'s Earring',
@@ -34,8 +32,6 @@ local sets = {
         Feet = 'Melee Gaiters',
     },
     ['Sleep'] = {
-        Main = 'Hades Sainti',
-        Ammo = 'Astrolabe',
         Head = 'Optical Hat',
         Neck = 'Opo-opo Necklace',
         Ear1 = 'Merman\'s Earring',
@@ -54,7 +50,7 @@ local sets = {
         Ammo = 'Astrolabe',
         Head = 'Walahra Turban',
         Neck = 'Faith Torque',
-        Ear1 = 'Ethereal Earring',
+        Ear1 = 'Hollow Earring',
         Ear2 = 'Brutal Earring',
         Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
         Hands = { Name = 'Seiryu\'s Kote', Augment = { [1] = 'Crit.hit rate+3', [2] = '"Store TP"+5', [3] = 'Evasion+4' } },
@@ -63,12 +59,11 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = 'Brown Belt',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Feet = 'Melee Gaiters',
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
     },
-    ['DEXSTR'] = {
-        Main = 'Hades Sainti',
-        Ammo = 'Astrolabe',
-        Head = { Name = 'Shr.Znr.Kabuto', Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
+    ['WS'] = {
+        Head = { Name = 'Shr.Znr.Kabuto',
+            Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Aesir Ear Pendant',
@@ -81,8 +76,43 @@ local sets = {
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Feet = 'Melee Gaiters',
     },
+    ['Shijin'] = {
+        Head = { Name = 'Shr.Znr.Kabuto',
+            Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },
+        Neck = 'Fotia Gorget',
+        Ear1 = 'Hollow Earring',
+        Ear2 = 'Aesir Ear Pendant',
+        Body = { Name = 'Shura Togi', Augment = { [1] = 'Evasion+5', [2] = 'Haste+2', [3] = '"Subtle Blow"+3' } },
+        Hands = 'Melee Gloves',
+        Ring1 = 'Zilant Ring',
+        Ring2 = 'Rajas Ring',
+        Back = 'Amemet Mantle +1',
+        Waist = 'Potent Belt',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
+        Feet = 'Melee Gaiters',
+    },
+    ['Chackra'] = {
+        Hands = 'Melee Gloves',
+    },
+    ['Counter'] = {
+        Feet = 'Melee Gaiters',
+    },
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
+        Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
+    },
+    ['Chi'] = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Faith Torque',
+        Ear1 = 'Star Earring',
+        Ear2 = 'Star Earring',
+        Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
+        Hands = 'Denali Wristbands',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Thunder Ring',
+        Back = 'Melee Cape',
+        Waist = 'Salire Belt',
+        Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
     },
     ['Utsu'] = {
@@ -159,13 +189,13 @@ profile.HandleAbility = function()
     if (action.Name == 'Dodge') then
         gFunc.EquipSet(sets.Idle);
     elseif (action.Name == 'Chackra') then
-        gFunc.EquipSet(sets.Idle);
+        gFunc.EquipSet(sets.Chackra);
     elseif (action.Name == 'Counterstance') then
-        gFunc.EquipSet(sets.Idle);
+        gFunc.EquipSet(sets.Counter);
     elseif (action.Name == 'Focus') then
         gFunc.EquipSet(sets.Idle);
     elseif (action.Name == 'Chi Blast') then
-        gFunc.EquipSet(sets.Idle);
+        gFunc.EquipSet(sets.Chi);
     elseif (action.Name == 'Footwork') then
         gFunc.EquipSet(sets.Idle);
     elseif (action.Name == 'Boost') then
@@ -202,7 +232,13 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.DEXSTR);
+    local action = gData.GetAction();
+
+    if (action.Name == "Shijin Spiral") then
+        gFunc.EquipSet(sets.Shijin);
+    else
+        gFunc.EquipSet(sets.WS);
+    end
 end
 
 return profile;
