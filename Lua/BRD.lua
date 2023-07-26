@@ -14,6 +14,10 @@ local sets = {
         Main = 'Silktone',
         Sub = { Name = 'Genbu\'s Shield', Augment = '"Cure" spellcasting time -3%' },
     },
+    ['ChanterStaff'] = {
+        Main = 'Chanter\'s Staff',
+        Sub = 'Magic Strap',
+    },
     ['Terra'] = {
         Main = 'Terra\'s Staff',
         Sub = 'Staff Strap',
@@ -75,6 +79,25 @@ local sets = {
         Ring2 = 'Merman\'s Ring',
         Waist = 'Lieutenant\'s Sash',
     },
+    ['Lowhp'] = {
+        Main = 'Terra\'s Staff',
+        Sub = 'Earth Grip',
+        Back = 'Cheviot Cape',
+        Body = 'Dalmatica',
+        Head = 'Zenith Crown',
+        Hands = 'Zenith Mitts',
+        Neck = 'Orochi Nodowa',
+        Legs = {
+            Name = 'Zenith Slacks',
+            Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' }
+        },
+        Feet = 'Zenith Pumps',
+        Ear1 = 'Astral Earring',
+        Ear2 = 'Merman\'s Earring',
+        Ring1 = 'Succor Ring',
+        Ring2 = 'Vivian Ring',
+        Waist = 'Marching Belt',
+    },
     ['Regen'] = {
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Head = { Name = 'Chl. Roundlet +1', Augment = { [1] = '"Regen"+3', [2] = '"Refresh"+1' } },
@@ -83,25 +106,13 @@ local sets = {
     ['PrecastSong'] = {
         Back = 'Veela cape',
         Body = 'Sha\'ir Manteel',
-        Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' } },
+        Legs = {
+            Name = 'Zenith Slacks',
+            Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' }
+        },
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
         Ring1 = 'Minstrel\'s Ring',
-    },
-    ['PrecastSongFast'] = {
-        -- Main = 'Chatoyant Staff',
-        -- Sub = 'Earth Grip',
-        Back = 'Veela cape',
-        Body = 'Sha\'ir Manteel',
-        Head = 'Zenith Crown',
-        Hands = 'Zenith Mitts',
-        Legs = { Name = 'Zenith Slacks', Augment = { [1] = 'Song spellcasting time -5%', [2] = 'Wind instrument skill +5', [3] = 'AGI+1' } },
-        Feet = 'Zenith Pumps',
-        Ear1 = 'Astral Earring',
-        Ear2 = 'Loquac. Earring',
-        Ring1 = 'Minstrel\'s Ring',
-        Ring2 = 'Vivian\'s Ring',
-        Waist = 'Marching Belt',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
@@ -117,7 +128,10 @@ local sets = {
         Feet = { Name = 'Shadow Clogs', Augment = { [1] = 'Singing skill +4', [2] = 'MP+12', [3] = '"Resist Sleep"+5' } },
         Hands = { Name = 'Chl. Cuffs +1', Augment = { [1] = 'Mag. Acc.+3', [2] = 'CHR+3' } },
         Head = 'Demon Helm +1',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Wind Torque',
         Range = 'Gjallarhorn',
         Ring1 = 'Trumpet Ring',
@@ -137,7 +151,10 @@ local sets = {
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
     },
     ['Requiem'] = {
         Back = 'Birdman Cape',
@@ -152,7 +169,10 @@ local sets = {
         Ring1 = 'Light Ring',
         Ring2 = 'Light Ring',
         Waist = 'Gleeman\'s Belt',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
     },
     ['Magic'] = {
         Back = 'Errant Cape',
@@ -218,7 +238,7 @@ local sets = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear2 = 'Hollow Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Hands = 'Dusk Gloves',
         Head = 'Walahra Turban',
@@ -233,10 +253,13 @@ local sets = {
     ['DEX'] = {
         Back = 'Amemet Mantle +1',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Pixie Earring',
+        Ear1 = 'Pixie Earring',
+        Ear2 = 'Hollow Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
+        Hands = {
+            Name = 'Hct. Mittens +1',
+            Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' }
+        },
         Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Love Torque',
@@ -248,10 +271,13 @@ local sets = {
     ['DEXINT'] = {
         Back = 'Amemet Mantle +1',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Ethereal Earring',
-        Ear2 = 'Pixie Earring',
+        Ear1 = 'Pixie Earring',
+        Ear2 = 'Hollow Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
+        Hands = {
+            Name = 'Hct. Mittens +1',
+            Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' }
+        },
         Head = 'Maat\'s Cap',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
         Neck = 'Love Torque',
@@ -266,9 +292,15 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Ethereal Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
+        Hands = {
+            Name = 'Hct. Mittens +1',
+            Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' }
+        },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Love Torque',
         Range = 'Frenzy fife',
         Ring1 = 'Flame Ring',
@@ -278,13 +310,16 @@ local sets = {
     ['Exenterator'] = {
         Back = 'Amemet Mantle +1',
         Body = { Name = 'Hecatomb Harness', Augment = { [1] = '"Conserve TP"+3', [2] = 'Attack+5', [3] = 'DEX+4' } },
-        Ear1 = 'Altdorf\'s Earring',
-        Ear2 = 'Wilhelm\'s Earring',
+        Ear1 = 'Aesir Ear Pendant',
+        Ear2 = 'Hollow Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
+        Hands = {
+            Name = 'Hct. Mittens +1',
+            Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' }
+        },
         Head = 'Optical Hat',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },
-        Neck = 'Love Torque',
+        Neck = 'Fotia Gorget',
         Range = 'Oliphant',
         Ring1 = 'Toreador\'s ring',
         Ring2 = 'Blobnag Ring',
@@ -293,12 +328,18 @@ local sets = {
     ['Mordant'] = {
         Back = 'Bard\'s Cape',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
-        Ear1 = 'Ethereal Earring',
-        Ear2 = 'Pixie Earring',
+        Ear1 = 'Pixie Earring',
+        Ear2 = 'Hollow Earring',
         Feet = { Name = 'Hct. Leggings', Augment = { [1] = 'STR+3', [2] = 'INT+3' } },
-        Hands = { Name = 'Hct. Mittens +1', Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' } },
+        Hands = {
+            Name = 'Hct. Mittens +1',
+            Augment = { [1] = 'Dagger skill +6', [2] = 'Sword skill +6', [3] = 'Crit. hit damage +3%' }
+        },
         Head = 'Maat\'s Cap',
-        Legs = { Name = 'Chl. Cannions +1', Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' } },
+        Legs = {
+            Name = 'Chl. Cannions +1',
+            Augment = { [1] = 'Song recast delay -3', [2] = 'Earth Affinity: Magic Accuracy+5' }
+        },
         Neck = 'Love Torque',
         Range = 'Oliphant',
         Ring1 = 'Light Ring',
@@ -345,6 +386,7 @@ profile.Packer = {
 local Settings = {
     Mog = false,
     Fight = false,
+    FastCast = false,
 };
 
 profile.OnLoad = function()
@@ -379,6 +421,16 @@ profile.HandleCommand = function(args)
             gFunc.Message('Fight Set On');
         end
     end
+    if (args[1] == 'fastcasting') then
+        if (Settings.FastCast == true) then
+            Settings.Fight = false;
+            Settings.FastCast = false;
+            gFunc.Message('Fast casting Set Off');
+        else
+            Settings.FastCast = true;
+            gFunc.Message('Fast casting Set On');
+        end
+    end
 end
 
 profile.HandleDefault = function()
@@ -404,9 +456,13 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.Regen);
         end
     else
-        gFunc.EquipSet(sets.Idle);
-        if (player.HPP <= 90 or player.MPP <= 90) then
-            gFunc.EquipSet(sets.Regen);
+        if (Settings.FastCast == true) then
+            gFunc.EquipSet(sets.Lowhp);
+        else
+            gFunc.EquipSet(sets.Idle);
+            if (player.HPP <= 90 or player.MPP <= 90) then
+                gFunc.EquipSet(sets.Regen);
+            end
         end
     end
 
@@ -486,7 +542,7 @@ profile.HandleMidcast = function()
         else
             gFunc.EquipSet(sets.Buff);
             if (Settings.Fight == false) then
-                gFunc.EquipSet(sets.Silktone);
+                gFunc.EquipSet(sets.ChanterStaff);
             end
         end
     elseif (spell.Skill == 'Ninjutsu') then
@@ -529,7 +585,7 @@ profile.HandleWeaponskill = function()
     if (AGI:contains(action.Name)) then
         gFunc.EquipSet(sets.Exenterator);
     elseif (CHR:contains(action.Name)) then
-            gFunc.EquipSet(sets.Mordant);
+        gFunc.EquipSet(sets.Mordant);
     elseif (DEX:contains(action.Name)) then
         gFunc.EquipSet(sets.DEX);
     elseif (DEXINT:contains(action.Name)) then
