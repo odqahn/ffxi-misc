@@ -3,7 +3,6 @@ local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
 
 local sets = {
     ['Idle'] = {
-        Main = 'Hades Sainti',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = 'Pantin Taj',
@@ -20,7 +19,7 @@ local sets = {
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Resting'] = {
-        Main = 'Chatoyant Staff',
+        -- Main = 'Chatoyant Staff',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = 'Pantin Taj',
@@ -52,13 +51,12 @@ local sets = {
         Feet = { Name = 'Pup. Babouches +1', Augment = { [1] = '"Repair" potency +2%', [2] = 'Pet: "Regen"+2' } },
     },
     ['Meele'] = {
-        Main = 'Hades Sainti',
         Range = 'Turbo Animator',
         Ammo = 'Automat. Oil +2',
         Head = { Name = 'Puppetry Taj +1', Augment = { [1] = 'Haste+4', [2] = 'Pet: Haste+4' } },
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear2 = 'Hollow Earring',
         Body = 'Pantin Tobe',
         Hands = 'Pantin Dastanas',
         Ring1 = 'Toreador\'s Ring',
@@ -328,6 +326,7 @@ end
 profile.HandleDefault = function()
     local sleep = gData.GetBuffCount('Sleep');
     local player = gData.GetPlayer();
+    local pet = gData.GetPet();
 
     if (sleep == 1) then
         gFunc.EquipSet(sets.Sleep);
@@ -343,12 +342,23 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.Resting);
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
+        if (pet == nil) then
+            gFunc.Equip('Feet', 'Hermes\' Sandals');
+        elseif (pet.HPP >= 99) then
+            gFunc.Equip('Feet', 'Hermes\' Sandals');
+        end
     else
         gFunc.EquipSet(sets.Idle);
+        if (pet == nil) then
+            gFunc.Equip('Feet', 'Hermes\' Sandals');
+        elseif (pet.HPP >= 99) then
+            gFunc.Equip('Feet', 'Hermes\' Sandals');
+        end
     end
-    if (Settings.Cure == true) and (Settings.Mog == false) then
-        gFunc.Equip('Legs', 'Pup. Churidars');
-    end
+
+    -- if (Settings.Cure == true) and (Settings.Mog == false) then
+    --     gFunc.Equip('Legs', 'Pup. Churidars');
+    -- end
 end
 
 profile.HandleAbility = function()
@@ -371,7 +381,7 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.DarkManeuver);
     elseif (action.Name == 'Repair') then
         gFunc.EquipSet(sets.Repair);
-    else
+    elseif (settings.Tanking == true) then
         gFunc.Equip('Neck', 'Harmonia\'s Torque');
     end
 

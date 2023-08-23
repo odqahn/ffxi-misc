@@ -204,7 +204,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Body = 'Haubergeon +1',
         Ear1 = 'Aesir Ear Pendant',
-        Ear2 = 'Pixie Earring',
+        Ear2 = 'Hollow Earring',
         Feet = 'Koga Kyahan',
         Hands = { Name = 'Nin. Tekko +1', Augment = { [1] = 'Haste+3', [2] = '"Dbl.Atk."+3' } },
         Head = { Name = 'Shr.Znr.Kabuto', Augment = { [1] = 'Weapon skill damage +3%', [2] = '"Resist Stun"+5', [3] = '"Conserve TP"+5' } },

@@ -3,7 +3,7 @@ local isTargetTagged = gFunc.LoadFile('common\\tag.lua');
 
 local sets = {
     ['DefaultWeapons'] = {
-        Main = 'Blau Dolch',
+        Main = 'Azoth',
         Sub = 'Mercurial Kris',
     },
     ['THWeapons'] = {
