@@ -452,9 +452,6 @@ profile.HandleDefault = function()
         end
     elseif (Settings.Mog == true) then
         gFunc.EquipSet(sets.Mog);
-        if (player.HPP <= 90 or player.MPP <= 90) then
-            gFunc.EquipSet(sets.Regen);
-        end
     else
         if (Settings.FastCast == true) then
             gFunc.EquipSet(sets.Lowhp);
