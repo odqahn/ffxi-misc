@@ -113,11 +113,13 @@ local sets = {
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
         Ear2 = 'Loquac. Earring',
         Ring1 = 'Minstrel\'s Ring',
+        Ring2 = 'Naji\'s Loop',
     },
     ['PrecastMagic'] = {
         Back = 'Veela cape',
         Body = { Name = 'Dalmatica', Augment = { [1] = 'Occ. quickens spellcasting +1%', [2] = '"Fast Cast"+3' } },
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
+        Ring2 = 'Naji\'s Loop',
         Ear2 = 'Loquac. Earring',
     },
     ['Buff'] = {
@@ -213,7 +215,7 @@ local sets = {
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Hands = 'Bricta\'s Cuffs',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Vivian Ring',
+        Ring2 = 'Naji\'s Loop',
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
         Legs = 'Bard\'s Cannions',

@@ -190,6 +190,7 @@ local sets = {
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
         Legs = 'Homam Cosciales',
+        Ring2 = 'Naji\'s Loop',
     },
     ['Casting'] = {
         Back = 'Boxer\'s Mantle',

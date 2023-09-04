@@ -96,7 +96,8 @@ local sets = {
         Ear2 = 'Star Earring',
         Head = 'Maat\'s Cap',
         Neck = 'Fylgja Torque +1',
-        Ring2 = 'Tamas Ring',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Naji\'s Loop',
         Waist = 'Salire Belt',
     },
     ['Stoneskin'] = {

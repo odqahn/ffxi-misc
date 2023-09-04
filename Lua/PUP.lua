@@ -88,7 +88,7 @@ local sets = {
         Body = 'Pantin Tobe +1',
         Hands = 'Pantin Dastanas',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Vivian Ring',
+        Ring2 = 'Naji\'s Loop',
         Back = 'Dew Silk Cape +1',
         Waist = 'Salire Belt',
         Legs = 'Pantin Churidars',
@@ -149,6 +149,7 @@ local sets = {
     ['Precast'] = {
         Back = 'Veela cape',
         Ear2 = 'Loquac. Earring',
+        Ring2 = 'Naji\'s Loop',
     },
     ['FireManeuver'] = {
         Head = 'Maat\'s Cap',

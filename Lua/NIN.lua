@@ -92,6 +92,7 @@ local sets = {
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
+        Ring2 = 'Naji\'s Loop',
     },
     ['Utsu'] = {
         Ammo = 'Goblin Cracker',
@@ -282,8 +283,8 @@ local sets = {
         Ear2 = 'Star Earring',
         Body = { Name = 'Kirin\'s Osode', Augment = { [1] = 'Accuracy+4', [2] = '"Dbl.Atk."+2', [3] = 'Evasion+4' } },
         Hands = 'Denali Wristbands',
-        Ring1 = 'Vivian Ring',
-        Ring2 = 'Tamas Ring',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Naji\'s Loop',
         Back = 'Boxer\'s Mantle',
         Waist = 'Ninurta\'s Sash',
         Legs = { Name = 'Byakko\'s Haidate', Augment = { [1] = 'AGI+3', [2] = '"Store TP"+3', [3] = 'DEX+3' } },

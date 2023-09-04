@@ -100,6 +100,7 @@ local sets = {
     ['Precast'] = {
         Ear2 = 'Loquac. Earring',
         Feet = { Name = 'Suzaku\'s Sune-Ate', Augment = { [1] = '"Fast Cast"+4', [2] = 'Haste+3' } },
+        Ring2 = 'Naji\'s Loop',
     },
     ['Chi'] = {
         Head = 'Maat\'s Cap',
